@@ -14,9 +14,7 @@ type
     Label2: TLabel;
     Edit_Nome: TDBEdit;
     Label3: TLabel;
-    Edit_CPF: TDBEdit;
-    Label4: TLabel;
-    Edit_CNPJ: TDBEdit;
+    Edit_CPF_CNPJ: TDBEdit;
     Label7: TLabel;
     Edit_Dt_Nasci: TDBEdit;
     Label8: TLabel;
@@ -40,7 +38,7 @@ type
     procedure But_PesquisaClick(Sender: TObject);
     procedure Edit_CodCidadeExit(Sender: TObject);
     procedure But_SalvarClick(Sender: TObject);
-    procedure But_SairClick(Sender: TObject);
+    procedure Radio_Fis_JuriExit(Sender: TObject);
   private
     { Private declarations }
   public
@@ -73,12 +71,6 @@ begin
     Form_PesquisaCidade.QueryPesquisa.Close;
     Form_PesquisaCidade.Free;
   end;
-end;
-
-procedure TForm_CadastroPessoa.But_SairClick(Sender: TObject);
-begin
-  inherited;
-  CONEXAO.Transaction.Rollback;
 end;
 
 procedure TForm_CadastroPessoa.But_SalvarClick(Sender: TObject);
@@ -144,8 +136,18 @@ begin
        RadioFunc.ItemIndex:=0;
        Radio_Fis_Juri.ItemIndex:=0;
   end;
+
   inherited;
 
+end;
+
+procedure TForm_CadastroPessoa.Radio_Fis_JuriExit(Sender: TObject);
+begin
+  inherited;
+  case Radio_Fis_Juri.ItemIndex of
+  0:DataSourceCadastro.DataSet.FieldByName('NR_CPF_CNPJ').EditMask:='000.000.000-00';
+  1:DataSourceCadastro.DataSet.FieldByName('NR_CPF_CNPJ').EditMask:='00.000.000/0000-00';
+  end;
 end;
 
 end.

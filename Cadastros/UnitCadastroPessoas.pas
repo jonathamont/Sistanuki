@@ -14,9 +14,7 @@ type
     Label2: TLabel;
     Edit_Nome: TDBEdit;
     Label3: TLabel;
-    Edit_CPF: TDBEdit;
-    Label4: TLabel;
-    Edit_CNPJ: TDBEdit;
+    Edit_CPF_CNPJ: TDBEdit;
     Label7: TLabel;
     Edit_Dt_Nasci: TDBEdit;
     Label8: TLabel;
@@ -137,7 +135,10 @@ begin
        RadioFunc.ItemIndex:=0;
        Radio_Fis_Juri.ItemIndex:=0;
   end;
+
   inherited;
+
+end;
 
 end;
 

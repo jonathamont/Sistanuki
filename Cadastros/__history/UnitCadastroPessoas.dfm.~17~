@@ -10,6 +10,7 @@ inherited Form_CadastroPessoa: TForm_CadastroPessoa
   inherited But_Pesquisa: TSpeedButton
     Left = 162
     Top = 238
+    OnClick = But_PesquisaClick
     ExplicitLeft = 162
     ExplicitTop = 238
   end
@@ -70,12 +71,12 @@ inherited Form_CadastroPessoa: TForm_CadastroPessoa
     FocusControl = Edit_Celulat
   end
   object Label10: TLabel [8]
-    Left = 22
+    Left = 24
     Top = 179
     Width = 24
     Height = 13
     Caption = 'Email'
-    FocusControl = Edit_email
+    FocusControl = Edit_Email
   end
   object Label11: TLabel [9]
     Left = 22
@@ -91,22 +92,22 @@ inherited Form_CadastroPessoa: TForm_CadastroPessoa
     Width = 63
     Height = 13
     Caption = 'Nome Cidade'
-    FocusControl = Edit_nNmCidade
+    FocusControl = Edit_NmCidade
   end
   object Label14: TLabel [11]
     Left = 24
     Top = 270
-    Width = 58
+    Width = 28
     Height = 13
-    Caption = 'DS_BAIRRO'
+    Caption = 'Bairro'
     FocusControl = Edit_Bairro
   end
   object Label15: TLabel [12]
     Left = 24
     Top = 318
-    Width = 40
+    Width = 19
     Height = 13
-    Caption = 'DS_RUA'
+    Caption = 'Rua'
     FocusControl = Edit_Rua
   end
   inherited GroupBox1: TGroupBox
@@ -116,8 +117,8 @@ inherited Form_CadastroPessoa: TForm_CadastroPessoa
     Height = 44
     Align = alBottom
     ExplicitLeft = 0
-    ExplicitTop = 445
-    ExplicitWidth = 650
+    ExplicitTop = 421
+    ExplicitWidth = 617
     ExplicitHeight = 44
     inherited But_Salvar: TBitBtn
       Top = 11
@@ -146,6 +147,7 @@ inherited Form_CadastroPessoa: TForm_CadastroPessoa
     Top = 59
     Width = 315
     Height = 21
+    CharCase = ecUpperCase
     DataField = 'NM_PESSOA'
     DataSource = Form_PesquisaPessoa.DataSourcePesquisa
     TabOrder = 2
@@ -178,8 +180,8 @@ inherited Form_CadastroPessoa: TForm_CadastroPessoa
     TabOrder = 5
   end
   object Edit_Telefone: TDBEdit [19]
-    Left = 22
-    Top = 147
+    Left = 24
+    Top = 150
     Width = 108
     Height = 21
     DataField = 'NR_TELEFONE'
@@ -188,15 +190,15 @@ inherited Form_CadastroPessoa: TForm_CadastroPessoa
   end
   object Edit_Celulat: TDBEdit [20]
     Left = 160
-    Top = 147
+    Top = 150
     Width = 147
     Height = 21
     DataField = 'NR_CELULAR'
     DataSource = Form_PesquisaPessoa.DataSourcePesquisa
     TabOrder = 7
   end
-  object Edit_email: TDBEdit [21]
-    Left = 22
+  object Edit_Email: TDBEdit [21]
+    Left = 24
     Top = 195
     Width = 209
     Height = 21
@@ -212,14 +214,16 @@ inherited Form_CadastroPessoa: TForm_CadastroPessoa
     DataField = 'CD_CIDADE'
     DataSource = Form_PesquisaPessoa.DataSourcePesquisa
     TabOrder = 9
+    OnExit = Edit_CodCidadeExit
   end
-  object Edit_nNmCidade: TDBEdit [23]
+  object Edit_NmCidade: TDBEdit [23]
     Left = 191
     Top = 238
     Width = 299
     Height = 21
     DataField = 'NM_CIDADE'
     DataSource = Form_PesquisaPessoa.DataSourcePesquisa
+    ReadOnly = True
     TabOrder = 10
   end
   object Edit_Bairro: TDBEdit [24]
@@ -227,6 +231,7 @@ inherited Form_CadastroPessoa: TForm_CadastroPessoa
     Top = 286
     Width = 377
     Height = 21
+    CharCase = ecUpperCase
     DataField = 'DS_BAIRRO'
     DataSource = Form_PesquisaPessoa.DataSourcePesquisa
     TabOrder = 11
@@ -236,6 +241,7 @@ inherited Form_CadastroPessoa: TForm_CadastroPessoa
     Top = 337
     Width = 377
     Height = 21
+    CharCase = ecUpperCase
     DataField = 'DS_RUA'
     DataSource = Form_PesquisaPessoa.DataSourcePesquisa
     TabOrder = 12
@@ -247,6 +253,8 @@ inherited Form_CadastroPessoa: TForm_CadastroPessoa
     Height = 35
     Caption = 'Sexo'
     Columns = 3
+    DataField = 'FG_SEXO'
+    DataSource = Form_PesquisaPessoa.DataSourcePesquisa
     Items.Strings = (
       'Masculino'
       'Feminino'
@@ -281,6 +289,8 @@ inherited Form_CadastroPessoa: TForm_CadastroPessoa
     Height = 32
     Caption = 'Tipo'
     Columns = 2
+    DataField = 'FG_FISC_JURID'
+    DataSource = Form_PesquisaPessoa.DataSourcePesquisa
     Items.Strings = (
       'Fisica'
       'Juridica')
@@ -290,6 +300,7 @@ inherited Form_CadastroPessoa: TForm_CadastroPessoa
       'J')
   end
   inherited DataSourceCadastro: TDataSource
+    DataSet = Form_PesquisaPessoa.QueryPesquisa
     Left = 440
     Top = 320
   end

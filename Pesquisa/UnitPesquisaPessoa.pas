@@ -12,8 +12,6 @@ type
   TForm_PesquisaPessoa = class(TForm_PesquisaBase)
     QueryPesquisaCD_PESSOA: TIntegerField;
     QueryPesquisaNM_PESSOA: TIBStringField;
-    QueryPesquisaNR_CPF: TIBStringField;
-    QueryPesquisaNR_CNPJ: TIBStringField;
     QueryPesquisaFG_FISC_JURID: TIBStringField;
     QueryPesquisaFG_SEXO: TIBStringField;
     QueryPesquisaDT_NASCIMENTO: TDateField;
@@ -25,6 +23,7 @@ type
     QueryPesquisaDS_BAIRRO: TIBStringField;
     QueryPesquisaDS_RUA: TIBStringField;
     QueryPesquisaNM_CIDADE: TIBStringField;
+    QueryPesquisaNR_CPF_CNPJ: TIBStringField;
     procedure ButPesquisaClick(Sender: TObject);
     procedure But_NovoClick(Sender: TObject);
     procedure But_AlterarClick(Sender: TObject);
