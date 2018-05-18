@@ -96,7 +96,7 @@ procedure TForm_PesquisaPessoa.But_NovoClick(Sender: TObject);
 begin
   inherited;
       try
-        ////
+
         QueryPesquisa.Append;
         Form_CadastroPessoa:=TForm_CadastroPessoa.Create(self);
         Form_CadastroPessoa.ShowModal;
