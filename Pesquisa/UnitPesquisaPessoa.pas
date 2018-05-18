@@ -87,6 +87,7 @@ begin
         Form_CadastroPessoa.ShowModal;
 
      finally
+        QueryPesquisaNR_CPF_CNPJ.EditMask:='';
         Form_CadastroPessoa.Free;
      end;
 end;
@@ -102,6 +103,7 @@ begin
 
      finally
         Form_CadastroPessoa.Free;
+        QueryPesquisaNR_CPF_CNPJ.EditMask:='';
         QueryPesquisa.Close;
         ButPesquisaClick(ButPesquisa);
 

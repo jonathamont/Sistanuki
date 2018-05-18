@@ -14,9 +14,7 @@ type
     Label2: TLabel;
     Edit_Nome: TDBEdit;
     Label3: TLabel;
-    Edit_CPF: TDBEdit;
-    Label4: TLabel;
-    Edit_CNPJ: TDBEdit;
+    Edit_CPF_CNPJ: TDBEdit;
     Label7: TLabel;
     Edit_Dt_Nasci: TDBEdit;
     Label8: TLabel;
@@ -40,7 +38,6 @@ type
     procedure But_PesquisaClick(Sender: TObject);
     procedure Edit_CodCidadeExit(Sender: TObject);
     procedure But_SalvarClick(Sender: TObject);
-    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -126,13 +123,6 @@ begin
   DataSourceCadastro.DataSet.FieldByName('NM_CIDADE').AsString:=CONEXAO.Query.FieldByName('NM_CIDADE').AsString;
 end;
 
-procedure TForm_CadastroPessoa.FormClose(Sender: TObject;
-  var Action: TCloseAction);
-begin
-  inherited;
-  CONEXAO.Transaction.Rollback;
-end;
-
 procedure TForm_CadastroPessoa.FormCreate(Sender: TObject);
 begin
   DataSourceCadastro.DataSet.FieldByName('DT_NASCIMENTO').EditMask:='00/00/0000';
@@ -142,10 +132,12 @@ begin
   begin
        Edit_CodigoPessoa.text:=IntToStr(CONEXAO.RetornaPK('CD_PESSOA','TB_PESSOA'));
        RadioSexo.ItemIndex:=0;
-       RadioFunc.ItemIndex:=0;
+       RadioFunc.ItemIndex:=1;
        Radio_Fis_Juri.ItemIndex:=0;
   end;
+
   inherited;
+
 
 end;
 

@@ -132,11 +132,12 @@ begin
   begin
        Edit_CodigoPessoa.text:=IntToStr(CONEXAO.RetornaPK('CD_PESSOA','TB_PESSOA'));
        RadioSexo.ItemIndex:=0;
-       RadioFunc.ItemIndex:=0;
+       RadioFunc.ItemIndex:=1;
        Radio_Fis_Juri.ItemIndex:=0;
   end;
 
   inherited;
+
 
 
 end;

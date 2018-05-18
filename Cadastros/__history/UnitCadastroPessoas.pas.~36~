@@ -38,7 +38,6 @@ type
     procedure But_PesquisaClick(Sender: TObject);
     procedure Edit_CodCidadeExit(Sender: TObject);
     procedure But_SalvarClick(Sender: TObject);
-    procedure Radio_Fis_JuriClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -136,16 +135,10 @@ begin
        RadioFunc.ItemIndex:=0;
        Radio_Fis_Juri.ItemIndex:=0;
   end;
+
   inherited;
 
-end;
 
-procedure TForm_CadastroPessoa.Radio_Fis_JuriClick(Sender: TObject);
-begin
-  inherited;
-  case Radio_Fis_Juri.ItemIndex of
-  0:DataSourceCadastro.DataSet.FieldByName('NR_CPF_CNPJ').EditMask:='000.000.000-00';
-  end;
 end;
 
 end.
