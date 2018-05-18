@@ -64,7 +64,6 @@ begin
       begin
            DataSourceCadastro.DataSet.FieldByName('CD_CIDADE').AsInteger:=Form_PesquisaCidade.QueryPesquisaCD_CIDADE.AsInteger;
            DataSourceCadastro.DataSet.FieldByName('NM_CIDADE').AsString:=Form_PesquisaCidade.QueryPesquisaNM_CIDADE.AsString;
-           Edit_CodigoPessoa.text:=IntToStr(CONEXAO.RetornaPK('CD_PESSOA','TB_PESSOA'));
            //QueryCadastroNM_CIDADE.AsString:=Form_PesquisaCidade.QueryPesquisaNM_CIDADE.AsString;
       end;
     Form_PesquisaCidade.QueryPesquisa.Close;
