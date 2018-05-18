@@ -138,7 +138,6 @@ begin
 
   inherited;
 
-end;
 
 end;
 
