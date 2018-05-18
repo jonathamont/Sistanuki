@@ -19,6 +19,7 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
+  TStyleManager.TrySetStyle('Charcoal Dark Slate');
   Application.CreateForm(TCONEXAO, CONEXAO);
   Application.CreateForm(TForm_PesquisaPessoa, Form_PesquisaPessoa);
   Application.Run;
