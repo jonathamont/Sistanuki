@@ -1,0 +1,56 @@
+unit UnitPesquisaMateria;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, UnitPesquisaBase, Data.DB,
+  IBX.IBCustomDataSet, IBX.IBUpdateSQL, IBX.IBQuery, Vcl.ExtCtrls, Vcl.StdCtrls,
+  Vcl.Buttons, Vcl.Mask, Vcl.Grids, Vcl.DBGrids;
+
+type
+  TForm_PesquisaBase1 = class(TForm_PesquisaBase)
+    procedure But_NovoClick(Sender: TObject);
+    procedure But_AlterarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form_PesquisaBase1: TForm_PesquisaBase1;
+
+implementation
+
+{$R *.dfm}
+
+uses UnitCadastroMateria;
+
+procedure TForm_PesquisaBase1.But_AlterarClick(Sender: TObject);
+begin
+  inherited;
+  try
+        QueryPesquisa.Edit;
+        Form_CadastroMaterias:=TForm_CadastroMaterias.Create(self);
+        Form_CadastroMaterias.ShowModal;
+
+     finally
+        Form_CadastroMaterias.Free;
+     end;
+end;
+
+procedure TForm_PesquisaBase1.But_NovoClick(Sender: TObject);
+begin
+  inherited;
+     try
+        QueryPesquisa.Append;
+        Form_CadastroMaterias:=TForm_CadastroMaterias.Create(self);
+        Form_CadastroMaterias.ShowModal;
+
+     finally
+        Form_CadastroMaterias.Free;
+     end;
+end;
+
+end.

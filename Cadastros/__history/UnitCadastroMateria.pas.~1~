@@ -1,0 +1,35 @@
+unit UnitCadastroMateria;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, UnitCadastroPadrão, Vcl.StdCtrls,
+  Vcl.DBCtrls, Vcl.Mask, Data.DB, IBX.IBCustomDataSet, IBX.IBUpdateSQL,
+  IBX.IBQuery, Vcl.Buttons;
+
+type
+  TForm_CadastroPadrao1 = class(TForm_CadastroPadrao)
+    QueryCadastroCD_MATERIA: TIntegerField;
+    QueryCadastroNM_MATERIA: TIBStringField;
+    QueryCadastroDS_MATERIA: TIBStringField;
+    Label1: TLabel;
+    Edit_Codigo: TDBEdit;
+    Label2: TLabel;
+    Edit_Nome: TDBEdit;
+    Label3: TLabel;
+    Memo_Desc: TDBMemo;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form_CadastroPadrao1: TForm_CadastroPadrao1;
+
+implementation
+
+{$R *.dfm}
+
+end.

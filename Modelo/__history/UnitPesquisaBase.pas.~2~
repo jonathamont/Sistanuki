@@ -1,0 +1,35 @@
+unit UnitPesquisaBase;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.Buttons,
+  Vcl.Mask, Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, IBX.IBCustomDataSet,
+  IBX.IBQuery;
+
+type
+  TForm_PesquisaBase = class(TForm)
+    IBQuery1: TIBQuery;
+    DataSource1: TDataSource;
+    DBGrid1: TDBGrid;
+    GroupBox1: TGroupBox;
+    RadioGroup1: TRadioGroup;
+    MaskEdit1: TMaskEdit;
+    Label1: TLabel;
+    BitBtn1: TBitBtn;
+    BitBtn2: TBitBtn;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form_PesquisaBase: TForm_PesquisaBase;
+
+implementation
+
+{$R *.dfm}
+
+end.

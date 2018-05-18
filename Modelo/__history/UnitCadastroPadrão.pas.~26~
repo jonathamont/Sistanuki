@@ -1,0 +1,83 @@
+unit UnitCadastroPadrão;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls,
+  Vcl.DBCtrls, Data.DB, IBX.IBCustomDataSet, IBX.IBUpdateSQL, IBX.IBQuery;
+
+type
+  TForm_CadastroPadrao = class(TForm)
+    QueryCadastro: TIBQuery;
+    UpdateCadastro: TIBUpdateSQL;
+    DataSourceCadastro: TDataSource;
+    GroupBox1: TGroupBox;
+    But_Salvar: TBitBtn;
+    But_Sair: TBitBtn;
+    But_Pesquisa: TSpeedButton;
+    procedure FormCreate(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure But_SalvarClick(Sender: TObject);
+    procedure But_SairClick(Sender: TObject);
+    procedure DataSourceCadastroStateChange(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form_CadastroPadrao: TForm_CadastroPadrao;
+
+implementation
+
+{$R *.dfm}
+
+uses UnitConexao;
+
+
+
+procedure TForm_CadastroPadrao.But_SairClick(Sender: TObject);
+begin
+     Close;
+end;
+
+procedure TForm_CadastroPadrao.But_SalvarClick(Sender: TObject);
+begin
+     if not(CONEXAO.Transaction.InTransaction) then
+        Begin
+          CONEXAO.Transaction.StartTransaction;
+        End;
+
+     Try
+        QueryCadastro.Post;
+        CONEXAO.Transaction.Commit;
+     Except
+        ShowMessage('Erro ao gravar!');
+        CONEXAO.Transaction.Rollback;
+     End;
+
+     QueryCadastro.Open;
+end;
+
+procedure TForm_CadastroPadrao.DataSourceCadastroStateChange(Sender: TObject);
+begin
+      But_Salvar.Enabled       :=(DataSourceCadastro.State in [dsInsert, dsEdit]);
+      But_Sair.Enabled         :=(DataSourceCadastro.State in [dsBrowse]);
+      But_Pesquisa.Enabled     :=(DataSourceCadastro.State in [dsBrowse]);
+
+end;
+
+procedure TForm_CadastroPadrao.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+     QueryCadastro.Close;
+end;
+
+procedure TForm_CadastroPadrao.FormCreate(Sender: TObject);
+begin
+     QueryCadastro.Open;
+end;
+
+end.
