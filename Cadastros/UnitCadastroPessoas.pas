@@ -64,7 +64,7 @@ begin
       begin
            DataSourceCadastro.DataSet.FieldByName('CD_CIDADE').AsInteger:=Form_PesquisaCidade.QueryPesquisaCD_CIDADE.AsInteger;
            DataSourceCadastro.DataSet.FieldByName('NM_CIDADE').AsString:=Form_PesquisaCidade.QueryPesquisaNM_CIDADE.AsString;
-
+           Edit_CodigoPessoa.text:=IntToStr(CONEXAO.RetornaPK('CD_PESSOA','TB_PESSOA'));
            //QueryCadastroNM_CIDADE.AsString:=Form_PesquisaCidade.QueryPesquisaNM_CIDADE.AsString;
       end;
     Form_PesquisaCidade.QueryPesquisa.Close;
@@ -99,6 +99,7 @@ begin
         Application.MessageBox('Rua é um campo obrigatorio','Aviso');
         exit;
   end;
+
   inherited;
 
 end;
@@ -130,7 +131,8 @@ begin
   DataSourceCadastro.DataSet.FieldByName('NR_CELULAR').EditMask:='(00)00000-0000';
   if (DataSourceCadastro.State = dsInsert) then
   begin
-       Edit_CodigoPessoa.text:=IntToStr(CONEXAO.RetornaPK('CD_PESSOA','TB_PESSOA'));
+       //Edit_CodigoPessoa.text:=IntToStr(CONEXAO.RetornaPK('CD_PESSOA','TB_PESSOA'));
+       DataSourceCadastro.DataSet.FieldByName('NR_CPF_CNPJ').EditMask:='000.000.000-00';
        RadioSexo.ItemIndex:=0;
        RadioFunc.ItemIndex:=1;
        Radio_Fis_Juri.ItemIndex:=0;

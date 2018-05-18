@@ -21,6 +21,6 @@ begin
   Application.MainFormOnTaskbar := True;
   TStyleManager.TrySetStyle('Ruby Graphite');
   Application.CreateForm(TCONEXAO, CONEXAO);
-  Application.CreateForm(TForm_PesquisaPessoa, Form_PesquisaPessoa);
+  Application.CreateForm(TForm_PesquisaPessoa);
   Application.Run;
 end.
