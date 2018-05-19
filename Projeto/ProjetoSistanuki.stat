@@ -3,15 +3,15 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 EditorSecs=13696
-DesignerSecs=6415
+DesignerSecs=6423
 InspectorSecs=1908
 =======
 <<<<<<< HEAD
 EditorSecs=15185
 DesignerSecs=6181
 InspectorSecs=2093
-CompileSecs=170838
-OtherSecs=4638
+CompileSecs=172253
+OtherSecs=4650
 =======
 EditorSecs=14071
 DesignerSecs=5889
@@ -22,4 +22,4 @@ OtherSecs=3953
 StartTime=08/05/2018 23:55:21
 RealKeys=0
 EffectiveKeys=0
-DebugSecs=9313
+DebugSecs=9318

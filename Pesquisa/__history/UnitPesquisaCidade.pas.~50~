@@ -16,8 +16,8 @@ type
     QueryPesquisaDS_PAIS: TIBStringField;
     procedure ButPesquisaClick(Sender: TObject);
     procedure But_AlterarClick(Sender: TObject);
-    procedure GridPesquisaDblClick(Sender: TObject);
     procedure But_NovoClick(Sender: TObject);
+    procedure But_ExcluirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -61,14 +61,38 @@ end;
 procedure TForm_PesquisaCidade.But_AlterarClick(Sender: TObject);
 begin
   inherited;
+
       try
+        QueryPesquisa.Edit;
         Form_CadastroCidades:=TForm_cadastroCidades.Create(self);
         Form_CadastroCidades.ShowModal;
-        QueryPesquisa.Edit;
-
       finally
         Form_CadastroCidades.Free;
       end;
+end;
+
+procedure TForm_PesquisaCidade.But_ExcluirClick(Sender: TObject);
+begin
+  inherited;
+  if Application.MessageBox('Deseja realmente excluir?','Aviso', MB_OK + MB_YESNO) = IDNO then
+        Begin
+          Exit;
+        End;
+     if not(CONEXAO.Transaction.InTransaction) then
+        Begin
+          CONEXAO.Transaction.StartTransaction;
+        End;
+
+      Begin
+        Try
+          QueryPesquisa.Delete;
+          CONEXAO.Transaction.Commit;
+
+        Except
+          CONEXAO.Transaction.Rollback;
+          ShowMessage('Erro ao Remover!');
+        End;
+      End;
 end;
 
 procedure TForm_PesquisaCidade.But_NovoClick(Sender: TObject);
@@ -79,20 +103,6 @@ begin
         Form_CadastroCidades:=TForm_CadastroCidades.Create(self);
         Form_CadastroCidades.ShowModal;
 
-     finally
-        Form_CadastroCidades.Free;
-     end;
-
-end;
-
-procedure TForm_PesquisaCidade.GridPesquisaDblClick(Sender: TObject);
-begin
-  inherited;
-  try
-        QueryPesquisa.Edit;
-        Form_CadastroCidades:=TForm_CadastroCidades.Create(self);
-        QueryPesquisaCD_CIDADE.AsInteger:=CONEXAO.RetornaPK('CD_MATERIA','TB_MATERIA');
-        Form_CadastroCidades.ShowModal
      finally
         Form_CadastroCidades.Free;
      end;

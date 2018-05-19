@@ -1,12 +1,21 @@
 
 Projeto/Win32/Debug/ProjetoSistanuki.exe
-<<<<<<< HEAD
-Projeto/Win32/Debug/UnitPesquisaAulaExp.dcu
-=======
 *.stat
 Projeto/Win32/Debug/UnitCadastroCidade.dcu
 Projeto/Win32/Debug/UnitCadastroMateria.dcu
 Projeto/Win32/Debug/UnitCadastroPessoas.dcu
 Projeto/Win32/Debug/UnitPesquisaPessoa.dcu
 *.dproj
->>>>>>> e540a16149c358cbaa0309e9ccc125aa57ec36dc
+*.exe
+*.stat
+*.exe
+Projeto/Win32/Debug/ProjetoSistanuki.exe
+*.dcu
+*.stat
+*.identcache
+*.dproj
+*.dpr
+*.FDB
+*.stat
+*.stat
+Projeto/ProjetoSistanuki.stat
