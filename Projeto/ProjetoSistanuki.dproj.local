@@ -4,40 +4,43 @@
     <Transaction>2018/05/08 23:30:33.000.744,=C:\Users\Jonat\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2018/05/08 23:31:15.000.344,=C:\SisTanuki\DataModulo\UnitConexao.pas</Transaction>
     <Transaction>2018/05/08 23:32:25.000.478,=C:\SisTanuki\Modelo\UnitCadastroPadrão.pas</Transaction>
-    <Transaction>2018/05/08 23:33:35.000.258,C:\Users\Jonat\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\SisTanuki\Projeto\ProjetoSistanuki.dproj</Transaction>
+    <Transaction>2018/05/08 23:33:35.000.258,C:\SisTanuki\Projeto\ProjetoSistanuki.dproj=C:\Users\Jonat\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
     <Transaction>2018/05/08 23:41:31.000.552,=C:\SisTanuki\Projeto\Unit1.pas</Transaction>
-    <Transaction>2018/05/08 23:49:09.000.606,C:\SisTanuki\Projeto\Unit1.pas=C:\SisTanuki\UnitCadastroCidade.pas</Transaction>
-    <Transaction>2018/05/08 23:49:09.000.606,C:\SisTanuki\Projeto\Unit1.dfm=C:\SisTanuki\UnitCadastroCidade.dfm</Transaction>
+    <Transaction>2018/05/08 23:49:09.000.606,C:\SisTanuki\UnitCadastroCidade.dfm=C:\SisTanuki\Projeto\Unit1.dfm</Transaction>
+    <Transaction>2018/05/08 23:49:09.000.606,C:\SisTanuki\UnitCadastroCidade.pas=C:\SisTanuki\Projeto\Unit1.pas</Transaction>
     <Transaction>2018/05/08 23:56:05.000.254,=C:\SisTanuki\Cadastros\UnitCadastroCidade.pas</Transaction>
     <Transaction>2018/05/10 12:40:56.000.795,=C:\SisTanuki\Modelo\UnitPesquisaBase.pas</Transaction>
     <Transaction>2018/05/10 12:50:46.000.145,=C:\SisTanuki\Projeto\Unit1.pas</Transaction>
-    <Transaction>2018/05/10 12:51:36.000.694,C:\SisTanuki\Projeto\Unit1.dfm=C:\SisTanuki\Consultas\UnitConsultaCidade.dfm</Transaction>
-    <Transaction>2018/05/10 12:51:36.000.694,C:\SisTanuki\Projeto\Unit1.pas=C:\SisTanuki\Consultas\UnitConsultaCidade.pas</Transaction>
+    <Transaction>2018/05/10 12:51:36.000.694,C:\SisTanuki\Consultas\UnitConsultaCidade.dfm=C:\SisTanuki\Projeto\Unit1.dfm</Transaction>
+    <Transaction>2018/05/10 12:51:36.000.694,C:\SisTanuki\Consultas\UnitConsultaCidade.pas=C:\SisTanuki\Projeto\Unit1.pas</Transaction>
     <Transaction>2018/05/10 12:54:56.000.611,=C:\SisTanuki\Projeto\Unit1.pas</Transaction>
     <Transaction>2018/05/10 12:55:42.000.605,C:\SisTanuki\Modelo\UnitPesquisaBase.pas=</Transaction>
     <Transaction>2018/05/10 12:55:54.000.839,C:\SisTanuki\Consultas\UnitConsultaCidade.pas=</Transaction>
     <Transaction>2018/05/10 12:56:14.000.238,=C:\SisTanuki\Modelo\UnitPesquisaBase.pas</Transaction>
     <Transaction>2018/05/10 12:56:31.000.182,=C:\SisTanuki\Projeto\Unit1.pas</Transaction>
     <Transaction>2018/05/10 12:58:26.000.874,=C:\SisTanuki\Projeto\Unit1.pas</Transaction>
-    <Transaction>2018/05/10 12:59:14.000.246,C:\SisTanuki\Projeto\Unit1.pas=C:\SisTanuki\Pesquisa\UnitPesquisaCidade.pas</Transaction>
-    <Transaction>2018/05/10 12:59:14.000.246,C:\SisTanuki\Projeto\Unit1.dfm=C:\SisTanuki\Pesquisa\UnitPesquisaCidade.dfm</Transaction>
+    <Transaction>2018/05/10 12:59:14.000.246,C:\SisTanuki\Pesquisa\UnitPesquisaCidade.dfm=C:\SisTanuki\Projeto\Unit1.dfm</Transaction>
+    <Transaction>2018/05/10 12:59:14.000.246,C:\SisTanuki\Pesquisa\UnitPesquisaCidade.pas=C:\SisTanuki\Projeto\Unit1.pas</Transaction>
     <Transaction>2018/05/10 18:29:45.000.392,=C:\SisTanuki\Projeto\Unit1.pas</Transaction>
-    <Transaction>2018/05/10 18:36:36.000.437,C:\SisTanuki\Projeto\Unit1.dfm=C:\SisTanuki\Cadastros\UnitCadastroMateria.dfm</Transaction>
-    <Transaction>2018/05/10 18:36:36.000.437,C:\SisTanuki\Projeto\Unit1.pas=C:\SisTanuki\Cadastros\UnitCadastroMateria.pas</Transaction>
+    <Transaction>2018/05/10 18:36:36.000.437,C:\SisTanuki\Cadastros\UnitCadastroMateria.pas=C:\SisTanuki\Projeto\Unit1.pas</Transaction>
+    <Transaction>2018/05/10 18:36:36.000.437,C:\SisTanuki\Cadastros\UnitCadastroMateria.dfm=C:\SisTanuki\Projeto\Unit1.dfm</Transaction>
     <Transaction>2018/05/11 17:12:59.000.775,=C:\SisTanuki\Projeto\Unit1.pas</Transaction>
     <Transaction>2018/05/11 17:13:17.000.392,=C:\SisTanuki\Projeto\Unit1.pas</Transaction>
-    <Transaction>2018/05/11 17:16:27.000.898,C:\SisTanuki\Pesquisa\UnitPesquisaMateria.pas=C:\SisTanuki\Projeto\Unit1.pas</Transaction>
-    <Transaction>2018/05/11 17:16:27.000.898,C:\SisTanuki\Pesquisa\UnitPesquisaMateria.dfm=C:\SisTanuki\Projeto\Unit1.dfm</Transaction>
+    <Transaction>2018/05/11 17:16:27.000.898,C:\SisTanuki\Projeto\Unit1.pas=C:\SisTanuki\Pesquisa\UnitPesquisaMateria.pas</Transaction>
+    <Transaction>2018/05/11 17:16:27.000.898,C:\SisTanuki\Projeto\Unit1.dfm=C:\SisTanuki\Pesquisa\UnitPesquisaMateria.dfm</Transaction>
     <Transaction>2018/05/11 18:18:34.000.796,=C:\SisTanuki\Projeto\Unit1.pas</Transaction>
     <Transaction>2018/05/11 18:19:00.000.533,=C:\SisTanuki\Projeto\Unit1.pas</Transaction>
-    <Transaction>2018/05/11 18:23:34.000.608,C:\SisTanuki\Pesquisa\UnitPesquisaPessoa.pas=C:\SisTanuki\Projeto\Unit1.pas</Transaction>
-    <Transaction>2018/05/11 18:23:34.000.608,C:\SisTanuki\Pesquisa\UnitPesquisaPessoa.dfm=C:\SisTanuki\Projeto\Unit1.dfm</Transaction>
+    <Transaction>2018/05/11 18:23:34.000.608,C:\SisTanuki\Projeto\Unit1.dfm=C:\SisTanuki\Pesquisa\UnitPesquisaPessoa.dfm</Transaction>
+    <Transaction>2018/05/11 18:23:34.000.608,C:\SisTanuki\Projeto\Unit1.pas=C:\SisTanuki\Pesquisa\UnitPesquisaPessoa.pas</Transaction>
     <Transaction>2018/05/11 18:24:10.000.814,=C:\SisTanuki\Projeto\Unit1.pas</Transaction>
-    <Transaction>2018/05/11 18:36:41.000.847,C:\SisTanuki\Cadastros\UnitCadastroPessoas.dfm=C:\SisTanuki\Projeto\Unit1.dfm</Transaction>
-    <Transaction>2018/05/11 18:36:41.000.847,C:\SisTanuki\Cadastros\UnitCadastroPessoas.pas=C:\SisTanuki\Projeto\Unit1.pas</Transaction>
+    <Transaction>2018/05/11 18:36:41.000.847,C:\SisTanuki\Projeto\Unit1.dfm=C:\SisTanuki\Cadastros\UnitCadastroPessoas.dfm</Transaction>
+    <Transaction>2018/05/11 18:36:41.000.847,C:\SisTanuki\Projeto\Unit1.pas=C:\SisTanuki\Cadastros\UnitCadastroPessoas.pas</Transaction>
+    <Transaction>2018/05/18 21:25:52.215,=C:\Sistanuki\Projeto\Unit1.pas</Transaction>
+    <Transaction>2018/05/18 21:27:51.482,C:\Sistanuki\Pesquisa\UnitPesquisaAulaExp.dfm=C:\Sistanuki\Projeto\Unit1.dfm</Transaction>
+    <Transaction>2018/05/18 21:27:51.482,C:\Sistanuki\Pesquisa\UnitPesquisaAulaExp.pas=C:\Sistanuki\Projeto\Unit1.pas</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
-    <File Path="C:\SisTanuki"/>
+    <File Path="C:\Sistanuki"/>
     <File Path="..\Cadastros"/>
     <File Path="..\Cadastros\UnitCadastroCidade.pas"/>
     <File Path="..\Cadastros\UnitCadastroCidade.dfm"/>
@@ -60,5 +63,7 @@
     <File Path="..\Pesquisa\UnitPesquisaMateria.dfm"/>
     <File Path="..\Pesquisa\UnitPesquisaPessoa.pas"/>
     <File Path="..\Pesquisa\UnitPesquisaPessoa.dfm"/>
+    <File Path="..\Pesquisa\UnitPesquisaAulaExp.pas"/>
+    <File Path="..\Pesquisa\UnitPesquisaAulaExp.dfm"/>
   </ProjectSortOrder>
 </BorlandProject>
