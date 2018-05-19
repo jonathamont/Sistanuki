@@ -20,10 +20,13 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TStyleManager.TrySetStyle('Glossy');
 =======
   TStyleManager.TrySetStyle('Charcoal Dark Slate');
 >>>>>>> parent of a50ed7f... FINAL CADASTRO PESSOA
+=======
+>>>>>>> parent of 66b98e9... 1
   Application.CreateForm(TCONEXAO, CONEXAO);
   Application.CreateForm(TForm_PesquisaPessoa, Form_PesquisaPessoa);
 <<<<<<< HEAD

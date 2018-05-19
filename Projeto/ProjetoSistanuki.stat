@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 EditorSecs=15329
 DesignerSecs=6195
 =======
@@ -63,3 +64,14 @@ RealKeys=0
 EffectiveKeys=0
 DebugSecs=9015
 >>>>>>> 66b98e9e778cdfb84e88454655da2cca585ca5b4
+=======
+EditorSecs=13167
+DesignerSecs=5819
+InspectorSecs=1786
+CompileSecs=144338
+OtherSecs=3799
+StartTime=08/05/2018 23:55:21
+RealKeys=0
+EffectiveKeys=0
+DebugSecs=7799
+>>>>>>> parent of 66b98e9... 1
