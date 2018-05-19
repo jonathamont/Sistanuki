@@ -114,6 +114,7 @@ end;
 procedure TForm_PesquisaPessoa.FormCreate(Sender: TObject);
 begin
   inherited;
+  //no
   QueryPesquisaDT_NASCIMENTO.EditMask:='00/00/0000';
   QueryPesquisaNR_TELEFONE.EditMask:='(00)0000-0000';
   QueryPesquisaNR_CELULAR.EditMask:='(00)00000-0000';
