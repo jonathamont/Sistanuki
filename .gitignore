@@ -6,3 +6,13 @@ Projeto/Win32/Debug/UnitCadastroMateria.dcu
 Projeto/Win32/Debug/UnitCadastroPessoas.dcu
 Projeto/Win32/Debug/UnitPesquisaPessoa.dcu
 *.dproj
+*.exe
+*.stat
+*.exe
+Projeto/Win32/Debug/ProjetoSistanuki.exe
+*.dcu
+*.stat
+*.identcache
+*.dproj
+*.dpr
+*.FDB
