@@ -10,14 +10,8 @@ uses
 
 type
   TForm_PesquisaPessoa = class(TForm_PesquisaBase)
-    Label1: TLabel;
-    Label2: TLabel;
-    Edit_DtInicio: TMaskEdit;
-    Edit_DtFim: TMaskEdit;
     QueryPesquisaCD_PESSOA: TIntegerField;
     QueryPesquisaNM_PESSOA: TIBStringField;
-    QueryPesquisaNR_CPF: TIBStringField;
-    QueryPesquisaNR_CNPJ: TIBStringField;
     QueryPesquisaFG_FISC_JURID: TIBStringField;
     QueryPesquisaFG_SEXO: TIBStringField;
     QueryPesquisaDT_NASCIMENTO: TDateField;
@@ -29,9 +23,11 @@ type
     QueryPesquisaDS_BAIRRO: TIBStringField;
     QueryPesquisaDS_RUA: TIBStringField;
     QueryPesquisaNM_CIDADE: TIBStringField;
+    QueryPesquisaNR_CPF_CNPJ: TIBStringField;
     procedure ButPesquisaClick(Sender: TObject);
     procedure But_NovoClick(Sender: TObject);
     procedure But_AlterarClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -67,12 +63,12 @@ begin
       2: SQL:= (SQL+' where NR_CPF like '+QuotedStr('%'+MaskEditPesquisa.Text+'%')+' Order by NR_CPF;');
       3:
         begin
-             if ((Edit_DtInicio.Text) = '  .  .    ') OR ((Edit_DtFim.Text) = '  .  .    ')   then
+             if (Trim(MaskEditPesquisa.Text) = '')   then
                begin
-                    SQL:=SQL +(' ORDER BY DT_NASCI;')
+                    SQL:=SQL +(' ORDER BY DT_NASCIMENTO;')
                end
              else
-                    SQL:= (SQL+' where DT_NASCIMENTO BETWEEN '+QuotedStr(Edit_DtInicio.Text)+' AND '+QuotedStr(Edit_DtFim.Text)+' Order by DT_NASCIMENTO;');
+                    SQL:= (SQL+' where extract(month from p.dt_nascimento) = '+QuotedStr(MaskEditPesquisa.Text)+' Order by DT_NASCIMENTO;');
 
         end;
       4: SQL:= (SQL+' where FG_FUNC like '+QuotedStr('%'+MaskEditPesquisa.Text+'%')+' Order by FG_FUNC;');
@@ -92,6 +88,7 @@ begin
         Form_CadastroPessoa.ShowModal;
 
      finally
+        QueryPesquisaNR_CPF_CNPJ.EditMask:='';
         Form_CadastroPessoa.Free;
      end;
 end;
@@ -100,13 +97,28 @@ procedure TForm_PesquisaPessoa.But_NovoClick(Sender: TObject);
 begin
   inherited;
       try
+
         QueryPesquisa.Append;
         Form_CadastroPessoa:=TForm_CadastroPessoa.Create(self);
         Form_CadastroPessoa.ShowModal;
 
      finally
         Form_CadastroPessoa.Free;
+        QueryPesquisaNR_CPF_CNPJ.EditMask:='';
+        QueryPesquisa.Close;
+        ButPesquisaClick(ButPesquisa);
+
      end;
+end;
+
+procedure TForm_PesquisaPessoa.FormCreate(Sender: TObject);
+begin
+  //cometario inserido aqui
+
+  inherited;
+  QueryPesquisaDT_NASCIMENTO.EditMask:='00/00/0000';
+  QueryPesquisaNR_TELEFONE.EditMask:='(00)0000-0000';
+  QueryPesquisaNR_CELULAR.EditMask:='(00)00000-0000';
 end;
 
 end.
