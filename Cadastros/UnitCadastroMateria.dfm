@@ -60,7 +60,7 @@ inherited Form_CadastroMaterias: TForm_CadastroMaterias
     Width = 65
     Height = 21
     DataField = 'CD_MATERIA'
-    DataSource = Form_PesquisaMateria.DataSourcePesquisa
+    DataSource = DataSourceCadastro
     Enabled = False
     TabOrder = 1
   end
@@ -71,7 +71,7 @@ inherited Form_CadastroMaterias: TForm_CadastroMaterias
     Height = 21
     CharCase = ecUpperCase
     DataField = 'NM_MATERIA'
-    DataSource = Form_PesquisaMateria.DataSourcePesquisa
+    DataSource = DataSourceCadastro
     TabOrder = 2
   end
   object Memo_Desc: TDBMemo [7]
@@ -80,7 +80,7 @@ inherited Form_CadastroMaterias: TForm_CadastroMaterias
     Width = 331
     Height = 244
     DataField = 'DS_MATERIA'
-    DataSource = Form_PesquisaMateria.DataSourcePesquisa
+    DataSource = DataSourceCadastro
     ScrollBars = ssBoth
     TabOrder = 3
   end

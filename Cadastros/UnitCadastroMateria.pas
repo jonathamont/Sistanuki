@@ -55,7 +55,7 @@ begin
   inherited;
   if (DataSourceCadastro.State = dsInsert) then
   begin
-        DataSourceCadastro.DataSet.FieldByName('CD_MATERIA').TEXT:=IntToStr(CONEXAO.RetornaPK('CD_MATERIA','TB_MATERIA'));
+       Edit_CodigoMateria.text:=IntToStr(CONEXAO.RetornaPK('CD_MATERIA','TB_MATERIA'));
   end;
 end;
 

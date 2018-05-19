@@ -21,6 +21,7 @@ begin
   Application.MainFormOnTaskbar := True;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TStyleManager.TrySetStyle('Glossy');
 =======
   TStyleManager.TrySetStyle('Charcoal Dark Slate');
@@ -34,6 +35,11 @@ begin
   Application.CreateForm(TForm_PesquisaMateria, Form_PesquisaMateria);
 =======
 >>>>>>> parent of 03b222e... Tela pesquisa aula exp
+=======
+  TStyleManager.TrySetStyle('Carbon');
+  Application.CreateForm(TCONEXAO, CONEXAO);
+  Application.CreateForm(TForm_PesquisaPessoa, Form_PesquisaPessoa);
+>>>>>>> parent of b1c1233... Relatorio pessoa
   Application.Run;
 end.
 

@@ -18,8 +18,8 @@ type
     Label4: TLabel;
     Combo_Pais: TDBComboBox;
     Combo_Estado: TDBComboBox;
+    procedure QueryCadastroBeforePost(DataSet: TDataSet);
     procedure But_SalvarClick(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -37,26 +37,22 @@ uses UnitPesquisaCidade;
 
 procedure TForm_CadastroCidades.But_SalvarClick(Sender: TObject);
 begin
-  if Trim(Edit_Nm_Cidade.Text)='' then
-  begin
-      Application.MessageBox('Campo Nome é Obrigatorio','Aviso');
-      exit;
-  end;
   inherited;
-
+  if True then
 
 end;
 
-procedure TForm_CadastroCidades.FormCreate(Sender: TObject);
+procedure TForm_CadastroCidades.QueryCadastroBeforePost(DataSet: TDataSet);
 begin
-  inherited;
-
   if (DataSourceCadastro.State = dsInsert) then
   begin
-       DataSourceCadastro.DataSet.FieldByName('DS_ESTADO').Value:='SC';
-       DataSourceCadastro.DataSet.FieldByName('DS_ESTADO').Value:='BRASIL';
-       DataSourceCadastro.DataSet.FieldByName('CD_CIDADE').text:=IntToStr(CONEXAO.RetornaPK('CD_CIDADE','TB_CIDADE'));
+       //Edit_CodCidade.text:=IntToStr(CONEXAO.RetornaPK('CD_CIDADE','TB_CIDADE'));
+      //QueryCadastroCD_MATERIA.AsInteger:=CONEXAO.RetornaPK('CD_MATERIA','TB_MATERIA');
+       DataSourceCadastro.DataSet.FieldByName('CD_CIDADE').AsInteger:=CONEXAO.RetornaPK('CD_CIDADE','TB_CIDADE');
   end;
+  inherited;
+
+
 end;
 
 end.

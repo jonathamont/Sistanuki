@@ -48,12 +48,16 @@
     <PropertyGroup Condition="'$(Base)'!=''">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <Custom_Styles>Glossy|VCLSTYLE|$(PUBLIC)\Documents\Embarcadero\Studio\17.0\Styles\Glossy.vsf</Custom_Styles>
 =======
         <Custom_Styles>&quot;Charcoal Dark Slate|VCLSTYLE|$(PUBLIC)\Documents\Embarcadero\Studio\17.0\Styles\CharcoalDarkSlate.vsf&quot;</Custom_Styles>
 >>>>>>> parent of a50ed7f... FINAL CADASTRO PESSOA
 =======
 >>>>>>> parent of 66b98e9... 1
+=======
+        <Custom_Styles>Carbon|VCLSTYLE|$(PUBLIC)\Documents\Embarcadero\Studio\17.0\Styles\Carbon.vsf</Custom_Styles>
+>>>>>>> parent of b1c1233... Relatorio pessoa
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
         <SanitizedProjectName>ProjetoSistanuki</SanitizedProjectName>
         <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>

@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 EditorSecs=15329
 DesignerSecs=6195
 =======
@@ -32,10 +33,17 @@ OtherSecs=4229
 >>>>>>> parent of d2a694b... project
 =======
 >>>>>>> parent of d2a694b... project
+=======
+EditorSecs=13167
+DesignerSecs=5834
+InspectorSecs=1786
+CompileSecs=146612
+OtherSecs=3803
+>>>>>>> parent of b1c1233... Relatorio pessoa
 StartTime=08/05/2018 23:55:21
 RealKeys=0
 EffectiveKeys=0
-DebugSecs=8739
+DebugSecs=7819
 =======
 EditorSecs=13704
 DesignerSecs=6058
