@@ -99,6 +99,7 @@ procedure TForm_PesquisaCidade.But_NovoClick(Sender: TObject);
 begin
   inherited;
     try
+        /////
         QueryPesquisa.Append;
         Form_CadastroCidades:=TForm_CadastroCidades.Create(self);
         Form_CadastroCidades.ShowModal;
