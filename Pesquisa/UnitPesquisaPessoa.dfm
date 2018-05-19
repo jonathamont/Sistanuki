@@ -1,7 +1,9 @@
 inherited Form_PesquisaPessoa: TForm_PesquisaPessoa
   Caption = 'Pesquisa Pessoa'
   ClientWidth = 808
+  ExplicitTop = -213
   ExplicitWidth = 824
+  ExplicitHeight = 650
   PixelsPerInch = 96
   TextHeight = 13
   inherited GridPesquisa: TDBGrid
@@ -190,6 +192,5 @@ inherited Form_PesquisaPessoa: TForm_PesquisaPessoa
       'where'
       '  CD_PESSOA = :OLD_CD_PESSOA')
     Left = 496
-    Top = 128
   end
 end

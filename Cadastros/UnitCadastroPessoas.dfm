@@ -3,6 +3,7 @@ inherited Form_CadastroPessoa: TForm_CadastroPessoa
   ClientHeight = 465
   ClientWidth = 617
   OnCreate = FormCreate
+  ExplicitTop = -50
   ExplicitWidth = 633
   ExplicitHeight = 504
   PixelsPerInch = 96
@@ -121,14 +122,6 @@ inherited Form_CadastroPessoa: TForm_CadastroPessoa
       Top = 11
       ExplicitLeft = 532
       ExplicitTop = 11
-    end
-    object BitBtn1: TBitBtn
-      Left = 264
-      Top = 16
-      Width = 75
-      Height = 25
-      Caption = 'BitBtn1'
-      TabOrder = 2
     end
   end
   object Edit_CodigoPessoa: TDBEdit [13]
