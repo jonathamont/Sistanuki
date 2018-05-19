@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 EditorSecs=15320
 DesignerSecs=6195
 =======
@@ -18,11 +19,16 @@ InspectorSecs=2093
 CompileSecs=168911
 OtherSecs=4301
 =======
+=======
+>>>>>>> parent of d2a694b... project
 EditorSecs=15185
 DesignerSecs=6181
 InspectorSecs=2093
 CompileSecs=165016
 OtherSecs=4229
+<<<<<<< HEAD
+>>>>>>> parent of d2a694b... project
+=======
 >>>>>>> parent of d2a694b... project
 StartTime=08/05/2018 23:55:21
 RealKeys=0
