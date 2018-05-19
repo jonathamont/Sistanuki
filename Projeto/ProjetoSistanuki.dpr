@@ -19,9 +19,9 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  TStyleManager.TrySetStyle('Carbon');
+  TStyleManager.TrySetStyle('Glossy');
   Application.CreateForm(TCONEXAO, CONEXAO);
-  Application.CreateForm(TForm_PesquisaPessoa, Form_PesquisaPessoa);
+  Application.CreateForm(TForm_PesquisaMateria, Form_PesquisaMateria);
   Application.Run;
 end.
 

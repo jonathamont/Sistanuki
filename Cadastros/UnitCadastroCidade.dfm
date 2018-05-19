@@ -73,7 +73,7 @@ inherited Form_CadastroCidades: TForm_CadastroCidades
     Width = 58
     Height = 21
     DataField = 'CD_CIDADE'
-    DataSource = DataSourceCadastro
+    DataSource = Form_PesquisaCidade.DataSourcePesquisa
     Enabled = False
     ReadOnly = True
     TabOrder = 1
@@ -85,7 +85,7 @@ inherited Form_CadastroCidades: TForm_CadastroCidades
     Height = 21
     CharCase = ecUpperCase
     DataField = 'NM_CIDADE'
-    DataSource = DataSourceCadastro
+    DataSource = Form_PesquisaCidade.DataSourcePesquisa
     TabOrder = 2
   end
   object Combo_Pais: TDBComboBox [8]
@@ -95,7 +95,7 @@ inherited Form_CadastroCidades: TForm_CadastroCidades
     Height = 21
     CharCase = ecUpperCase
     DataField = 'DS_PAIS'
-    DataSource = DataSourceCadastro
+    DataSource = Form_PesquisaCidade.DataSourcePesquisa
     Items.Strings = (
       'BRASIL'
       'PORTUGAL'
@@ -110,14 +110,15 @@ inherited Form_CadastroCidades: TForm_CadastroCidades
     Height = 21
     CharCase = ecUpperCase
     DataField = 'DS_ESTADO'
-    DataSource = DataSourceCadastro
+    DataSource = Form_PesquisaCidade.DataSourcePesquisa
     Items.Strings = (
       'SC'
       'PR'
       'RS'
       'SP'
       'AM'
-      'ES')
+      'ES'
+      '**')
     TabOrder = 4
   end
   inherited DataSourceCadastro: TDataSource

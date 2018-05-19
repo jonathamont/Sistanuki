@@ -1,6 +1,7 @@
 inherited Form_PesquisaCidade: TForm_PesquisaCidade
   Caption = 'Pesquisa Cidade'
-  ExplicitTop = 8
+  ExplicitWidth = 819
+  ExplicitHeight = 650
   PixelsPerInch = 96
   TextHeight = 13
   inherited GroupBox: TGroupBox
