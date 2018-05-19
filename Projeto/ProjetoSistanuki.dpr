@@ -12,7 +12,8 @@ uses
   UnitCadastroMateria in '..\Cadastros\UnitCadastroMateria.pas' {Form_CadastroMaterias},
   UnitPesquisaMateria in '..\Pesquisa\UnitPesquisaMateria.pas' {Form_PesquisaMateria},
   UnitPesquisaPessoa in '..\Pesquisa\UnitPesquisaPessoa.pas' {Form_PesquisaPessoa},
-  UnitCadastroPessoas in '..\Cadastros\UnitCadastroPessoas.pas' {Form_CadastroPessoa};
+  UnitCadastroPessoas in '..\Cadastros\UnitCadastroPessoas.pas' {Form_CadastroPessoa},
+  UnitPesquisaAulaExp in '..\Pesquisa\UnitPesquisaAulaExp.pas' {Form_PesquisaAulaExp};
 
 {$R *.res}
 
@@ -21,6 +22,7 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TCONEXAO, CONEXAO);
   Application.CreateForm(TForm_PesquisaPessoa, Form_PesquisaPessoa);
+  Application.CreateForm(TForm_PesquisaAulaExp, Form_PesquisaAulaExp);
   Application.Run;
 end.
 
