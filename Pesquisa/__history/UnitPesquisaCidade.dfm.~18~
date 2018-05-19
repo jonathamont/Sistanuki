@@ -1,0 +1,66 @@
+inherited Form_PesquisaCidade: TForm_PesquisaCidade
+  Caption = 'Pesquisa Cidade'
+  ExplicitTop = -88
+  ExplicitWidth = 819
+  ExplicitHeight = 650
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited GroupBox: TGroupBox
+    inherited RadioFiltro: TRadioGroup
+      Items.Strings = (
+        'Codigo'
+        'Nome'
+        'Estado')
+    end
+    inherited ButPesquisa: TBitBtn
+      OnClick = ButPesquisaClick
+    end
+    inherited But_Imprimir: TBitBtn
+      Visible = False
+    end
+  end
+  inherited Panel1: TPanel
+    ExplicitLeft = 0
+    ExplicitTop = 570
+    ExplicitWidth = 803
+    inherited But_Alterar: TBitBtn
+      OnClick = But_AlterarClick
+    end
+  end
+  inherited But_Novo: TBitBtn
+    OnClick = But_NovoClick
+  end
+  inherited QueryPesquisa: TIBQuery
+    Active = True
+    SQL.Strings = (
+      'select * from TB_CIDADE')
+    object QueryPesquisaCD_CIDADE: TIntegerField
+      DisplayLabel = 'Codigo'
+      FieldName = 'CD_CIDADE'
+      Origin = '"TB_CIDADE"."CD_CIDADE"'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QueryPesquisaNM_CIDADE: TIBStringField
+      DisplayLabel = 'Nome'
+      FieldName = 'NM_CIDADE'
+      Origin = '"TB_CIDADE"."NM_CIDADE"'
+      Required = True
+      Size = 60
+    end
+    object QueryPesquisaDS_ESTADO: TIBStringField
+      DisplayLabel = 'Estado'
+      FieldName = 'DS_ESTADO'
+      Origin = '"TB_CIDADE"."DS_ESTADO"'
+      Required = True
+      Size = 30
+    end
+    object QueryPesquisaDS_PAIS: TIBStringField
+      DisplayLabel = 'Pais'
+      FieldName = 'DS_PAIS'
+      Origin = '"TB_CIDADE"."DS_PAIS"'
+      Required = True
+      Size = 50
+    end
+  end
+end

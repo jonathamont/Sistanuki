@@ -19,57 +19,22 @@
     <Transaction>2018/05/10 12:56:14.000.238,=C:\SisTanuki\Modelo\UnitPesquisaBase.pas</Transaction>
     <Transaction>2018/05/10 12:56:31.000.182,=C:\SisTanuki\Projeto\Unit1.pas</Transaction>
     <Transaction>2018/05/10 12:58:26.000.874,=C:\SisTanuki\Projeto\Unit1.pas</Transaction>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <Transaction>2018/05/10 12:59:14.000.246,C:\SisTanuki\Pesquisa\UnitPesquisaCidade.dfm=C:\SisTanuki\Projeto\Unit1.dfm</Transaction>
-    <Transaction>2018/05/10 12:59:14.000.246,C:\SisTanuki\Pesquisa\UnitPesquisaCidade.pas=C:\SisTanuki\Projeto\Unit1.pas</Transaction>
-=======
-    <Transaction>2018/05/10 12:59:14.000.246,C:\SisTanuki\Pesquisa\UnitPesquisaCidade.pas=C:\SisTanuki\Projeto\Unit1.pas</Transaction>
-    <Transaction>2018/05/10 12:59:14.000.246,C:\SisTanuki\Pesquisa\UnitPesquisaCidade.dfm=C:\SisTanuki\Projeto\Unit1.dfm</Transaction>
->>>>>>> parent of a50ed7f... FINAL CADASTRO PESSOA
-=======
     <Transaction>2018/05/10 12:59:14.000.246,C:\SisTanuki\Projeto\Unit1.pas=C:\SisTanuki\Pesquisa\UnitPesquisaCidade.pas</Transaction>
     <Transaction>2018/05/10 12:59:14.000.246,C:\SisTanuki\Projeto\Unit1.dfm=C:\SisTanuki\Pesquisa\UnitPesquisaCidade.dfm</Transaction>
->>>>>>> parent of 66b98e9... 1
     <Transaction>2018/05/10 18:29:45.000.392,=C:\SisTanuki\Projeto\Unit1.pas</Transaction>
     <Transaction>2018/05/10 18:36:36.000.437,C:\SisTanuki\Projeto\Unit1.dfm=C:\SisTanuki\Cadastros\UnitCadastroMateria.dfm</Transaction>
     <Transaction>2018/05/10 18:36:36.000.437,C:\SisTanuki\Projeto\Unit1.pas=C:\SisTanuki\Cadastros\UnitCadastroMateria.pas</Transaction>
     <Transaction>2018/05/11 17:12:59.000.775,=C:\SisTanuki\Projeto\Unit1.pas</Transaction>
     <Transaction>2018/05/11 17:13:17.000.392,=C:\SisTanuki\Projeto\Unit1.pas</Transaction>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <Transaction>2018/05/11 17:16:27.000.898,C:\SisTanuki\Projeto\Unit1.pas=C:\SisTanuki\Pesquisa\UnitPesquisaMateria.pas</Transaction>
-    <Transaction>2018/05/11 17:16:27.000.898,C:\SisTanuki\Projeto\Unit1.dfm=C:\SisTanuki\Pesquisa\UnitPesquisaMateria.dfm</Transaction>
-    <Transaction>2018/05/11 18:18:34.000.796,=C:\SisTanuki\Projeto\Unit1.pas</Transaction>
-    <Transaction>2018/05/11 18:19:00.000.533,=C:\SisTanuki\Projeto\Unit1.pas</Transaction>
-    <Transaction>2018/05/11 18:23:34.000.608,C:\SisTanuki\Projeto\Unit1.dfm=C:\SisTanuki\Pesquisa\UnitPesquisaPessoa.dfm</Transaction>
-    <Transaction>2018/05/11 18:23:34.000.608,C:\SisTanuki\Projeto\Unit1.pas=C:\SisTanuki\Pesquisa\UnitPesquisaPessoa.pas</Transaction>
-    <Transaction>2018/05/11 18:24:10.000.814,=C:\SisTanuki\Projeto\Unit1.pas</Transaction>
-    <Transaction>2018/05/11 18:36:41.000.847,C:\SisTanuki\Projeto\Unit1.dfm=C:\SisTanuki\Cadastros\UnitCadastroPessoas.dfm</Transaction>
-    <Transaction>2018/05/11 18:36:41.000.847,C:\SisTanuki\Projeto\Unit1.pas=C:\SisTanuki\Cadastros\UnitCadastroPessoas.pas</Transaction>
-    <Transaction>2018/05/18 21:25:52.000.215,=C:\Sistanuki\Projeto\Unit1.pas</Transaction>
-    <Transaction>2018/05/18 21:27:51.000.482,C:\Sistanuki\Pesquisa\UnitPesquisaAulaExp.pas=C:\Sistanuki\Projeto\Unit1.pas</Transaction>
-    <Transaction>2018/05/18 21:27:51.000.482,C:\Sistanuki\Pesquisa\UnitPesquisaAulaExp.dfm=C:\Sistanuki\Projeto\Unit1.dfm</Transaction>
-=======
-    <Transaction>2018/05/11 17:16:27.000.898,C:\SisTanuki\Projeto\Unit1.dfm=C:\SisTanuki\Pesquisa\UnitPesquisaMateria.dfm</Transaction>
-    <Transaction>2018/05/11 17:16:27.000.898,C:\SisTanuki\Projeto\Unit1.pas=C:\SisTanuki\Pesquisa\UnitPesquisaMateria.pas</Transaction>
-=======
     <Transaction>2018/05/11 17:16:27.000.898,C:\SisTanuki\Pesquisa\UnitPesquisaMateria.pas=C:\SisTanuki\Projeto\Unit1.pas</Transaction>
     <Transaction>2018/05/11 17:16:27.000.898,C:\SisTanuki\Pesquisa\UnitPesquisaMateria.dfm=C:\SisTanuki\Projeto\Unit1.dfm</Transaction>
->>>>>>> parent of 66b98e9... 1
     <Transaction>2018/05/11 18:18:34.000.796,=C:\SisTanuki\Projeto\Unit1.pas</Transaction>
     <Transaction>2018/05/11 18:19:00.000.533,=C:\SisTanuki\Projeto\Unit1.pas</Transaction>
     <Transaction>2018/05/11 18:23:34.000.608,C:\SisTanuki\Pesquisa\UnitPesquisaPessoa.pas=C:\SisTanuki\Projeto\Unit1.pas</Transaction>
     <Transaction>2018/05/11 18:23:34.000.608,C:\SisTanuki\Pesquisa\UnitPesquisaPessoa.dfm=C:\SisTanuki\Projeto\Unit1.dfm</Transaction>
     <Transaction>2018/05/11 18:24:10.000.814,=C:\SisTanuki\Projeto\Unit1.pas</Transaction>
-<<<<<<< HEAD
-    <Transaction>2018/05/11 18:36:41.000.847,C:\SisTanuki\Projeto\Unit1.dfm=C:\SisTanuki\Cadastros\UnitCadastroPessoas.dfm</Transaction>
-    <Transaction>2018/05/11 18:36:41.000.847,C:\SisTanuki\Projeto\Unit1.pas=C:\SisTanuki\Cadastros\UnitCadastroPessoas.pas</Transaction>
->>>>>>> parent of a50ed7f... FINAL CADASTRO PESSOA
-=======
     <Transaction>2018/05/11 18:36:41.000.847,C:\SisTanuki\Cadastros\UnitCadastroPessoas.dfm=C:\SisTanuki\Projeto\Unit1.dfm</Transaction>
     <Transaction>2018/05/11 18:36:41.000.847,C:\SisTanuki\Cadastros\UnitCadastroPessoas.pas=C:\SisTanuki\Projeto\Unit1.pas</Transaction>
->>>>>>> parent of 66b98e9... 1
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="C:\Sistanuki"/>
@@ -94,5 +59,6 @@
     <File Path="..\Pesquisa\UnitPesquisaMateria.pas"/>
     <File Path="..\Pesquisa\UnitPesquisaMateria.dfm"/>
     <File Path="..\Pesquisa\UnitPesquisaPessoa.pas"/>
+    <File Path="..\Pesquisa\UnitPesquisaPessoa.dfm"/>
   </ProjectSortOrder>
 </BorlandProject>

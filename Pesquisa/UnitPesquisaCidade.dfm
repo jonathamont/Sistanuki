@@ -1,6 +1,7 @@
 inherited Form_PesquisaCidade: TForm_PesquisaCidade
   Caption = 'Pesquisa Cidade'
-  ExplicitTop = 8
+  ExplicitWidth = 819
+  ExplicitHeight = 650
   PixelsPerInch = 96
   TextHeight = 13
   inherited GroupBox: TGroupBox
@@ -20,6 +21,9 @@ inherited Form_PesquisaCidade: TForm_PesquisaCidade
   inherited Panel1: TPanel
     inherited But_Alterar: TBitBtn
       OnClick = But_AlterarClick
+    end
+    inherited But_Excluir: TBitBtn
+      OnClick = But_ExcluirClick
     end
   end
   inherited But_Novo: TBitBtn
