@@ -122,6 +122,14 @@ inherited Form_CadastroPessoa: TForm_CadastroPessoa
       ExplicitLeft = 532
       ExplicitTop = 11
     end
+    object BitBtn1: TBitBtn
+      Left = 264
+      Top = 16
+      Width = 75
+      Height = 25
+      Caption = 'BitBtn1'
+      TabOrder = 2
+    end
   end
   object Edit_CodigoPessoa: TDBEdit [13]
     Left = 22

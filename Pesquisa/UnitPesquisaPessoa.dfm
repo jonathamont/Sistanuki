@@ -3,14 +3,16 @@ inherited Form_PesquisaPessoa: TForm_PesquisaPessoa
   ClientWidth = 808
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   ExplicitLeft = -37
 >>>>>>> bcfd8aa68dba10880080f6762371782f7666b99e
 =======
   ExplicitTop = -213
 >>>>>>> parent of 03b222e... Tela pesquisa aula exp
+=======
+>>>>>>> parent of a50ed7f... FINAL CADASTRO PESSOA
   ExplicitWidth = 824
-  ExplicitHeight = 650
   PixelsPerInch = 96
   TextHeight = 13
   inherited GridPesquisa: TDBGrid
@@ -213,6 +215,7 @@ inherited Form_PesquisaPessoa: TForm_PesquisaPessoa
       'where'
       '  CD_PESSOA = :OLD_CD_PESSOA')
     Left = 496
+    Top = 128
   end
   object ReportPessoa: TfrxReport
     Version = '5.1.5'

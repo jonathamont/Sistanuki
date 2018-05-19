@@ -29,7 +29,6 @@ type
     procedure ButPesquisaClick(Sender: TObject);
     procedure But_NovoClick(Sender: TObject);
     procedure But_AlterarClick(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -111,14 +110,6 @@ begin
         ButPesquisaClick(ButPesquisa);
 
      end;
-end;
-
-procedure TForm_PesquisaPessoa.FormCreate(Sender: TObject);
-begin
-  inherited;
-  QueryPesquisaDT_NASCIMENTO.EditMask:='00/00/0000';
-  QueryPesquisaNR_TELEFONE.EditMask:='(00)0000-0000';
-  QueryPesquisaNR_CELULAR.EditMask:='(00)00000-0000';
 end;
 
 end.
