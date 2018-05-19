@@ -16,3 +16,6 @@ Projeto/Win32/Debug/ProjetoSistanuki.exe
 *.dproj
 *.dpr
 *.FDB
+*.stat
+*.stat
+Projeto/ProjetoSistanuki.stat
