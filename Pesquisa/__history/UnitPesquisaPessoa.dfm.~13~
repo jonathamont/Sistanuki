@@ -1,21 +1,34 @@
 inherited Form_PesquisaPessoa: TForm_PesquisaPessoa
   Caption = 'Pesquisa Pessoa'
   ClientWidth = 808
-  ExplicitTop = -213
   ExplicitWidth = 824
   ExplicitHeight = 650
   PixelsPerInch = 96
   TextHeight = 13
   inherited GridPesquisa: TDBGrid
-    Top = 81
+    Top = 97
     Width = 808
-    Height = 489
+    Height = 473
   end
   inherited GroupBox: TGroupBox
     Width = 808
-    Height = 81
+    Height = 97
     ExplicitWidth = 808
-    ExplicitHeight = 81
+    ExplicitHeight = 97
+    object Label1: TLabel [0]
+      Left = 359
+      Top = 51
+      Width = 43
+      Height = 13
+      Caption = 'Dt. Inicio'
+    end
+    object Label2: TLabel [1]
+      Left = 497
+      Top = 51
+      Width = 36
+      Height = 13
+      Caption = 'DT. Fim'
+    end
     inherited RadioFiltro: TRadioGroup
       Width = 337
       Height = 53
@@ -44,6 +57,26 @@ inherited Form_PesquisaPessoa: TForm_PesquisaPessoa
     inherited But_Imprimir: TBitBtn
       Left = 667
       ExplicitLeft = 667
+    end
+    object Edit_DtInicio: TMaskEdit
+      Left = 359
+      Top = 70
+      Width = 120
+      Height = 21
+      EditMask = '99.99.9999;1;_'
+      MaxLength = 10
+      TabOrder = 4
+      Text = '  .  .    '
+    end
+    object Edit_DtFim: TMaskEdit
+      Left = 497
+      Top = 70
+      Width = 120
+      Height = 21
+      EditMask = '99.99.9999;1;_'
+      MaxLength = 10
+      TabOrder = 5
+      Text = '  .  .    '
     end
   end
   inherited Panel1: TPanel
@@ -74,10 +107,10 @@ inherited Form_PesquisaPessoa: TForm_PesquisaPessoa
       Required = True
       Size = 50
     end
-    object QueryPesquisaNR_CPF_CNPJ: TIBStringField
-      FieldName = 'NR_CPF_CNPJ'
-      Origin = '"TB_PESSOA"."NR_CPF_CNPJ"'
-      Size = 18
+    object QueryPesquisaNR_CPF: TIBStringField
+      FieldName = 'NR_CPF'
+      Origin = '"TB_PESSOA"."NR_CPF"'
+      Size = 11
     end
     object QueryPesquisaFG_FISC_JURID: TIBStringField
       FieldName = 'FG_FISC_JURID'
@@ -85,6 +118,11 @@ inherited Form_PesquisaPessoa: TForm_PesquisaPessoa
       Required = True
       FixedChar = True
       Size = 1
+    end
+    object QueryPesquisaNR_CNPJ: TIBStringField
+      FieldName = 'NR_CNPJ'
+      Origin = '"TB_PESSOA"."NR_CNPJ"'
+      Size = 14
     end
     object QueryPesquisaFG_FUNC: TIBStringField
       FieldName = 'FG_FUNC'
@@ -158,7 +196,8 @@ inherited Form_PesquisaPessoa: TForm_PesquisaPessoa
       'set'
       '  CD_PESSOA = :CD_PESSOA,'
       '  NM_PESSOA = :NM_PESSOA,'
-      '  NR_CPF_CNPJ = :NR_CPF_CNPJ,'
+      '  NR_CPF = :NR_CPF,'
+      '  NR_CNPJ = :NR_CNPJ,'
       '  FG_FISC_JURID = :FG_FISC_JURID,'
       '  FG_SEXO = :FG_SEXO,'
       '  DT_NASCIMENTO = :DT_NASCIMENTO,'
@@ -174,23 +213,24 @@ inherited Form_PesquisaPessoa: TForm_PesquisaPessoa
     InsertSQL.Strings = (
       'insert into tb_pessoa'
       
-        '  (CD_PESSOA, NM_PESSOA, NR_CPF_CNPJ, FG_FISC_JURID, FG_SEXO, DT' +
-        '_NASCIMENTO, '
+        '  (CD_PESSOA, NM_PESSOA, NR_CPF, NR_CNPJ, FG_FISC_JURID, FG_SEXO' +
+        ', DT_NASCIMENTO, '
       
         '   NR_TELEFONE, NR_CELULAR, DS_EMAIL, CD_CIDADE, FG_FUNC, DS_BAI' +
         'RRO, DS_RUA)'
       'values'
       
-        '  (:CD_PESSOA, :NM_PESSOA, :NR_CPF_CNPJ, :FG_FISC_JURID, :FG_SEX' +
-        'O, :DT_NASCIMENTO, '
+        '  (:CD_PESSOA, :NM_PESSOA, :NR_CPF, :NR_CNPJ, :FG_FISC_JURID, :F' +
+        'G_SEXO, '
       
-        '   :NR_TELEFONE, :NR_CELULAR, :DS_EMAIL, :CD_CIDADE, :FG_FUNC, :' +
-        'DS_BAIRRO, '
-      '   :DS_RUA)')
+        '   :DT_NASCIMENTO, :NR_TELEFONE, :NR_CELULAR, :DS_EMAIL, :CD_CID' +
+        'ADE, :FG_FUNC, '
+      '   :DS_BAIRRO, :DS_RUA)')
     DeleteSQL.Strings = (
       'delete from tb_pessoa'
       'where'
       '  CD_PESSOA = :OLD_CD_PESSOA')
     Left = 496
+    Top = 128
   end
 end

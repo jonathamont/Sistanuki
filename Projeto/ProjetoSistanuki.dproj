@@ -135,10 +135,6 @@
             <Form>Form_CadastroPessoa</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="..\Pesquisa\UnitPesquisaAulaExp.pas">
-            <Form>Form_PesquisaBase1</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

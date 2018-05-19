@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 EditorSecs=15320
 DesignerSecs=6195
 =======
@@ -16,8 +17,8 @@ EditorSecs=15185
 DesignerSecs=6181
 >>>>>>> 4d78fbde9de35f881c69a915e9bbb08911175849
 InspectorSecs=2093
-CompileSecs=168911
-OtherSecs=4301
+CompileSecs=169860
+OtherSecs=4310
 =======
 =======
 >>>>>>> parent of d2a694b... project
@@ -39,8 +40,13 @@ EditorSecs=13704
 DesignerSecs=6058
 InspectorSecs=1847
 >>>>>>> bcfd8aa68dba10880080f6762371782f7666b99e
+=======
+EditorSecs=13704
+DesignerSecs=6058
+InspectorSecs=1847
+>>>>>>> parent of 03b222e... Tela pesquisa aula exp
 CompileSecs=152295
-OtherSecs=4424
+OtherSecs=3905
 StartTime=08/05/2018 23:55:21
 RealKeys=0
 EffectiveKeys=0

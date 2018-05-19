@@ -12,8 +12,7 @@ uses
   UnitCadastroMateria in '..\Cadastros\UnitCadastroMateria.pas' {Form_CadastroMaterias},
   UnitPesquisaMateria in '..\Pesquisa\UnitPesquisaMateria.pas' {Form_PesquisaMateria},
   UnitPesquisaPessoa in '..\Pesquisa\UnitPesquisaPessoa.pas' {Form_PesquisaPessoa},
-  UnitCadastroPessoas in '..\Cadastros\UnitCadastroPessoas.pas' {Form_CadastroPessoa},
-  UnitPesquisaAulaExp in '..\Pesquisa\UnitPesquisaAulaExp.pas' {Form_PesquisaBase1};
+  UnitCadastroPessoas in '..\Cadastros\UnitCadastroPessoas.pas' {Form_CadastroPessoa};
 
 {$R *.res}
 
@@ -23,8 +22,11 @@ begin
   TStyleManager.TrySetStyle('Glossy');
   Application.CreateForm(TCONEXAO, CONEXAO);
   Application.CreateForm(TForm_PesquisaPessoa, Form_PesquisaPessoa);
+<<<<<<< HEAD
   Application.CreateForm(TForm_PesquisaBase1, Form_PesquisaBase1);
   Application.CreateForm(TForm_PesquisaMateria, Form_PesquisaMateria);
+=======
+>>>>>>> parent of 03b222e... Tela pesquisa aula exp
   Application.Run;
 end.
 

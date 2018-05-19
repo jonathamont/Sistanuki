@@ -2,10 +2,15 @@ inherited Form_PesquisaPessoa: TForm_PesquisaPessoa
   Caption = 'Pesquisa Pessoa'
   ClientWidth = 808
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   ExplicitLeft = -37
 >>>>>>> bcfd8aa68dba10880080f6762371782f7666b99e
+=======
+  ExplicitTop = -213
+>>>>>>> parent of 03b222e... Tela pesquisa aula exp
   ExplicitWidth = 824
+  ExplicitHeight = 650
   PixelsPerInch = 96
   TextHeight = 13
   inherited GridPesquisa: TDBGrid
