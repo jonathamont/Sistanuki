@@ -1,8 +1,18 @@
 [Stats]
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 EditorSecs=15212
 DesignerSecs=6195
+=======
+EditorSecs=13718
+DesignerSecs=6335
+InspectorSecs=1865
+=======
+<<<<<<< HEAD
+EditorSecs=15185
+DesignerSecs=6181
+>>>>>>> 4d78fbde9de35f881c69a915e9bbb08911175849
 InspectorSecs=2093
 CompileSecs=165016
 OtherSecs=4233
@@ -14,8 +24,9 @@ DebugSecs=8739
 EditorSecs=13704
 DesignerSecs=6058
 InspectorSecs=1847
+>>>>>>> bcfd8aa68dba10880080f6762371782f7666b99e
 CompileSecs=152295
-OtherSecs=3905
+OtherSecs=4424
 StartTime=08/05/2018 23:55:21
 RealKeys=0
 EffectiveKeys=0
