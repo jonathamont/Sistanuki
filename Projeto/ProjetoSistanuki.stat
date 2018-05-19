@@ -1,5 +1,6 @@
 [Stats]
 <<<<<<< HEAD
+<<<<<<< HEAD
 EditorSecs=15185
 DesignerSecs=6181
 InspectorSecs=2093
@@ -9,6 +10,17 @@ StartTime=08/05/2018 23:55:21
 RealKeys=0
 EffectiveKeys=0
 DebugSecs=8739
+=======
+EditorSecs=13704
+DesignerSecs=6058
+InspectorSecs=1847
+CompileSecs=152295
+OtherSecs=3905
+StartTime=08/05/2018 23:55:21
+RealKeys=0
+EffectiveKeys=0
+DebugSecs=8006
+>>>>>>> 935c7bb865be43a3e92f203e024ac7d6e50df5d6
 =======
 EditorSecs=13470
 DesignerSecs=5848
