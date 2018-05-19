@@ -1,8 +1,2 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<BorlandProject>
-  <Transactions>
-    <Transaction>2018/05/19 18:38:36.768,=C:\Sistanuki\Projeto\Unit1.pas</Transaction>
-    <Transaction>2018/05/19 18:40:43.510,C:\Sistanuki\Pesquisa\UnitPesquisaAulaExp.pas=C:\Sistanuki\Projeto\Unit1.pas</Transaction>
-    <Transaction>2018/05/19 18:40:43.510,C:\Sistanuki\Pesquisa\UnitPesquisaAulaExp.dfm=C:\Sistanuki\Projeto\Unit1.dfm</Transaction>
-  </Transactions>
-</BorlandProject>
+<BorlandProject/>
