@@ -2,7 +2,6 @@ inherited Form_PesquisaPessoa: TForm_PesquisaPessoa
   Caption = 'Pesquisa Pessoa'
   ClientWidth = 808
   ExplicitWidth = 824
-  ExplicitHeight = 650
   PixelsPerInch = 96
   TextHeight = 13
   inherited GridPesquisa: TDBGrid
@@ -73,10 +72,10 @@ inherited Form_PesquisaPessoa: TForm_PesquisaPessoa
       Required = True
       Size = 50
     end
-    object QueryPesquisaNR_CPF: TIBStringField
-      FieldName = 'NR_CPF'
-      Origin = '"TB_PESSOA"."NR_CPF"'
-      Size = 11
+    object QueryPesquisaNR_CPF_CNPJ: TIBStringField
+      FieldName = 'NR_CPF_CNPJ'
+      Origin = '"TB_PESSOA"."NR_CPF_CNPJ"'
+      Size = 18
     end
     object QueryPesquisaFG_FISC_JURID: TIBStringField
       FieldName = 'FG_FISC_JURID'
@@ -84,11 +83,6 @@ inherited Form_PesquisaPessoa: TForm_PesquisaPessoa
       Required = True
       FixedChar = True
       Size = 1
-    end
-    object QueryPesquisaNR_CNPJ: TIBStringField
-      FieldName = 'NR_CNPJ'
-      Origin = '"TB_PESSOA"."NR_CNPJ"'
-      Size = 14
     end
     object QueryPesquisaFG_FUNC: TIBStringField
       FieldName = 'FG_FUNC'
@@ -162,8 +156,7 @@ inherited Form_PesquisaPessoa: TForm_PesquisaPessoa
       'set'
       '  CD_PESSOA = :CD_PESSOA,'
       '  NM_PESSOA = :NM_PESSOA,'
-      '  NR_CPF = :NR_CPF,'
-      '  NR_CNPJ = :NR_CNPJ,'
+      '  NR_CPF_CNPJ = :NR_CPF_CNPJ,'
       '  FG_FISC_JURID = :FG_FISC_JURID,'
       '  FG_SEXO = :FG_SEXO,'
       '  DT_NASCIMENTO = :DT_NASCIMENTO,'
@@ -179,24 +172,23 @@ inherited Form_PesquisaPessoa: TForm_PesquisaPessoa
     InsertSQL.Strings = (
       'insert into tb_pessoa'
       
-        '  (CD_PESSOA, NM_PESSOA, NR_CPF, NR_CNPJ, FG_FISC_JURID, FG_SEXO' +
-        ', DT_NASCIMENTO, '
+        '  (CD_PESSOA, NM_PESSOA, NR_CPF_CNPJ, FG_FISC_JURID, FG_SEXO, DT' +
+        '_NASCIMENTO, '
       
         '   NR_TELEFONE, NR_CELULAR, DS_EMAIL, CD_CIDADE, FG_FUNC, DS_BAI' +
         'RRO, DS_RUA)'
       'values'
       
-        '  (:CD_PESSOA, :NM_PESSOA, :NR_CPF, :NR_CNPJ, :FG_FISC_JURID, :F' +
-        'G_SEXO, '
+        '  (:CD_PESSOA, :NM_PESSOA, :NR_CPF_CNPJ, :FG_FISC_JURID, :FG_SEX' +
+        'O, :DT_NASCIMENTO, '
       
-        '   :DT_NASCIMENTO, :NR_TELEFONE, :NR_CELULAR, :DS_EMAIL, :CD_CID' +
-        'ADE, :FG_FUNC, '
-      '   :DS_BAIRRO, :DS_RUA)')
+        '   :NR_TELEFONE, :NR_CELULAR, :DS_EMAIL, :CD_CIDADE, :FG_FUNC, :' +
+        'DS_BAIRRO, '
+      '   :DS_RUA)')
     DeleteSQL.Strings = (
       'delete from tb_pessoa'
       'where'
       '  CD_PESSOA = :OLD_CD_PESSOA')
     Left = 496
-    Top = 128
   end
 end

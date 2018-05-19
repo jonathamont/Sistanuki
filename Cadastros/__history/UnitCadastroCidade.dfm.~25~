@@ -2,6 +2,7 @@ inherited Form_CadastroCidades: TForm_CadastroCidades
   Caption = 'Cadastro Cidades'
   ClientHeight = 165
   ClientWidth = 451
+  OnCreate = FormCreate
   ExplicitWidth = 467
   ExplicitHeight = 204
   PixelsPerInch = 96
@@ -65,15 +66,6 @@ inherited Form_CadastroCidades: TForm_CadastroCidades
       ExplicitLeft = 375
       ExplicitTop = 11
     end
-    object BitBtn1: TBitBtn
-      Left = 192
-      Top = 11
-      Width = 75
-      Height = 25
-      Caption = 'Excluir'
-      TabOrder = 2
-      OnClick = BitBtn1Click
-    end
   end
   object Edit_CodCidade: TDBEdit [6]
     Left = 16
@@ -82,6 +74,7 @@ inherited Form_CadastroCidades: TForm_CadastroCidades
     Height = 21
     DataField = 'CD_CIDADE'
     DataSource = DataSourceCadastro
+    Enabled = False
     ReadOnly = True
     TabOrder = 1
   end

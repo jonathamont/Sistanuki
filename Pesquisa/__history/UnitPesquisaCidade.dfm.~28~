@@ -1,0 +1,99 @@
+inherited Form_PesquisaCidade: TForm_PesquisaCidade
+  Caption = 'Pesquisa Cidade'
+  ExplicitWidth = 819
+  ExplicitHeight = 650
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited GroupBox: TGroupBox
+    inherited RadioFiltro: TRadioGroup
+      Items.Strings = (
+        'Codigo'
+        'Nome'
+        'Estado')
+    end
+    inherited ButPesquisa: TBitBtn
+      OnClick = ButPesquisaClick
+    end
+    inherited But_Imprimir: TBitBtn
+      Visible = False
+    end
+  end
+  inherited Panel1: TPanel
+    inherited But_Alterar: TBitBtn
+      OnClick = But_AlterarClick
+    end
+    inherited But_Excluir: TBitBtn
+      OnClick = But_ExcluirClick
+    end
+  end
+  inherited But_Novo: TBitBtn
+    OnClick = But_NovoClick
+  end
+  inherited QueryPesquisa: TIBQuery
+    SQL.Strings = (
+      'select * from TB_CIDADE')
+    Left = 600
+    Top = 352
+    object QueryPesquisaCD_CIDADE: TIntegerField
+      DisplayLabel = 'Codigo'
+      FieldName = 'CD_CIDADE'
+      Origin = '"TB_CIDADE"."CD_CIDADE"'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QueryPesquisaNM_CIDADE: TIBStringField
+      DisplayLabel = 'Nome'
+      FieldName = 'NM_CIDADE'
+      Origin = '"TB_CIDADE"."NM_CIDADE"'
+      Required = True
+      Size = 60
+    end
+    object QueryPesquisaDS_ESTADO: TIBStringField
+      DisplayLabel = 'Estado'
+      FieldName = 'DS_ESTADO'
+      Origin = '"TB_CIDADE"."DS_ESTADO"'
+      Required = True
+      Size = 30
+    end
+    object QueryPesquisaDS_PAIS: TIBStringField
+      DisplayLabel = 'Pais'
+      FieldName = 'DS_PAIS'
+      Origin = '"TB_CIDADE"."DS_PAIS"'
+      Required = True
+      Size = 50
+    end
+  end
+  inherited DataSourcePesquisa: TDataSource
+    Left = 528
+    Top = 352
+  end
+  inherited UpdateCadastro: TIBUpdateSQL
+    RefreshSQL.Strings = (
+      'Select '
+      '  CD_CIDADE,'
+      '  NM_CIDADE,'
+      '  DS_ESTADO,'
+      '  DS_PAIS'
+      'from TB_CIDADE '
+      'where'
+      '  CD_CIDADE = :CD_CIDADE')
+    ModifySQL.Strings = (
+      'update TB_CIDADE'
+      'set'
+      '  CD_CIDADE = :CD_CIDADE,'
+      '  NM_CIDADE = :NM_CIDADE,'
+      '  DS_ESTADO = :DS_ESTADO,'
+      '  DS_PAIS = :DS_PAIS'
+      'where'
+      '  CD_CIDADE = :OLD_CD_CIDADE')
+    InsertSQL.Strings = (
+      'insert into TB_CIDADE'
+      '  (CD_CIDADE, NM_CIDADE, DS_ESTADO, DS_PAIS)'
+      'values'
+      '  (:CD_CIDADE, :NM_CIDADE, :DS_ESTADO, :DS_PAIS)')
+    DeleteSQL.Strings = (
+      'delete from TB_CIDADE'
+      'where'
+      '  CD_CIDADE = :OLD_CD_CIDADE')
+  end
+end

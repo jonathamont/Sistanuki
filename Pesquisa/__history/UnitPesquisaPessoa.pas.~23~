@@ -22,13 +22,9 @@ type
     QueryPesquisaDS_EMAIL: TIBStringField;
     QueryPesquisaCD_CIDADE: TIntegerField;
     QueryPesquisaFG_FUNC: TIBStringField;
-    QueryPesquisaNM_CIDADE: TIBStringField;
     QueryPesquisaDS_BAIRRO: TIBStringField;
     QueryPesquisaDS_RUA: TIBStringField;
-    Label1: TLabel;
-    Label2: TLabel;
-    Edit_DtInicio: TMaskEdit;
-    Edit_DtFim: TMaskEdit;
+    QueryPesquisaNM_CIDADE: TIBStringField;
     procedure ButPesquisaClick(Sender: TObject);
     procedure But_NovoClick(Sender: TObject);
     procedure But_AlterarClick(Sender: TObject);
@@ -67,12 +63,12 @@ begin
       2: SQL:= (SQL+' where NR_CPF like '+QuotedStr('%'+MaskEditPesquisa.Text+'%')+' Order by NR_CPF;');
       3:
         begin
-             if ((Edit_DtInicio.Text) = '  .  .    ') OR ((Edit_DtFim.Text) = '  .  .    ')   then
+             if (Trim(MaskEditPesquisa.Text) = '')   then
                begin
-                    SQL:=SQL +(' ORDER BY DT_NASCI;')
+                    SQL:=SQL +(' ORDER BY DT_NASCIMENTO;')
                end
              else
-                    SQL:= (SQL+' where DT_NASCI BETWEEN '+QuotedStr(Edit_DtInicio.Text)+' AND '+QuotedStr(Edit_DtFim.Text)+' Order by DT_NASCI;');
+                    SQL:= (SQL+' where extract(month from p.dt_nascimento) = '+QuotedStr(MaskEditPesquisa.Text)+' Order by DT_NASCIMENTO;');
 
         end;
       4: SQL:= (SQL+' where FG_FUNC like '+QuotedStr('%'+MaskEditPesquisa.Text+'%')+' Order by FG_FUNC;');
@@ -100,12 +96,16 @@ procedure TForm_PesquisaPessoa.But_NovoClick(Sender: TObject);
 begin
   inherited;
       try
+        ////
         QueryPesquisa.Append;
         Form_CadastroPessoa:=TForm_CadastroPessoa.Create(self);
         Form_CadastroPessoa.ShowModal;
 
      finally
         Form_CadastroPessoa.Free;
+        QueryPesquisa.Close;
+        ButPesquisaClick(ButPesquisa);
+
      end;
 end;
 

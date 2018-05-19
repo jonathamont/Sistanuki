@@ -14,9 +14,7 @@ type
     Label2: TLabel;
     Edit_Nome: TDBEdit;
     Label3: TLabel;
-    Edit_CPF: TDBEdit;
-    Label4: TLabel;
-    Edit_CNPJ: TDBEdit;
+    Edit_CPF_CNPJ: TDBEdit;
     Label7: TLabel;
     Edit_Dt_Nasci: TDBEdit;
     Label8: TLabel;
@@ -36,10 +34,12 @@ type
     RadioSexo: TDBRadioGroup;
     RadioFunc: TDBRadioGroup;
     Radio_Fis_Juri: TDBRadioGroup;
+    BitBtn1: TBitBtn;
     procedure FormCreate(Sender: TObject);
     procedure But_PesquisaClick(Sender: TObject);
     procedure Edit_CodCidadeExit(Sender: TObject);
     procedure But_SalvarClick(Sender: TObject);
+    procedure Radio_Fis_JuriExit(Sender: TObject);
   private
     { Private declarations }
   public
@@ -66,7 +66,6 @@ begin
       begin
            DataSourceCadastro.DataSet.FieldByName('CD_CIDADE').AsInteger:=Form_PesquisaCidade.QueryPesquisaCD_CIDADE.AsInteger;
            DataSourceCadastro.DataSet.FieldByName('NM_CIDADE').AsString:=Form_PesquisaCidade.QueryPesquisaNM_CIDADE.AsString;
-
            //QueryCadastroNM_CIDADE.AsString:=Form_PesquisaCidade.QueryPesquisaNM_CIDADE.AsString;
       end;
     Form_PesquisaCidade.QueryPesquisa.Close;
@@ -101,6 +100,7 @@ begin
         Application.MessageBox('Rua é um campo obrigatorio','Aviso');
         exit;
   end;
+
   inherited;
 
 end;
@@ -127,18 +127,29 @@ end;
 
 procedure TForm_CadastroPessoa.FormCreate(Sender: TObject);
 begin
-  DataSourceCadastro.DataSet.FieldByName('DT_NASCIMENTO').EditMask:='00/00/0000';
-  DataSourceCadastro.DataSet.FieldByName('NR_TELEFONE').EditMask:='(00)0000-0000';
-  DataSourceCadastro.DataSet.FieldByName('NR_CELULAR').EditMask:='(00)00000-0000';
+
   if (DataSourceCadastro.State = dsInsert) then
   begin
-       Edit_CodigoPessoa.text:=IntToStr(CONEXAO.RetornaPK('CD_PESSOA','TB_PESSOA'));
-       RadioSexo.ItemIndex:=0;
-       RadioFunc.ItemIndex:=0;
-       Radio_Fis_Juri.ItemIndex:=0;
+       DataSourceCadastro.DataSet.FieldByName('CD_PESSOA').TEXT:=IntToStr(CONEXAO.RetornaPK('CD_PESSOA','TB_PESSOA'));
+       DataSourceCadastro.DataSet.FieldByName('FG_SEXO').Value:='N';
+       DataSourceCadastro.DataSet.FieldByName('FG_FUNC').Value:='N';
+       DataSourceCadastro.DataSet.FieldByName('FG_FISC_JURID').Value:='F';
+       DataSourceCadastro.DataSet.FieldByName('NR_CPF_CNPJ').EditMask:='000.000.00-00';
   end;
+
   inherited;
 
+
+
+end;
+
+procedure TForm_CadastroPessoa.Radio_Fis_JuriExit(Sender: TObject);
+begin
+  inherited;
+  case Radio_Fis_Juri.ItemIndex of
+  0:DataSourceCadastro.DataSet.FieldByName('NR_CPF_CNPJ').EditMask:='000.000.00-00';
+  1:DataSourceCadastro.DataSet.FieldByName('NR_CPF_CNPJ').EditMask:='000.000/0000-00'
+  end;
 end;
 
 end.

@@ -29,6 +29,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure RadioFiltroClick(Sender: TObject);
     procedure ButSairClick(Sender: TObject);
+    procedure But_ExcluirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -47,6 +48,30 @@ uses UnitConexao;
 procedure TForm_PesquisaBase.ButSairClick(Sender: TObject);
 begin
     Close;
+end;
+
+procedure TForm_PesquisaBase.But_ExcluirClick(Sender: TObject);
+begin
+     if Application.MessageBox('Deseja realmente excluir?','Aviso', MB_OK + MB_YESNO) = IDNO then
+        Begin
+          Exit;
+        End;
+     if not(CONEXAO.Transaction.InTransaction) then
+        Begin
+          CONEXAO.Transaction.StartTransaction;
+        End;
+
+      Begin
+        Try
+          QueryPesquisa.Delete;
+          CONEXAO.Transaction.Commit;
+        Except
+          CONEXAO.Transaction.Rollback;
+          ShowMessage('Erro ao Remover!');
+        End;
+      End;
+
+      QueryPesquisa.Open
 end;
 
 procedure TForm_PesquisaBase.FormCreate(Sender: TObject);

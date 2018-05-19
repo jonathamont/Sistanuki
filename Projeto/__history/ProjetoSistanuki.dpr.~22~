@@ -8,17 +8,19 @@ uses
   Vcl.Styles,
   UnitCadastroCidade in '..\Cadastros\UnitCadastroCidade.pas' {Form_CadastroCidades},
   UnitPesquisaBase in '..\Modelo\UnitPesquisaBase.pas' {Form_PesquisaBase},
-  UnitPesquisaCidade in '..\Pesquisa\UnitPesquisaCidade.pas' {Form_PesquisaCidade};
+  UnitPesquisaCidade in '..\Pesquisa\UnitPesquisaCidade.pas' {Form_PesquisaCidade},
+  UnitCadastroMateria in '..\Cadastros\UnitCadastroMateria.pas' {Form_CadastroMaterias},
+  UnitPesquisaMateria in '..\Pesquisa\UnitPesquisaMateria.pas' {Form_PesquisaMateria},
+  UnitPesquisaPessoa in '..\Pesquisa\UnitPesquisaPessoa.pas' {Form_PesquisaPessoa},
+  UnitCadastroPessoas in '..\Cadastros\UnitCadastroPessoas.pas' {Form_CadastroPessoa};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  TStyleManager.TrySetStyle('Carbon');
   Application.CreateForm(TCONEXAO, CONEXAO);
-  Application.CreateForm(TForm_CadastroCidades, Form_CadastroCidades);
-  Application.CreateForm(TForm_PesquisaBase, Form_PesquisaBase);
-  Application.CreateForm(TForm_PesquisaCidade, Form_PesquisaCidade);
+  Application.CreateForm(TForm_PesquisaMateria, Form_PesquisaMateria);
   Application.Run;
 end.
+

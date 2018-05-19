@@ -117,6 +117,7 @@ object Form_PesquisaBase: TForm_PesquisaBase
       Height = 25
       Caption = 'Excluir'
       TabOrder = 2
+      OnClick = But_ExcluirClick
     end
   end
   object But_Novo: TBitBtn
@@ -184,7 +185,7 @@ object Form_PesquisaBase: TForm_PesquisaBase
       'delete from TB_AULA'
       'where'
       '  CD_AULA = :OLD_CD_AULA')
-    Left = 456
-    Top = 352
+    Left = 520
+    Top = 128
   end
 end

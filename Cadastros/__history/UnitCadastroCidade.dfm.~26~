@@ -2,6 +2,7 @@ inherited Form_CadastroCidades: TForm_CadastroCidades
   Caption = 'Cadastro Cidades'
   ClientHeight = 165
   ClientWidth = 451
+  OnCreate = FormCreate
   ExplicitWidth = 467
   ExplicitHeight = 204
   PixelsPerInch = 96
@@ -73,6 +74,7 @@ inherited Form_CadastroCidades: TForm_CadastroCidades
     Height = 21
     DataField = 'CD_CIDADE'
     DataSource = DataSourceCadastro
+    Enabled = False
     ReadOnly = True
     TabOrder = 1
   end
