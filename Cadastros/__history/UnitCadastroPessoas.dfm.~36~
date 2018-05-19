@@ -3,6 +3,7 @@ inherited Form_CadastroPessoa: TForm_CadastroPessoa
   ClientHeight = 465
   ClientWidth = 617
   OnCreate = FormCreate
+  ExplicitTop = -50
   ExplicitWidth = 633
   ExplicitHeight = 504
   PixelsPerInch = 96
@@ -281,7 +282,7 @@ inherited Form_CadastroPessoa: TForm_CadastroPessoa
     Values.Strings = (
       'F'
       'J')
-    OnClick = Radio_Fis_JuriClick
+    OnExit = Radio_Fis_JuriExit
   end
   inherited DataSourceCadastro: TDataSource
     DataSet = Form_PesquisaPessoa.QueryPesquisa

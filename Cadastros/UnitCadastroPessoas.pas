@@ -34,7 +34,6 @@ type
     RadioSexo: TDBRadioGroup;
     RadioFunc: TDBRadioGroup;
     Radio_Fis_Juri: TDBRadioGroup;
-    BitBtn1: TBitBtn;
     procedure FormCreate(Sender: TObject);
     procedure But_PesquisaClick(Sender: TObject);
     procedure Edit_CodCidadeExit(Sender: TObject);
@@ -127,15 +126,16 @@ end;
 
 procedure TForm_CadastroPessoa.FormCreate(Sender: TObject);
 begin
-  DataSourceCadastro.DataSet.FieldByName('DT_NASCIMENTO').EditMask:='00/00/0000';
-  DataSourceCadastro.DataSet.FieldByName('NR_TELEFONE').EditMask:='(00)0000-0000';
-  DataSourceCadastro.DataSet.FieldByName('NR_CELULAR').EditMask:='(00)00000-0000';
+
   if (DataSourceCadastro.State = dsInsert) then
   begin
-       Edit_CodigoPessoa.text:=IntToStr(CONEXAO.RetornaPK('CD_PESSOA','TB_PESSOA'));
-       RadioSexo.ItemIndex:=0;
-       RadioFunc.ItemIndex:=1;
-       Radio_Fis_Juri.ItemIndex:=0;
+       DataSourceCadastro.DataSet.FieldByName('NR_CPF_CNPJ').EditMask:='000.000.00-00';
+       DataSourceCadastro.DataSet.FieldByName('FG_SEXO').Value:='M';
+       DataSourceCadastro.DataSet.FieldByName('FG_FISC_JURID').Value:='F';
+       DataSourceCadastro.DataSet.FieldByName('FG_FUNC').Value:='N';
+       DataSourceCadastro.DataSet.FieldByName('CD_PESSOA').Text:=intToStr(CONEXAO.RetornaPK('CD_PESSOA','TB_PESSOA'));
+       //Edit_CodigoPessoa.text:=IntToStr(CONEXAO.RetornaPK('CD_PESSOA','TB_PESSOA'));
+
   end;
 
   inherited;
@@ -147,9 +147,10 @@ end;
 procedure TForm_CadastroPessoa.Radio_Fis_JuriExit(Sender: TObject);
 begin
   inherited;
-  //case Radio_Fis_Juri.ItemIndex of
-  //0:DataSourceCadastro.DataSet.FieldByName('NR_CPF_CNPJ').EditMask:='000.000.00-00'
-  //end;
+  case Radio_Fis_Juri.ItemIndex of
+  0:DataSourceCadastro.DataSet.FieldByName('NR_CPF_CNPJ').EditMask:='000.000.00-00';
+  1:DataSourceCadastro.DataSet.FieldByName('NR_CPF_CNPJ').EditMask:='000.000/0000-00'
+  end;
 end;
 
 end.
