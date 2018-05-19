@@ -35,12 +35,12 @@
     <Transaction>2018/05/11 18:24:10.000.814,=C:\SisTanuki\Projeto\Unit1.pas</Transaction>
     <Transaction>2018/05/11 18:36:41.000.847,C:\SisTanuki\Projeto\Unit1.dfm=C:\SisTanuki\Cadastros\UnitCadastroPessoas.dfm</Transaction>
     <Transaction>2018/05/11 18:36:41.000.847,C:\SisTanuki\Projeto\Unit1.pas=C:\SisTanuki\Cadastros\UnitCadastroPessoas.pas</Transaction>
-    <Transaction>2018/05/18 21:25:52.215,=C:\Sistanuki\Projeto\Unit1.pas</Transaction>
-    <Transaction>2018/05/18 21:27:51.482,C:\Sistanuki\Pesquisa\UnitPesquisaAulaExp.dfm=C:\Sistanuki\Projeto\Unit1.dfm</Transaction>
-    <Transaction>2018/05/18 21:27:51.482,C:\Sistanuki\Pesquisa\UnitPesquisaAulaExp.pas=C:\Sistanuki\Projeto\Unit1.pas</Transaction>
+    <Transaction>2018/05/18 21:25:52.000.215,=C:\Sistanuki\Projeto\Unit1.pas</Transaction>
+    <Transaction>2018/05/18 21:27:51.000.482,C:\Sistanuki\Pesquisa\UnitPesquisaAulaExp.pas=C:\Sistanuki\Projeto\Unit1.pas</Transaction>
+    <Transaction>2018/05/18 21:27:51.000.482,C:\Sistanuki\Pesquisa\UnitPesquisaAulaExp.dfm=C:\Sistanuki\Projeto\Unit1.dfm</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
-    <File Path="C:\Sistanuki"/>
+    <File Path="C:\SisTanuki"/>
     <File Path="..\Cadastros"/>
     <File Path="..\Cadastros\UnitCadastroCidade.pas"/>
     <File Path="..\Cadastros\UnitCadastroCidade.dfm"/>

@@ -22,12 +22,9 @@ begin
   Application.MainFormOnTaskbar := True;
   TStyleManager.TrySetStyle('Glossy');
   Application.CreateForm(TCONEXAO, CONEXAO);
-<<<<<<< HEAD
   Application.CreateForm(TForm_PesquisaPessoa, Form_PesquisaPessoa);
   Application.CreateForm(TForm_PesquisaBase1, Form_PesquisaBase1);
-=======
   Application.CreateForm(TForm_PesquisaMateria, Form_PesquisaMateria);
->>>>>>> bcfd8aa68dba10880080f6762371782f7666b99e
   Application.Run;
 end.
 
