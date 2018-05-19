@@ -53,8 +53,8 @@ begin
 
   if (DataSourceCadastro.State = dsInsert) then
   begin
-       DataSourceCadastro.DataSet.FieldByName('DS_ESTADO').Value:='SC';
-       DataSourceCadastro.DataSet.FieldByName('DS_ESTADO').Value:='BRASIL';
+       DataSourceCadastro.DataSet.FieldByName('DS_PAIS').Value:='BRASIL';
+       DataSourceCadastro.DataSet.FieldByName('FG_SEXO').Value:='SC';
        DataSourceCadastro.DataSet.FieldByName('CD_CIDADE').text:=IntToStr(CONEXAO.RetornaPK('CD_CIDADE','TB_CIDADE'));
   end;
 end;

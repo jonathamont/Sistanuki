@@ -117,8 +117,7 @@ inherited Form_CadastroCidades: TForm_CadastroCidades
       'RS'
       'SP'
       'AM'
-      'ES'
-      '**')
+      'ES')
     TabOrder = 4
   end
   inherited DataSourceCadastro: TDataSource

@@ -130,12 +130,11 @@ begin
 
   if (DataSourceCadastro.State = dsInsert) then
   begin
-       RadioSexo.ItemIndex:=0;
-       RadioFunc.ItemIndex:=1;
-       Radio_Fis_Juri.ItemIndex:=0;
-       DataSourceCadastro.DataSet.FieldByName('cd_pessoa').Text:=intToStr(CONEXAO.RetornaPK('CD_PESSOA','TB_PESSOA'));
-       //Edit_CodigoPessoa.text:=IntToStr(CONEXAO.RetornaPK('CD_PESSOA','TB_PESSOA'));
-
+       DataSourceCadastro.DataSet.FieldByName('CD_PESSOA').TEXT:=IntToStr(CONEXAO.RetornaPK('CD_PESSOA','TB_PESSOA'));
+       DataSourceCadastro.DataSet.FieldByName('FG_SEXO').Value:='M';
+       DataSourceCadastro.DataSet.FieldByName('FG_FUNC').Value:='N';
+       DataSourceCadastro.DataSet.FieldByName('FG_FISC_JURID').Value:='F';
+       DataSourceCadastro.DataSet.FieldByName('NR_CPF_CNPJ').EditMask:='000.000.00-00';
   end;
 
   inherited;

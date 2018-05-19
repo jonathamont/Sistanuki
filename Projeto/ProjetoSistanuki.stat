@@ -1,6 +1,7 @@
 [Stats]
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 EditorSecs=13791
 DesignerSecs=6358
 InspectorSecs=1865
@@ -11,30 +12,14 @@ DesignerSecs=6181
 InspectorSecs=2093
 CompileSecs=166856
 OtherSecs=4529
-StartTime=08/05/2018 23:55:21
-RealKeys=0
-EffectiveKeys=0
-DebugSecs=8739
 =======
-EditorSecs=13704
-DesignerSecs=6058
-InspectorSecs=1847
->>>>>>> bcfd8aa68dba10880080f6762371782f7666b99e
-CompileSecs=152295
-OtherSecs=4424
+EditorSecs=14071
+DesignerSecs=5889
+InspectorSecs=1817
+CompileSecs=159949
+OtherSecs=3953
+>>>>>>> 00e5f909d8d19ebbbaf0b6063b0251af601399f6
 StartTime=08/05/2018 23:55:21
 RealKeys=0
 EffectiveKeys=0
-DebugSecs=8006
->>>>>>> 935c7bb865be43a3e92f203e024ac7d6e50df5d6
-=======
-EditorSecs=13470
-DesignerSecs=5848
-InspectorSecs=1787
-CompileSecs=150715
-OtherSecs=3838
-StartTime=08/05/2018 23:55:21
-RealKeys=0
-EffectiveKeys=0
-DebugSecs=9015
->>>>>>> 66b98e9e778cdfb84e88454655da2cca585ca5b4
+DebugSecs=9241

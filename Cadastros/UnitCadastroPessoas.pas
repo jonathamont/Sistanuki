@@ -34,6 +34,7 @@ type
     RadioSexo: TDBRadioGroup;
     RadioFunc: TDBRadioGroup;
     Radio_Fis_Juri: TDBRadioGroup;
+    BitBtn1: TBitBtn;
     procedure FormCreate(Sender: TObject);
     procedure But_PesquisaClick(Sender: TObject);
     procedure Edit_CodCidadeExit(Sender: TObject);
@@ -129,13 +130,11 @@ begin
 
   if (DataSourceCadastro.State = dsInsert) then
   begin
-       DataSourceCadastro.DataSet.FieldByName('NR_CPF_CNPJ').EditMask:='000.000.00-00';
-       DataSourceCadastro.DataSet.FieldByName('FG_SEXO').Value:='M';
-       DataSourceCadastro.DataSet.FieldByName('FG_FISC_JURID').Value:='F';
+       DataSourceCadastro.DataSet.FieldByName('CD_PESSOA').TEXT:=IntToStr(CONEXAO.RetornaPK('CD_PESSOA','TB_PESSOA'));
+       DataSourceCadastro.DataSet.FieldByName('FG_SEXO').Value:='N';
        DataSourceCadastro.DataSet.FieldByName('FG_FUNC').Value:='N';
-       DataSourceCadastro.DataSet.FieldByName('CD_PESSOA').Text:=intToStr(CONEXAO.RetornaPK('CD_PESSOA','TB_PESSOA'));
-       //Edit_CodigoPessoa.text:=IntToStr(CONEXAO.RetornaPK('CD_PESSOA','TB_PESSOA'));
-
+       DataSourceCadastro.DataSet.FieldByName('FG_FISC_JURID').Value:='F';
+       DataSourceCadastro.DataSet.FieldByName('NR_CPF_CNPJ').EditMask:='000.000.00-00';
   end;
 
   inherited;

@@ -127,15 +127,13 @@ end;
 
 procedure TForm_CadastroPessoa.FormCreate(Sender: TObject);
 begin
-  DataSourceCadastro.DataSet.FieldByName('DT_NASCIMENTO').EditMask:='00/00/0000';
-  DataSourceCadastro.DataSet.FieldByName('NR_TELEFONE').EditMask:='(00)0000-0000';
-  DataSourceCadastro.DataSet.FieldByName('NR_CELULAR').EditMask:='(00)00000-0000';
+
   if (DataSourceCadastro.State = dsInsert) then
   begin
-       Edit_CodigoPessoa.text:=IntToStr(CONEXAO.RetornaPK('CD_PESSOA','TB_PESSOA'));
-       RadioSexo.ItemIndex:=0;
-       RadioFunc.ItemIndex:=1;
-       Radio_Fis_Juri.ItemIndex:=0;
+       DataSourceCadastro.DataSet.FieldByName('CD_CIDADE').text:=IntToStr(CONEXAO.RetornaPK('CD_PESSOA','TB_PESSOA'));
+       DataSourceCadastro.DataSet.FieldByName('FG_SEXO').Value:='M';
+       DataSourceCadastro.DataSet.FieldByName('FG_FUNC').Value:='N';
+       DataSourceCadastro.DataSet.FieldByName('FG_FISC_JURID').Value:='F';
   end;
 
   inherited;
