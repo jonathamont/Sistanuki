@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <BorlandProject>
 	<Transactions>
     <Transaction>2018/05/19 18:38:36.000.768,=C:\Sistanuki\Projeto\Unit1.pas</Transaction>
@@ -6,3 +7,6 @@
     <Transaction>2018/05/19 18:40:43.000.510,C:\Sistanuki\Projeto\Unit1.dfm=C:\Sistanuki\Pesquisa\UnitPesquisaAulaExp.dfm</Transaction>
   </Transactions>
 </BorlandProject>
+=======
+<BorlandProject/>
+>>>>>>> e540a16149c358cbaa0309e9ccc125aa57ec36dc

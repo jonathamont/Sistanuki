@@ -113,6 +113,8 @@ end;
 
 procedure TForm_PesquisaPessoa.FormCreate(Sender: TObject);
 begin
+  //cometario inserido aqui
+  //
   inherited;
   //no
   QueryPesquisaDT_NASCIMENTO.EditMask:='00/00/0000';
