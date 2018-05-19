@@ -2,18 +2,33 @@ inherited Form_PesquisaPessoa: TForm_PesquisaPessoa
   Caption = 'Pesquisa Pessoa'
   ClientWidth = 808
   ExplicitWidth = 824
+  ExplicitHeight = 650
   PixelsPerInch = 96
   TextHeight = 13
   inherited GridPesquisa: TDBGrid
-    Top = 81
+    Top = 97
     Width = 808
-    Height = 489
+    Height = 473
   end
   inherited GroupBox: TGroupBox
     Width = 808
-    Height = 81
+    Height = 97
     ExplicitWidth = 808
-    ExplicitHeight = 81
+    ExplicitHeight = 97
+    object Label1: TLabel [0]
+      Left = 359
+      Top = 51
+      Width = 43
+      Height = 13
+      Caption = 'Dt. Inicio'
+    end
+    object Label2: TLabel [1]
+      Left = 497
+      Top = 51
+      Width = 36
+      Height = 13
+      Caption = 'DT. Fim'
+    end
     inherited RadioFiltro: TRadioGroup
       Width = 337
       Height = 53
@@ -43,6 +58,26 @@ inherited Form_PesquisaPessoa: TForm_PesquisaPessoa
       Left = 667
       ExplicitLeft = 667
     end
+    object Edit_DtInicio: TMaskEdit
+      Left = 359
+      Top = 70
+      Width = 120
+      Height = 21
+      EditMask = '99.99.9999;1;_'
+      MaxLength = 10
+      TabOrder = 4
+      Text = '  .  .    '
+    end
+    object Edit_DtFim: TMaskEdit
+      Left = 497
+      Top = 70
+      Width = 120
+      Height = 21
+      EditMask = '99.99.9999;1;_'
+      MaxLength = 10
+      TabOrder = 5
+      Text = '  .  .    '
+    end
   end
   inherited Panel1: TPanel
     Width = 808
@@ -61,21 +96,30 @@ inherited Form_PesquisaPessoa: TForm_PesquisaPessoa
       'order by p.nm_pessoa')
     Left = 688
     object QueryPesquisaCD_PESSOA: TIntegerField
+      DisplayLabel = 'Codigo'
       FieldName = 'CD_PESSOA'
       Origin = '"TB_PESSOA"."CD_PESSOA"'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
       Required = True
     end
     object QueryPesquisaNM_PESSOA: TIBStringField
+      DisplayLabel = 'Nome'
       FieldName = 'NM_PESSOA'
       Origin = '"TB_PESSOA"."NM_PESSOA"'
       Required = True
       Size = 50
     end
     object QueryPesquisaNR_CPF: TIBStringField
+      DisplayLabel = 'CPF'
       FieldName = 'NR_CPF'
       Origin = '"TB_PESSOA"."NR_CPF"'
       Size = 11
+    end
+    object QueryPesquisaNR_CNPJ: TIBStringField
+      DisplayLabel = 'CNPJ'
+      FieldName = 'NR_CNPJ'
+      Origin = '"TB_PESSOA"."NR_CNPJ"'
+      Size = 14
     end
     object QueryPesquisaFG_FISC_JURID: TIBStringField
       FieldName = 'FG_FISC_JURID'
@@ -84,19 +128,8 @@ inherited Form_PesquisaPessoa: TForm_PesquisaPessoa
       FixedChar = True
       Size = 1
     end
-    object QueryPesquisaNR_CNPJ: TIBStringField
-      FieldName = 'NR_CNPJ'
-      Origin = '"TB_PESSOA"."NR_CNPJ"'
-      Size = 14
-    end
-    object QueryPesquisaFG_FUNC: TIBStringField
-      FieldName = 'FG_FUNC'
-      Origin = '"TB_PESSOA"."FG_FUNC"'
-      Required = True
-      FixedChar = True
-      Size = 1
-    end
     object QueryPesquisaFG_SEXO: TIBStringField
+      DisplayLabel = 'Sexo'
       FieldName = 'FG_SEXO'
       Origin = '"TB_PESSOA"."FG_SEXO"'
       Required = True
@@ -104,31 +137,44 @@ inherited Form_PesquisaPessoa: TForm_PesquisaPessoa
       Size = 1
     end
     object QueryPesquisaDT_NASCIMENTO: TDateField
+      DisplayLabel = 'Data Nascimento'
       FieldName = 'DT_NASCIMENTO'
       Origin = '"TB_PESSOA"."DT_NASCIMENTO"'
       Required = True
     end
     object QueryPesquisaNR_TELEFONE: TIBStringField
+      DisplayLabel = 'T. Residencial'
       FieldName = 'NR_TELEFONE'
       Origin = '"TB_PESSOA"."NR_TELEFONE"'
-      Size = 13
+      Size = 8
     end
     object QueryPesquisaNR_CELULAR: TIBStringField
+      DisplayLabel = 'Celular'
       FieldName = 'NR_CELULAR'
       Origin = '"TB_PESSOA"."NR_CELULAR"'
-      Size = 14
+      Size = 11
     end
     object QueryPesquisaDS_EMAIL: TIBStringField
+      DisplayLabel = 'Email'
       FieldName = 'DS_EMAIL'
       Origin = '"TB_PESSOA"."DS_EMAIL"'
       Size = 50
     end
     object QueryPesquisaCD_CIDADE: TIntegerField
+      DisplayLabel = 'Cidade'
       FieldName = 'CD_CIDADE'
       Origin = '"TB_PESSOA"."CD_CIDADE"'
+    end
+    object QueryPesquisaFG_FUNC: TIBStringField
+      DisplayLabel = 'Funcionario'
+      FieldName = 'FG_FUNC'
+      Origin = '"TB_PESSOA"."FG_FUNC"'
       Required = True
+      FixedChar = True
+      Size = 1
     end
     object QueryPesquisaNM_CIDADE: TIBStringField
+      DisplayLabel = 'Nome Cidade'
       FieldName = 'NM_CIDADE'
       Origin = '"TB_CIDADE"."NM_CIDADE"'
       Required = True

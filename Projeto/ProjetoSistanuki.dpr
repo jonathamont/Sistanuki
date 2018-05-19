@@ -19,7 +19,11 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
+<<<<<<< HEAD
   TStyleManager.TrySetStyle('Ruby Graphite');
+=======
+  TStyleManager.TrySetStyle('Charcoal Dark Slate');
+>>>>>>> parent of a50ed7f... FINAL CADASTRO PESSOA
   Application.CreateForm(TCONEXAO, CONEXAO);
   Application.CreateForm(TForm_PesquisaPessoa, Form_PesquisaPessoa);
   Application.Run;

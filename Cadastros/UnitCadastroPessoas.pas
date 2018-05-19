@@ -36,6 +36,7 @@ type
     RadioSexo: TDBRadioGroup;
     RadioFunc: TDBRadioGroup;
     Radio_Fis_Juri: TDBRadioGroup;
+    BitBtn1: TBitBtn;
     procedure FormCreate(Sender: TObject);
     procedure But_PesquisaClick(Sender: TObject);
     procedure Edit_CodCidadeExit(Sender: TObject);
@@ -134,11 +135,28 @@ begin
   begin
        Edit_CodigoPessoa.text:=IntToStr(CONEXAO.RetornaPK('CD_PESSOA','TB_PESSOA'));
        RadioSexo.ItemIndex:=0;
+<<<<<<< HEAD
        RadioFunc.ItemIndex:=0;
+=======
+       RadioFunc.ItemIndex:=1;
+>>>>>>> parent of a50ed7f... FINAL CADASTRO PESSOA
        Radio_Fis_Juri.ItemIndex:=0;
   end;
   inherited;
 
+<<<<<<< HEAD
+=======
+
+
+end;
+
+procedure TForm_CadastroPessoa.Radio_Fis_JuriExit(Sender: TObject);
+begin
+  inherited;
+  //case Radio_Fis_Juri.ItemIndex of
+  //0:DataSourceCadastro.DataSet.FieldByName('NR_CPF_CNPJ').EditMask:='000.000.00-00'
+  //end;
+>>>>>>> parent of a50ed7f... FINAL CADASTRO PESSOA
 end;
 
 end.
