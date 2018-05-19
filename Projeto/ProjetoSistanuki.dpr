@@ -20,7 +20,11 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TStyleManager.TrySetStyle('Ruby Graphite');
+=======
+  TStyleManager.TrySetStyle('Charcoal Dark Slate');
+>>>>>>> parent of a50ed7f... FINAL CADASTRO PESSOA
 =======
   TStyleManager.TrySetStyle('Charcoal Dark Slate');
 >>>>>>> parent of a50ed7f... FINAL CADASTRO PESSOA

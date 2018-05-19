@@ -47,6 +47,10 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        <Custom_Styles>&quot;Charcoal Dark Slate|VCLSTYLE|$(PUBLIC)\Documents\Embarcadero\Studio\17.0\Styles\CharcoalDarkSlate.vsf&quot;</Custom_Styles>
+>>>>>>> parent of a50ed7f... FINAL CADASTRO PESSOA
 =======
         <Custom_Styles>&quot;Charcoal Dark Slate|VCLSTYLE|$(PUBLIC)\Documents\Embarcadero\Studio\17.0\Styles\CharcoalDarkSlate.vsf&quot;</Custom_Styles>
 >>>>>>> parent of a50ed7f... FINAL CADASTRO PESSOA

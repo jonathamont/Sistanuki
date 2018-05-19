@@ -136,7 +136,11 @@ begin
        Edit_CodigoPessoa.text:=IntToStr(CONEXAO.RetornaPK('CD_PESSOA','TB_PESSOA'));
        RadioSexo.ItemIndex:=0;
 <<<<<<< HEAD
+<<<<<<< HEAD
        RadioFunc.ItemIndex:=0;
+=======
+       RadioFunc.ItemIndex:=1;
+>>>>>>> parent of a50ed7f... FINAL CADASTRO PESSOA
 =======
        RadioFunc.ItemIndex:=1;
 >>>>>>> parent of a50ed7f... FINAL CADASTRO PESSOA
@@ -156,6 +160,9 @@ begin
   //case Radio_Fis_Juri.ItemIndex of
   //0:DataSourceCadastro.DataSet.FieldByName('NR_CPF_CNPJ').EditMask:='000.000.00-00'
   //end;
+<<<<<<< HEAD
+>>>>>>> parent of a50ed7f... FINAL CADASTRO PESSOA
+=======
 >>>>>>> parent of a50ed7f... FINAL CADASTRO PESSOA
 end;
 
