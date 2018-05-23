@@ -1,6 +1,5 @@
 
 Projeto/Win32/Debug/ProjetoSistanuki.exe
-Projeto/Win32/*
 *.stat
 Projeto/Win32/Debug/UnitCadastroCidade.dcu
 Projeto/Win32/Debug/UnitCadastroMateria.dcu
@@ -20,6 +19,7 @@ Projeto/Win32/Debug/ProjetoSistanuki.exe
 *.stat
 *.stat
 Projeto/ProjetoSistanuki.stat
+<<<<<<< HEAD
 *.dcu
 *.dcu
 *.dcu
@@ -30,3 +30,7 @@ Projeto/ProjetoSistanuki.stat
 *.dcu
 *.dcu
 *.exe
+=======
+*.stat
+Projeto/Win32/Debug/ProjetoSistanuki.exe
+>>>>>>> d0f924dc40ff1658e97dca49f1a5345d5fc3b64e
