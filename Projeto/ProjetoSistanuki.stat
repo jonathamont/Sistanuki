@@ -3,9 +3,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-EditorSecs=13696
-DesignerSecs=6425
-InspectorSecs=1908
+EditorSecs=13766
+DesignerSecs=7081
+InspectorSecs=1955
 =======
 EditorSecs=13830
 DesignerSecs=6397
@@ -18,7 +18,7 @@ DesignerSecs=6181
 InspectorSecs=2093
 <<<<<<< HEAD
 CompileSecs=173712
-OtherSecs=4659
+OtherSecs=5254
 =======
 CompileSecs=173226
 OtherSecs=4702

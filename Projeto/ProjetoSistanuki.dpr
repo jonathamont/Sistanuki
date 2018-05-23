@@ -14,7 +14,10 @@ uses
   UnitPesquisaPessoa in '..\Pesquisa\UnitPesquisaPessoa.pas' {Form_PesquisaPessoa},
   UnitCadastroPessoas in '..\Cadastros\UnitCadastroPessoas.pas' {Form_CadastroPessoa},
   UnitPesquisaAulaExp in '..\Pesquisa\UnitPesquisaAulaExp.pas' {Form_PesquisaAulaExp},
-  UnitCadastroAulaExp in '..\Cadastros\UnitCadastroAulaExp.pas' {Form_CadastroAulaExp};
+  UnitCadastroAulaExp in '..\Cadastros\UnitCadastroAulaExp.pas' {Form_CadastroAulaExp},
+  UnitCadastroBaseMestreDetalhe in '..\Modelo\UnitCadastroBaseMestreDetalhe.pas' {Form_CadastroBaseMestreDetalhe},
+  UnitPesquisaCurso in '..\Pesquisa\UnitPesquisaCurso.pas' {Form_PesquisaCurso},
+  UnitCadastroCurso in '..\Cadastros\UnitCadastroCurso.pas' {Form_CadastroCurso};
 
 {$R *.res}
 
@@ -25,6 +28,9 @@ begin
   Application.CreateForm(TForm_CadastroAulaExp, Form_CadastroAulaExp);
   Application.CreateForm(TForm_PesquisaPessoa, Form_PesquisaPessoa);
   Application.CreateForm(TForm_PesquisaCidade, Form_PesquisaCidade);
+  Application.CreateForm(TForm_CadastroBaseMestreDetalhe, Form_CadastroBaseMestreDetalhe);
+  Application.CreateForm(TForm_PesquisaCurso, Form_PesquisaCurso);
+  Application.CreateForm(TForm_CadastroCurso, Form_CadastroCurso);
   Application.Run;
 end.
 
