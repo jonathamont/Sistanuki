@@ -13,6 +13,8 @@ type
     QueryPesquisaCD_CURSO: TIntegerField;
     QueryPesquisaNM_CURSO: TIBStringField;
     QueryPesquisaNR_HORAS: TTimeField;
+    procedure But_NovoClick(Sender: TObject);
+    procedure ButPesquisaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -25,5 +27,31 @@ var
 implementation
 
 {$R *.dfm}
+
+uses UnitCadastroCurso, UnitConexao;
+
+procedure TForm_PesquisaCurso.ButPesquisaClick(Sender: TObject);
+begin
+  inherited;
+   //
+end;
+
+procedure TForm_PesquisaCurso.But_NovoClick(Sender: TObject);
+begin
+  inherited;
+   try
+
+        QueryPesquisa.Append;
+        QueryPesquisaCD_CURSO.Value:=(CONEXAO.RetornaPK('CD_CURSO','TB_CURSO'));
+        Form_CadastroCurso:=TForm_CadastroCurso.Create(self);
+        Form_CadastroCurso.ShowModal;
+
+     finally
+        Form_CadastroCurso.Free;
+        QueryPesquisa.Close;
+        ButPesquisaClick(ButPesquisa);
+
+     end;
+end;
 
 end.

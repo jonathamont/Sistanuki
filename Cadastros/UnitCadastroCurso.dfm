@@ -18,7 +18,7 @@ inherited Form_CadastroCurso: TForm_CadastroCurso
     Width = 55
     Height = 13
     Caption = 'CD_CURSO'
-    FocusControl = DBEdit1
+    FocusControl = Edit_CodCurso
   end
   object Label2: TLabel [2]
     Left = 168
@@ -26,7 +26,7 @@ inherited Form_CadastroCurso: TForm_CadastroCurso
     Width = 56
     Height = 13
     Caption = 'NM_CURSO'
-    FocusControl = DBEdit2
+    FocusControl = Edit_NMCurso
   end
   object Label3: TLabel [3]
     Left = 16
@@ -34,7 +34,7 @@ inherited Form_CadastroCurso: TForm_CadastroCurso
     Width = 55
     Height = 13
     Caption = 'NR_HORAS'
-    FocusControl = DBEdit3
+    FocusControl = Edit_Horas
   end
   object Label4: TLabel [4]
     Left = 16
@@ -42,7 +42,7 @@ inherited Form_CadastroCurso: TForm_CadastroCurso
     Width = 65
     Height = 13
     Caption = 'CD_MATERIA'
-    FocusControl = DBEdit4
+    FocusControl = Edit_CodMateria
   end
   object Label5: TLabel [5]
     Left = 200
@@ -50,7 +50,7 @@ inherited Form_CadastroCurso: TForm_CadastroCurso
     Width = 66
     Height = 13
     Caption = 'NM_MATERIA'
-    FocusControl = DBEdit5
+    FocusControl = Edit_NmMateria
   end
   inherited GroupBox1: TGroupBox
     Left = 0
@@ -59,8 +59,8 @@ inherited Form_CadastroCurso: TForm_CadastroCurso
     Height = 42
     Align = alBottom
     ExplicitLeft = 0
-    ExplicitTop = 360
-    ExplicitWidth = 658
+    ExplicitTop = 522
+    ExplicitWidth = 537
     ExplicitHeight = 42
     inherited But_Salvar: TBitBtn
       Top = 11
@@ -77,14 +77,14 @@ inherited Form_CadastroCurso: TForm_CadastroCurso
     Top = 247
     Width = 537
     Height = 275
-    ExplicitTop = 288
-    ExplicitWidth = 658
+    ExplicitTop = 247
+    ExplicitWidth = 537
     ExplicitHeight = 275
     inherited GridItem: TDBGrid
       Width = 505
     end
   end
-  object DBEdit1: TDBEdit [8]
+  object Edit_CodCurso: TDBEdit [8]
     Left = 16
     Top = 32
     Width = 134
@@ -93,7 +93,7 @@ inherited Form_CadastroCurso: TForm_CadastroCurso
     DataSource = Form_PesquisaCurso.DataSourcePesquisa
     TabOrder = 2
   end
-  object DBEdit2: TDBEdit [9]
+  object Edit_NMCurso: TDBEdit [9]
     Left = 168
     Top = 32
     Width = 302
@@ -102,7 +102,7 @@ inherited Form_CadastroCurso: TForm_CadastroCurso
     DataSource = Form_PesquisaCurso.DataSourcePesquisa
     TabOrder = 3
   end
-  object DBEdit3: TDBEdit [10]
+  object Edit_Horas: TDBEdit [10]
     Left = 16
     Top = 82
     Width = 134
@@ -111,7 +111,7 @@ inherited Form_CadastroCurso: TForm_CadastroCurso
     DataSource = Form_PesquisaCurso.DataSourcePesquisa
     TabOrder = 4
   end
-  object DBEdit4: TDBEdit [11]
+  object Edit_CodMateria: TDBEdit [11]
     Left = 16
     Top = 187
     Width = 134
@@ -120,13 +120,14 @@ inherited Form_CadastroCurso: TForm_CadastroCurso
     DataSource = DataSourceItem
     TabOrder = 5
   end
-  object DBEdit5: TDBEdit [12]
+  object Edit_NmMateria: TDBEdit [12]
     Left = 200
-    Top = 187
+    Top = 190
     Width = 250
     Height = 21
     DataField = 'NM_MATERIA'
     DataSource = DataSourceItem
+    ReadOnly = True
     TabOrder = 6
   end
   object Panel1: TPanel [13]
