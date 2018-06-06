@@ -2,7 +2,6 @@ inherited Form_CadastroCurso: TForm_CadastroCurso
   Caption = 'Cadastro Curso'
   ClientHeight = 564
   ClientWidth = 537
-  ExplicitTop = -149
   ExplicitWidth = 553
   ExplicitHeight = 603
   PixelsPerInch = 96
@@ -46,8 +45,8 @@ inherited Form_CadastroCurso: TForm_CadastroCurso
     FocusControl = Edit_CodMateria
   end
   object Label5: TLabel [5]
-    Left = 192
-    Top = 168
+    Left = 200
+    Top = 171
     Width = 66
     Height = 13
     Caption = 'NM_MATERIA'
@@ -122,8 +121,8 @@ inherited Form_CadastroCurso: TForm_CadastroCurso
     TabOrder = 5
   end
   object Edit_NmMateria: TDBEdit [12]
-    Left = 192
-    Top = 187
+    Left = 200
+    Top = 190
     Width = 250
     Height = 21
     DataField = 'NM_MATERIA'

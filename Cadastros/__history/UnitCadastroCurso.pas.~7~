@@ -26,7 +26,6 @@ type
     Edit_NmMateria: TDBEdit;
     Panel1: TPanel;
     Panel2: TPanel;
-    procedure But_Item_NovoClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -41,16 +40,5 @@ implementation
 {$R *.dfm}
 
 uses UnitConexao, UnitPesquisaCurso;
-
-procedure TForm_CadastroCurso.But_Item_NovoClick(Sender: TObject);
-begin
-  DataSourceItem.DataSet.Open;
-
-  inherited;
-  QueryItemNM_MATERIA.Value:='teste'; //retirar isso
-  QueryItemCD_CURSO_MATERIA.Value:=CONEXAO.RetornaPK('CD_CURSO_MATERIA','TB_CURSO_MATERIA');
-  QueryItemCD_CURSO.Value:=StrToInt(Edit_CodCurso.Text);
-
-end;
 
 end.

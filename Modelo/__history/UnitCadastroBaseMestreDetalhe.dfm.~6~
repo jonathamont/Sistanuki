@@ -3,6 +3,7 @@ inherited Form_CadastroBaseMestreDetalhe: TForm_CadastroBaseMestreDetalhe
   ClientHeight = 726
   ClientWidth = 651
   ShowHint = True
+  ExplicitTop = -58
   ExplicitWidth = 667
   ExplicitHeight = 765
   PixelsPerInch = 96

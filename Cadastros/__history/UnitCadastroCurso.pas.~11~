@@ -45,11 +45,9 @@ uses UnitConexao, UnitPesquisaCurso;
 procedure TForm_CadastroCurso.But_Item_NovoClick(Sender: TObject);
 begin
   DataSourceItem.DataSet.Open;
-
   inherited;
-  QueryItemNM_MATERIA.Value:='teste'; //retirar isso
   QueryItemCD_CURSO_MATERIA.Value:=CONEXAO.RetornaPK('CD_CURSO_MATERIA','TB_CURSO_MATERIA');
-  QueryItemCD_CURSO.Value:=StrToInt(Edit_CodCurso.Text);
+  QueryItemCD_CURSO.Value:=DataSourceCadastro.DataSet.FieldByName('CD_CURSO').Value;
 
 end;
 
