@@ -5,10 +5,10 @@
     <Transaction>2018/05/23 12:49:02.000.958,C:\Sistanuki\Modelo\UnitCadastroBaseMestreDetalhe.pas=</Transaction>
     <Transaction>2018/05/23 12:49:21.000.850,=C:\Sistanuki\Modelo\UnitCadastroBaseMestreDetalhe.pas</Transaction>
     <Transaction>2018/05/23 12:54:19.000.788,=C:\Sistanuki\Projeto\Unit1.pas</Transaction>
-    <Transaction>2018/05/23 13:03:31.000.337,C:\Sistanuki\Projeto\Unit1.pas=C:\Sistanuki\Pesquisa\UnitPesquisaCurso.pas</Transaction>
-    <Transaction>2018/05/23 13:03:31.000.337,C:\Sistanuki\Projeto\Unit1.dfm=C:\Sistanuki\Pesquisa\UnitPesquisaCurso.dfm</Transaction>
+    <Transaction>2018/05/23 13:03:31.000.337,C:\Sistanuki\Pesquisa\UnitPesquisaCurso.pas=C:\Sistanuki\Projeto\Unit1.pas</Transaction>
+    <Transaction>2018/05/23 13:03:31.000.337,C:\Sistanuki\Pesquisa\UnitPesquisaCurso.dfm=C:\Sistanuki\Projeto\Unit1.dfm</Transaction>
     <Transaction>2018/05/23 13:03:52.000.078,=C:\Sistanuki\Projeto\Unit1.pas</Transaction>
-    <Transaction>2018/05/23 13:26:40.000.175,C:\Sistanuki\Projeto\Unit1.pas=C:\Sistanuki\Cadastros\UnitCadastroCurso.pas</Transaction>
-    <Transaction>2018/05/23 13:26:40.000.175,C:\Sistanuki\Projeto\Unit1.dfm=C:\Sistanuki\Cadastros\UnitCadastroCurso.dfm</Transaction>
+    <Transaction>2018/05/23 13:26:40.000.175,C:\Sistanuki\Cadastros\UnitCadastroCurso.pas=C:\Sistanuki\Projeto\Unit1.pas</Transaction>
+    <Transaction>2018/05/23 13:26:40.000.175,C:\Sistanuki\Cadastros\UnitCadastroCurso.dfm=C:\Sistanuki\Projeto\Unit1.dfm</Transaction>
   </Transactions>
 </BorlandProject>
