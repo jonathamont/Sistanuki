@@ -1,13 +1,16 @@
 inherited Form_PesquisaCurso: TForm_PesquisaCurso
   Caption = 'Pesquisa Curso'
-  ExplicitTop = -37
-  ExplicitWidth = 819
-  ExplicitHeight = 650
+  ExplicitTop = -213
   PixelsPerInch = 96
   TextHeight = 13
   inherited GroupBox: TGroupBox
     inherited ButPesquisa: TBitBtn
       OnClick = ButPesquisaClick
+    end
+  end
+  inherited Panel1: TPanel
+    inherited But_Alterar: TBitBtn
+      OnClick = But_AlterarClick
     end
   end
   inherited But_Novo: TBitBtn

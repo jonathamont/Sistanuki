@@ -3,9 +3,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-EditorSecs=14423
-DesignerSecs=7309
-InspectorSecs=2008
+EditorSecs=16306
+DesignerSecs=7537
+InspectorSecs=2018
 =======
 EditorSecs=13830
 DesignerSecs=6397
@@ -17,8 +17,8 @@ EditorSecs=15185
 DesignerSecs=6181
 InspectorSecs=2093
 <<<<<<< HEAD
-CompileSecs=210388
-OtherSecs=5494
+CompileSecs=317699
+OtherSecs=5671
 =======
 CompileSecs=173226
 OtherSecs=4702
@@ -34,7 +34,7 @@ StartTime=08/05/2018 23:55:21
 RealKeys=0
 EffectiveKeys=0
 <<<<<<< HEAD
-DebugSecs=9740
+DebugSecs=10695
 =======
 DebugSecs=9432
 >>>>>>> a1a99c244d23d07c1e6d9874519afbe0c6cf9934

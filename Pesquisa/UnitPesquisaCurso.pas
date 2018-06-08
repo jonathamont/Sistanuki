@@ -1,7 +1,8 @@
 unit UnitPesquisaCurso;
 
 interface
-
+// vERIFICAR A EXCLUSÃO PARA EXCLUIR DA TABELA FILHA TAMBÉM
+//
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, UnitPesquisaBase, Data.DB,
@@ -15,6 +16,8 @@ type
     QueryPesquisaNR_HORAS: TTimeField;
     procedure But_NovoClick(Sender: TObject);
     procedure ButPesquisaClick(Sender: TObject);
+    procedure But_AlterarClick(Sender: TObject);
+    procedure But_ExcluirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -34,6 +37,49 @@ procedure TForm_PesquisaCurso.ButPesquisaClick(Sender: TObject);
 begin
   inherited;
    //
+end;
+
+procedure TForm_PesquisaCurso.But_AlterarClick(Sender: TObject);
+begin
+  inherited;
+  inherited;
+   try
+        QueryPesquisa.Edit;
+        Form_CadastroCurso:=TForm_CadastroCurso.Create(self);
+        Form_CadastroCurso.ShowModal;
+
+     finally
+        Form_CadastroCurso.Free;
+     end;
+end;
+
+procedure TForm_PesquisaCurso.But_ExcluirClick(Sender: TObject);
+var
+  sql:String;
+begin
+
+  if Application.MessageBox('Deseja realmente excluir?','Aviso', MB_OK + MB_YESNO) = IDNO then
+        Begin
+          Exit;
+        End;
+     if not(CONEXAO.Transaction.InTransaction) then
+        Begin
+          CONEXAO.Transaction.StartTransaction;
+        End;
+
+      Begin
+        Try
+          QueryPesquisa.Delete;
+          CONEXAO.Transaction.Commit;
+        Except
+          CONEXAO.Transaction.Rollback;
+          ShowMessage('Erro ao Remover!');
+        End;
+      End;
+
+      QueryPesquisa.Open;
+
+
 end;
 
 procedure TForm_PesquisaCurso.But_NovoClick(Sender: TObject);

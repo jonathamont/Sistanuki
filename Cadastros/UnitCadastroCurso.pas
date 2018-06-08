@@ -27,6 +27,7 @@ type
     Panel1: TPanel;
     Panel2: TPanel;
     procedure But_Item_NovoClick(Sender: TObject);
+    procedure Edit_CodMateriaExit(Sender: TObject);
   private
     { Private declarations }
   public
@@ -44,12 +45,32 @@ uses UnitConexao, UnitPesquisaCurso;
 
 procedure TForm_CadastroCurso.But_Item_NovoClick(Sender: TObject);
 begin
-  DataSourceItem.DataSet.Open;
 
+  DataSourceItem.DataSet.Open;
   inherited;
-  QueryItemNM_MATERIA.Value:='teste'; //retirar isso
   QueryItemCD_CURSO_MATERIA.Value:=CONEXAO.RetornaPK('CD_CURSO_MATERIA','TB_CURSO_MATERIA');
   QueryItemCD_CURSO.Value:=StrToInt(Edit_CodCurso.Text);
+
+end;
+
+procedure TForm_CadastroCurso.Edit_CodMateriaExit(Sender: TObject);
+VAR
+  SQL:String;
+begin
+  inherited;
+  if Edit_CodMateria.Text='' then
+  begin
+    EXIT;
+  end;
+  SQL:=('SELECT NM_MATERIA FROM TB_MATERIA WHERE CD_MATERIA ='+Edit_CodMateria.Text);
+  CONEXAO.TrocaSQL(CONEXAO.Query,SQL);
+  if CONEXAO.Query.IsEmpty then
+    begin
+         Application.MessageBox('Codigo MATERIA não localizado','Aviso',MB_ICONWARNING+MB_OK);
+         Edit_CodMateria.SetFocus;
+         exit;
+    end;
+  QueryItemNM_MATERIA.Value:=CONEXAO.Query.FieldByName('NM_METERIA').AsString;
 
 end;
 

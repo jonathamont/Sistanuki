@@ -2,7 +2,6 @@ inherited Form_CadastroCurso: TForm_CadastroCurso
   Caption = 'Cadastro Curso'
   ClientHeight = 564
   ClientWidth = 537
-  ExplicitTop = -149
   ExplicitWidth = 553
   ExplicitHeight = 603
   PixelsPerInch = 96
@@ -120,6 +119,7 @@ inherited Form_CadastroCurso: TForm_CadastroCurso
     DataField = 'CD_MATERIA'
     DataSource = DataSourceItem
     TabOrder = 5
+    OnExit = Edit_CodMateriaExit
   end
   object Edit_NmMateria: TDBEdit [12]
     Left = 192
@@ -146,7 +146,8 @@ inherited Form_CadastroCurso: TForm_CadastroCurso
     TabOrder = 8
   end
   inherited DataSourceCadastro: TDataSource
-    Left = 176
+    DataSet = Form_PesquisaCurso.QueryPesquisa
+    Left = 184
     Top = 72
   end
   inherited QueryItem: TIBQuery
