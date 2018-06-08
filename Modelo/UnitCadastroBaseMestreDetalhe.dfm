@@ -13,52 +13,27 @@ inherited Form_CadastroBaseMestreDetalhe: TForm_CadastroBaseMestreDetalhe
     ExplicitLeft = 32
     ExplicitTop = 15
   end
-  inherited NavigatorCadastro: TDBNavigator
-    Top = 701
-    Width = 651
-    Hints.Strings = ()
-    ExplicitTop = 495
-    ExplicitWidth = 649
-  end
   inherited GroupBox1: TGroupBox
     Left = 562
-    Height = 420
-    ExplicitLeft = 560
-    ExplicitHeight = 216
-    inherited But_Novo: TBitBtn
-      Top = 12
-      ExplicitTop = 12
-    end
-    inherited But_Editar: TBitBtn
-      Top = 47
-      ExplicitTop = 47
-    end
+    Height = 445
+    ExplicitLeft = 562
+    ExplicitHeight = 445
     inherited But_Salvar: TBitBtn
       Top = 82
       ExplicitTop = 82
-    end
-    inherited But_Desfazer: TBitBtn
-      Top = 116
-      ExplicitTop = 116
-    end
-    inherited But_Excluir: TBitBtn
-      Top = 150
-      ExplicitTop = 150
     end
     inherited But_Sair: TBitBtn
       Top = 183
       ExplicitTop = 183
     end
   end
-  object GroupSeparacao: TGroupBox [3]
+  object GroupSeparacao: TGroupBox [2]
     Left = 0
-    Top = 420
+    Top = 445
     Width = 651
     Height = 281
     Align = alBottom
-    TabOrder = 2
-    ExplicitTop = 214
-    ExplicitWidth = 649
+    TabOrder = 1
     object But_Item_Novo: TSpeedButton
       Left = 24
       Top = 16
@@ -260,14 +235,6 @@ inherited Form_CadastroBaseMestreDetalhe: TForm_CadastroBaseMestreDetalhe
       TitleFont.Name = 'Tahoma'
       TitleFont.Style = []
     end
-  end
-  inherited QueryCadastro: TIBQuery
-    Left = 520
-    Top = 32
-  end
-  inherited UpdateCadastro: TIBUpdateSQL
-    Left = 520
-    Top = 80
   end
   inherited DataSourceCadastro: TDataSource
     Left = 520

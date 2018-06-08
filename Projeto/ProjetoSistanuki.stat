@@ -3,9 +3,15 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 EditorSecs=13696
 DesignerSecs=6433
 InspectorSecs=1908
+=======
+EditorSecs=16306
+DesignerSecs=7537
+InspectorSecs=2018
+>>>>>>> ef72819f4f829019f1183f3fb4e350c1be99797e
 =======
 EditorSecs=13830
 DesignerSecs=6397
@@ -17,8 +23,13 @@ EditorSecs=15185
 DesignerSecs=6181
 InspectorSecs=2093
 <<<<<<< HEAD
+<<<<<<< HEAD
 CompileSecs=175044
 OtherSecs=4664
+=======
+CompileSecs=317699
+OtherSecs=5671
+>>>>>>> ef72819f4f829019f1183f3fb4e350c1be99797e
 =======
 CompileSecs=173226
 OtherSecs=4702
@@ -34,7 +45,11 @@ StartTime=08/05/2018 23:55:21
 RealKeys=0
 EffectiveKeys=0
 <<<<<<< HEAD
+<<<<<<< HEAD
 DebugSecs=9356
+=======
+DebugSecs=10695
+>>>>>>> ef72819f4f829019f1183f3fb4e350c1be99797e
 =======
 DebugSecs=9432
 >>>>>>> a1a99c244d23d07c1e6d9874519afbe0c6cf9934
