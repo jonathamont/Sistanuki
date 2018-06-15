@@ -27,6 +27,7 @@ type
     Panel1: TPanel;
     Panel2: TPanel;
     procedure But_Item_NovoClick(Sender: TObject);
+    procedure But_PesquisaClick(Sender: TObject);
     procedure Edit_CodMateriaExit(Sender: TObject);
   private
     { Private declarations }
@@ -41,7 +42,7 @@ implementation
 
 {$R *.dfm}
 
-uses UnitConexao, UnitPesquisaCurso;
+uses UnitConexao, UnitPesquisaCurso, UnitPesquisaMateria;
 
 procedure TForm_CadastroCurso.But_Item_NovoClick(Sender: TObject);
 begin
@@ -53,16 +54,34 @@ begin
 
 end;
 
-procedure TForm_CadastroCurso.Edit_CodMateriaExit(Sender: TObject);
-VAR
-  SQL:String;
+procedure TForm_CadastroCurso.But_PesquisaClick(Sender: TObject);
 begin
   inherited;
-  if Edit_CodMateria.Text='' then
+  try
+    Form_PesquisaMateria:=TForm_PesquisaMateria.Create(self);
+    Form_PesquisaMateria.ShowModal
+  finally
+    if (Form_PesquisaMateria.ModalResult = mrok) then
+      begin
+           QueryItemCD_MATERIA.Value:=Form_PesquisaMateria.QueryPesquisa.FieldByName('CD_MATERIA').AsInteger;
+           QueryItemNM_MATERIA.Value:=Form_PesquisaMateria.QueryPesquisa.FieldByName('NM_MATERIA').AsString;
+      end;
+    Form_PesquisaMateria.QueryPesquisa.Close;
+    Form_PesquisaMateria.Free;
+
+
+  end;
+end;
+procedure TForm_CadastroCurso.Edit_CodMateriaExit(Sender: TObject);
+var
+  sql:String;
+begin
+  inherited;
+   if Edit_CodMateria.Text='' then
   begin
     EXIT;
   end;
-  SQL:=('SELECT NM_MATERIA FROM TB_MATERIA WHERE CD_MATERIA ='+Edit_CodMateria.Text);
+  SQL:=('SELECT NM_MATERIA FROM TB_MATERIA M WHERE CD_MATERIA='+Edit_CodMateria.Text);
   CONEXAO.TrocaSQL(CONEXAO.Query,SQL);
   if CONEXAO.Query.IsEmpty then
     begin
@@ -70,8 +89,7 @@ begin
          Edit_CodMateria.SetFocus;
          exit;
     end;
-  QueryItemNM_MATERIA.Value:=CONEXAO.Query.FieldByName('NM_METERIA').AsString;
-
+  QueryItemNM_MATERIA.Value:=CONEXAO.Query.FieldByName('NM_MATERIA').AsString;
 end;
 
 end.

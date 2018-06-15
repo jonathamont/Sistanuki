@@ -97,7 +97,8 @@ begin
       CONEXAO.Transaction.Rollback;
       Application.MessageBox('Erro ao gravar','Erro',MB_OK);
     end;
-  //QueryCadastro.Open;
+    DataSourceCadastro.DataSet.Open;
+    DataSourceItem.DataSet.Open;
 end;
 
 procedure TForm_CadastroBaseMestreDetalhe.DataSourceItemStateChange(

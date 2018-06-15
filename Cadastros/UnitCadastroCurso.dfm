@@ -9,6 +9,7 @@ inherited Form_CadastroCurso: TForm_CadastroCurso
   inherited But_Pesquisa: TSpeedButton
     Left = 163
     Top = 186
+    OnClick = But_PesquisaClick
     ExplicitLeft = 163
     ExplicitTop = 186
   end
