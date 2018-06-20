@@ -34,9 +34,25 @@ implementation
 uses UnitCadastroCurso, UnitConexao;
 
 procedure TForm_PesquisaCurso.ButPesquisaClick(Sender: TObject);
+var
+  sql:String;
 begin
   inherited;
-   //
+  sql:='select * FROM TB_CURSO C ';
+  case RadioFiltro.ItemIndex of
+    0:
+        begin
+             if (Trim(MaskEditPesquisa.Text) = '')  then
+               begin
+                    SQL:=SQL +(' ORDER BY CD_CURSO;')
+               end
+             else
+                    SQL:= (SQL +' WHERE CD_CURSO = '+MaskEditPesquisa.Text+';');
+        end;
+      1: SQL:= (SQL+' where C.NM_CURSO like '+QuotedStr('%'+MaskEditPesquisa.Text+'%')+' Order by NM_CURSO;');
+  END;
+
+  CONEXAO.TrocaSQL(QueryPesquisa,SQL);
 end;
 
 procedure TForm_PesquisaCurso.But_AlterarClick(Sender: TObject);
@@ -50,6 +66,8 @@ begin
 
      finally
         Form_CadastroCurso.Free;
+        ButPesquisaClick(ButPesquisa);
+
      end;
 end;
 

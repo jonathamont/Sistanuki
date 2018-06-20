@@ -2,6 +2,8 @@ inherited Form_CadastroCurso: TForm_CadastroCurso
   Caption = 'Cadastro Curso'
   ClientHeight = 564
   ClientWidth = 537
+  OnClose = FormClose
+  OnCreate = FormCreate
   ExplicitWidth = 553
   ExplicitHeight = 603
   PixelsPerInch = 96
@@ -9,6 +11,7 @@ inherited Form_CadastroCurso: TForm_CadastroCurso
   inherited But_Pesquisa: TSpeedButton
     Left = 163
     Top = 186
+    OnClick = But_PesquisaClick
     ExplicitLeft = 163
     ExplicitTop = 186
   end
@@ -145,12 +148,24 @@ inherited Form_CadastroCurso: TForm_CadastroCurso
     Height = 13
     TabOrder = 8
   end
+  object But_atualiza: TBitBtn [15]
+    Left = 454
+    Top = 59
+    Width = 75
+    Height = 25
+    Caption = 'But_atualiza'
+    Enabled = False
+    TabOrder = 9
+    Visible = False
+    OnClick = But_atualizaClick
+  end
   inherited DataSourceCadastro: TDataSource
     DataSet = Form_PesquisaCurso.QueryPesquisa
     Left = 184
     Top = 72
   end
   inherited QueryItem: TIBQuery
+    Active = True
     SQL.Strings = (
       'select CM.*, M.NM_MATERIA  from TB_CURSO_MATERIA CM'
       'INNER JOIN TB_CURSO C ON (C.CD_CURSO = CM.CD_CURSO)'
