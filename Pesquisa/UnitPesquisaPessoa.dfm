@@ -1,6 +1,7 @@
 inherited Form_PesquisaPessoa: TForm_PesquisaPessoa
   Caption = 'Pesquisa Pessoa'
   ClientWidth = 808
+  ExplicitTop = -138
   ExplicitWidth = 824
   PixelsPerInch = 96
   TextHeight = 13
