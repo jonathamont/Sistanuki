@@ -40,3 +40,17 @@ Projeto/Win32/Debug/ProjetoSistanuki.exe
 *.exe
 *.exe
 >>>>>>> ef72819f4f829019f1183f3fb4e350c1be99797e
+<<<<<<< HEAD
+=======
+Projeto/Win32/Debug/ProjetoSistanuki.exe
+Projeto/Win32/Debug/UnitCadastroCidade.dcu
+Projeto/Win32/Debug/UnitCadastroMateria.dcu
+Projeto/Win32/Debug/UnitCadastroPadrão.dcu
+Projeto/Win32/Debug/UnitCadastroPessoas.dcu
+Projeto/Win32/Debug/UnitConexao.dcu
+Projeto/Win32/Debug/UnitPesquisaAulaExp.dcu
+Projeto/Win32/Debug/UnitPesquisaBase.dcu
+Projeto/Win32/Debug/UnitPesquisaCidade.dcu
+Projeto/Win32/Debug/UnitPesquisaMateria.dcu
+Projeto/Win32/Debug/UnitPesquisaPessoa.dcu
+>>>>>>> c0a041099a790fa199ebc9fcf67fa74b10d11f38

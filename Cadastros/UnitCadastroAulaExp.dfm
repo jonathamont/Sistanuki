@@ -1,8 +1,13 @@
 inherited Form_CadastroAulaExp: TForm_CadastroAulaExp
   Caption = 'Cadastro aulas experimentais'
   ClientHeight = 464
+<<<<<<< HEAD
   ExplicitWidth = 535
   ExplicitHeight = 503
+=======
+  OnCreate = FormCreate
+  ExplicitHeight = 502
+>>>>>>> c0a041099a790fa199ebc9fcf67fa74b10d11f38
   PixelsPerInch = 96
   TextHeight = 13
   inherited But_Pesquisa: TSpeedButton

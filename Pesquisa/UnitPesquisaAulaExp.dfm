@@ -2,6 +2,25 @@ inherited Form_PesquisaAulaExp: TForm_PesquisaAulaExp
   Caption = 'Pesquisa de Aulas Esperimentais'
   PixelsPerInch = 96
   TextHeight = 13
+<<<<<<< HEAD
+=======
+  inherited GroupBox: TGroupBox
+    inherited RadioFiltro: TRadioGroup
+      ItemIndex = 0
+    end
+    inherited ButPesquisa: TBitBtn
+      OnClick = ButPesquisaClick
+    end
+  end
+  inherited Panel1: TPanel
+    inherited But_Alterar: TBitBtn
+      OnClick = But_AlterarClick
+    end
+  end
+  inherited But_Novo: TBitBtn
+    OnClick = But_NovoClick
+  end
+>>>>>>> c0a041099a790fa199ebc9fcf67fa74b10d11f38
   inherited QueryPesquisa: TIBQuery
     SQL.Strings = (
       'select ae.*, p.nm_pessoa, c.nm_curso from tb_aula_exp ae'
