@@ -99,7 +99,7 @@ begin
     end;
 
     DataSourceCadastro.DataSet.Open;
-
+    DataSourceCadastro.DataSet.
 end;
 
 procedure TForm_CadastroBaseMestreDetalhe.DataSourceItemStateChange(

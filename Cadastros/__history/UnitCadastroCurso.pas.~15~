@@ -26,24 +26,19 @@ type
     Edit_NmMateria: TDBEdit;
     Panel1: TPanel;
     Panel2: TPanel;
-    But_atualiza: TBitBtn;
     procedure But_Item_NovoClick(Sender: TObject);
     procedure But_PesquisaClick(Sender: TObject);
     procedure Edit_CodMateriaExit(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure But_atualizaClick(Sender: TObject);
-    procedure But_Item_SaveClick(Sender: TObject);
   private
     { Private declarations }
   public
-
+    { Public declarations }
   end;
 
 var
   Form_CadastroCurso: TForm_CadastroCurso;
-
 
 implementation
 
@@ -51,35 +46,13 @@ implementation
 
 uses UnitConexao, UnitPesquisaCurso, UnitPesquisaMateria;
 
-
-procedure TForm_CadastroCurso.But_atualizaClick(Sender: TObject);
-var
-sql:String;
-begin
-  inherited;
-  sql:='select c.*,m.nm_materia from tb_curso_materia c  inner join tb_materia m on(m.cd_materia = c.cd_materia ) where cd_curso =' + IntToStr( DataSourceCadastro.DataSet.FieldByName('CD_CURSO').Value);
-  CONEXAO.TrocaSQL(QueryItem,SQL);
-end;
-
 procedure TForm_CadastroCurso.But_Item_NovoClick(Sender: TObject);
 begin
 
   DataSourceItem.DataSet.Open;
   inherited;
   QueryItemCD_CURSO_MATERIA.Value:=CONEXAO.RetornaPK('CD_CURSO_MATERIA','TB_CURSO_MATERIA');
-  QueryItemCD_CURSO.Value:=StrToInt(DataSourceCadastro.DataSet.FieldByName('CD_CURSO').Value);
-
-end;
-
-procedure TForm_CadastroCurso.But_Item_SaveClick(Sender: TObject);
-var
-  chave:Integer;
-begin
-  chave:=StrToInt(Edit_CodCurso.Text);
-  inherited;
-  DataSourceCadastro.DataSet.Locate('CD_CURSO',chave,[]);
-  QueryItem.Open;
-  //But_atualizaClick(But_atualiza);
+  QueryItemCD_CURSO.Value:=StrToInt(Edit_CodCurso.Text);
 
 end;
 
@@ -131,12 +104,9 @@ end;
 procedure TForm_CadastroCurso.FormCreate(Sender: TObject);
 begin
   inherited;
-  But_atualizaClick(But_atualiza);
-  //QueryItem.ParamByName('CURSO').AsInteger:=DataSourceCadastro.DataSet.FieldByName('CD_CURSO').AsInteger;
+
+  QueryItem.ParamByName('CURSO').AsInteger:=DataSourceCadastro.DataSet.FieldByName('CD_CURSO').AsInteger;
   QueryItem.Open;
 end;
-
-
-
 
 end.

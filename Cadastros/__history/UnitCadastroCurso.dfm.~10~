@@ -148,17 +148,6 @@ inherited Form_CadastroCurso: TForm_CadastroCurso
     Height = 13
     TabOrder = 8
   end
-  object But_atualiza: TBitBtn [15]
-    Left = 454
-    Top = 59
-    Width = 75
-    Height = 25
-    Caption = 'But_atualiza'
-    Enabled = False
-    TabOrder = 9
-    Visible = False
-    OnClick = But_atualizaClick
-  end
   inherited DataSourceCadastro: TDataSource
     DataSet = Form_PesquisaCurso.QueryPesquisa
     Left = 184

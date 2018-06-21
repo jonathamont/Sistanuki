@@ -89,7 +89,11 @@ begin
   CONEXAO.TrocaSQL(CONEXAO.Query,sql);
   if CONEXAO.Query.IsEmpty then
     begin
+<<<<<<< HEAD
       Application.MessageBox('Código do CURSO não localizado','Aviso',MB_ICONWARNING+MB_OK);
+=======
+      Application.MessageBox('Código do CURSO não localisado','Aviso',MB_ICONWARNING+MB_OK);
+>>>>>>> bf660dca3138529f366e4fd4076bb9c0be895ceb
       Edit_CodCurso.SetFocus;
       Exit;
     end;

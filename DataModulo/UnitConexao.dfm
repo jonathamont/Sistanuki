@@ -15,6 +15,7 @@ object CONEXAO: TCONEXAO
     Top = 88
   end
   object Transaction: TIBTransaction
+    Active = True
     DefaultDatabase = DB
     Left = 160
     Top = 88

@@ -59,6 +59,7 @@ begin
   inherited;
   sql:='select c.*,m.nm_materia from tb_curso_materia c  inner join tb_materia m on(m.cd_materia = c.cd_materia ) where cd_curso =' + IntToStr( DataSourceCadastro.DataSet.FieldByName('CD_CURSO').Value);
   CONEXAO.TrocaSQL(QueryItem,SQL);
+  QueryItem.Open;
 end;
 
 procedure TForm_CadastroCurso.But_Item_NovoClick(Sender: TObject);
@@ -67,19 +68,14 @@ begin
   DataSourceItem.DataSet.Open;
   inherited;
   QueryItemCD_CURSO_MATERIA.Value:=CONEXAO.RetornaPK('CD_CURSO_MATERIA','TB_CURSO_MATERIA');
-  QueryItemCD_CURSO.Value:=StrToInt(DataSourceCadastro.DataSet.FieldByName('CD_CURSO').Value);
+  QueryItemCD_CURSO.Value:=StrToInt(Edit_CodCurso.Text);
 
 end;
 
 procedure TForm_CadastroCurso.But_Item_SaveClick(Sender: TObject);
-var
-  chave:Integer;
 begin
-  chave:=StrToInt(Edit_CodCurso.Text);
   inherited;
-  DataSourceCadastro.DataSet.Locate('CD_CURSO',chave,[]);
-  QueryItem.Open;
-  //But_atualizaClick(But_atualiza);
+  But_atualizaClick(But_atualiza);
 
 end;
 

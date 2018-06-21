@@ -4,9 +4,7 @@ object CONEXAO: TCONEXAO
   Width = 261
   object DB: TIBDatabase
     Connected = True
-    DatabaseName = 
-      'C:\Users\Pichau\Documents\Projeto Sistema Livraria\Banco\BANCOLI' +
-      'VRARIA.FDB'
+    DatabaseName = 'C:\SisTanuki\Banco\BANCO_TANUKI.FDB'
     Params.Strings = (
       'user_name=SYSDBA'
       'password=masterkey')
@@ -17,7 +15,6 @@ object CONEXAO: TCONEXAO
     Top = 88
   end
   object Transaction: TIBTransaction
-    Active = True
     DefaultDatabase = DB
     Left = 160
     Top = 88

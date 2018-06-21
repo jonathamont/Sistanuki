@@ -1,14 +1,18 @@
 inherited Form_CadastroAulaExp: TForm_CadastroAulaExp
   Caption = 'Cadastro aulas experimentais'
   ClientHeight = 464
+<<<<<<< HEAD
+  ExplicitWidth = 535
+  ExplicitHeight = 503
+=======
   OnCreate = FormCreate
   ExplicitHeight = 502
+>>>>>>> c0a041099a790fa199ebc9fcf67fa74b10d11f38
   PixelsPerInch = 96
   TextHeight = 13
   inherited But_Pesquisa: TSpeedButton
     Left = 104
     Top = 90
-    OnClick = But_PesquisaClick
     ExplicitLeft = 104
     ExplicitTop = 90
   end
@@ -76,7 +80,7 @@ inherited Form_CadastroAulaExp: TForm_CadastroAulaExp
     Caption = 'Nome Curso'
     FocusControl = Edit_NomeCurso
   end
-  object Btn_PesquisaCurso: TSpeedButton [9]
+  object SpeedButton1: TSpeedButton [9]
     Left = 104
     Top = 149
     Width = 23
@@ -90,7 +94,6 @@ inherited Form_CadastroAulaExp: TForm_CadastroAulaExp
       05555508CECCCCC805555508CEECCCC8055555508C444C805555555088FFF880
       5555555508FFF80555555555508F805555555555508F805555555555508F8055
       55555555508F8055555555550888880555555555500000555555}
-    OnClick = Btn_PesquisaCursoClick
   end
   inherited GroupBox1: TGroupBox
     Left = 0
