@@ -27,12 +27,7 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TCONEXAO, CONEXAO);
-  Application.CreateForm(TForm_PesquisaCurso, Form_PesquisaCurso);
-  Application.CreateForm(TForm_PesquisaAulaExp, Form_PesquisaAulaExp);
-  Application.CreateForm(TForm_CadastroAulaExp, Form_CadastroAulaExp);
-  Application.CreateForm(TForm_CadastroPessoa, Form_CadastroPessoa);
   Application.CreateForm(TForm_PesquisaTurma, Form_PesquisaTurma);
-  Application.CreateForm(TForm_CadastroTurma, Form_CadastroTurma);
   Application.Run;
 end.
 
