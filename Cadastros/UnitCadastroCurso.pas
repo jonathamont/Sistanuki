@@ -72,9 +72,14 @@ begin
 end;
 
 procedure TForm_CadastroCurso.But_Item_SaveClick(Sender: TObject);
+var
+  chave:Integer;
 begin
+  chave:=StrToInt(Edit_CodCurso.Text);
   inherited;
-  But_atualizaClick(But_atualiza);
+  DataSourceCadastro.DataSet.Locate('CD_CURSO',chave,[]);
+  QueryItem.Open;
+  //But_atualizaClick(But_atualiza);
 
 end;
 
