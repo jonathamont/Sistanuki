@@ -1,0 +1,5 @@
+inherited Form_PesquisaBase1: TForm_PesquisaBase1
+  Caption = 'Pesquisa Aulas'
+  PixelsPerInch = 96
+  TextHeight = 13
+end

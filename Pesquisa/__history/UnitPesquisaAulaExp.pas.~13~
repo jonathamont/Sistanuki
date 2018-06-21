@@ -1,0 +1,170 @@
+unit UnitPesquisaAulaExp;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, UnitPesquisaBase, Data.DB,
+  IBX.IBCustomDataSet, IBX.IBUpdateSQL, IBX.IBQuery, Vcl.ExtCtrls, Vcl.StdCtrls,
+  Vcl.Buttons, Vcl.Mask, Vcl.Grids, Vcl.DBGrids;
+
+type
+  TForm_PesquisaAulaExp = class(TForm_PesquisaBase)
+    QueryPesquisaCD_AULA_EXP: TIntegerField;
+    QueryPesquisaCD_PESSOA: TIntegerField;
+    QueryPesquisaDT_CADASTRO: TDateField;
+    QueryPesquisaDT_AULA: TDateField;
+    QueryPesquisaCD_CURSO: TIntegerField;
+    QueryPesquisaDS_INF: TIBStringField;
+    QueryPesquisaNM_PESSOA: TIBStringField;
+    QueryPesquisaNM_CURSO: TIBStringField;
+    procedure ButPesquisaClick(Sender: TObject);
+    procedure But_AlterarClick(Sender: TObject);
+    procedure But_NovoClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form_PesquisaAulaExp: TForm_PesquisaAulaExp;
+
+implementation
+
+{$R *.dfm}
+
+uses UnitCadastroAulaExp, UnitConexao;
+
+procedure TForm_PesquisaAulaExp.ButPesquisaClick(Sender: TObject);
+  var
+  SQL:string;
+begin
+  inherited;
+  sql:='select ae.*, p.nm_pessoa, c.nm_curso from tb_aula_exp ae'+
+       'inner join tb_pessoa p on (p.cd_pessoa = ae.cd_pessoa)'+
+       'inner join tb_curso c on (c.cd_curso = ae.cd_curso)';
+  case RadioFiltro.ItemIndex of
+    0:begin
+        if (Trim(MaskEditPesquisa.Text) ='') then
+          begin
+           SQL:= SQL + ('order by cd_aula_exp')
+          end
+       else
+
+            SQL:= (SQL +' where cd_aula_exp = '+MaskEditPesquisa.Text+';')
+
+       end;
+     1: SQL:= (SQL+' where p.nm_pessoa like '+QuotedStr('%'+MaskEditPesquisa.Text+'%')+' Order by p.nm_pessoa;');
+
+  end;
+CONEXAO.TrocaSQL(QueryPesquisa,SQL);
+end;
+
+
+{
+var
+  SQL:String;
+begin
+  inherited;
+  sql:='SELECT P.*, C.NM_CIDADE FROM TB_PESSOA P INNER JOIN TB_CIDADE C ON(C.CD_CIDADE = P.CD_CIDADE) ';
+  case RadioFiltro.ItemIndex of
+      0:
+        begin
+             if (Trim(MaskEditPesquisa.Text) = '')  then
+               begin
+                    SQL:=SQL +(' ORDER BY CD_PESSOA;')
+               end
+             else
+                    SQL:= (SQL +' WHERE CD_PESSOA = '+MaskEditPesquisa.Text+';');
+        end;
+      1: SQL:= (SQL+' where NM_PESSOA like '+QuotedStr('%'+MaskEditPesquisa.Text+'%')+' Order by NM_PESSOA;');
+      2: SQL:= (SQL+' where NR_CPF like '+QuotedStr('%'+MaskEditPesquisa.Text+'%')+' Order by NR_CPF;');
+      3:
+        begin
+             if (Trim(MaskEditPesquisa.Text) = '')   then
+               begin
+                    SQL:=SQL +(' ORDER BY DT_NASCIMENTO;')
+               end
+             else
+                    SQL:= (SQL+' where extract(month from p.dt_nascimento) = '+QuotedStr(MaskEditPesquisa.Text)+' Order by DT_NASCIMENTO;');
+
+        end;
+      4: SQL:= (SQL+' where FG_FUNC like '+QuotedStr('%'+MaskEditPesquisa.Text+'%')+' Order by FG_FUNC;');
+      5: SQL:= (SQL+' where C.NM_CIDADE like '+QuotedStr('%'+MaskEditPesquisa.Text+'%')+' Order by C.NM_CIDADE;');
+
+  END;
+
+  CONEXAO.TrocaSQL(QueryPesquisa,SQL);
+}
+
+
+procedure TForm_PesquisaAulaExp.But_AlterarClick(Sender: TObject);
+begin
+  inherited;
+  try
+    QueryPesquisa.Edit;
+    Form_CadastroAulaExp := TForm_CadastroAulaExp.Create(Self);
+    Form_CadastroAulaExp.ShowModal
+  finally
+
+    Form_CadastroAulaExp.Free;
+
+  end;
+
+{
+procedure TForm_PesquisaPessoa.But_AlterarClick(Sender: TObject);
+begin
+  inherited;
+   try
+        QueryPesquisa.Edit;
+        Form_CadastroPessoa:=TForm_CadastroPessoa.Create(self);
+        Form_CadastroPessoa.ShowModal;
+
+     finally
+        QueryPesquisaNR_CPF_CNPJ.EditMask:='';
+        Form_CadastroPessoa.Free;
+     end;
+end;
+}
+
+
+end;
+
+procedure TForm_PesquisaAulaExp.But_NovoClick(Sender: TObject);
+begin
+  inherited;
+  try
+    QueryPesquisa.Append;
+    Form_CadastroAulaExp := TForm_CadastroAulaExp.Create(Self);
+    Form_CadastroAulaExp.ShowModal;
+  finally
+    Form_CadastroAulaExp.Free;
+    QueryPesquisa.Close;
+    ButPesquisaClick(ButPesquisa);
+
+  end;
+
+  {
+  procedure TForm_PesquisaPessoa.But_NovoClick(Sender: TObject);
+begin
+  inherited;
+      try
+
+        QueryPesquisa.Append;
+        Form_CadastroPessoa:=TForm_CadastroPessoa.Create(self);
+        Form_CadastroPessoa.ShowModal;
+
+     finally
+        Form_CadastroPessoa.Free;
+        QueryPesquisaNR_CPF_CNPJ.EditMask:='';
+        QueryPesquisa.Close;
+        ButPesquisaClick(ButPesquisa);
+
+     end;
+end;
+  }
+
+end;
+
+end.

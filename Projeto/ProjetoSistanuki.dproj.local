@@ -8,7 +8,17 @@
     <Transaction>2018/05/23 13:03:31.000.337,C:\Sistanuki\Pesquisa\UnitPesquisaCurso.pas=C:\Sistanuki\Projeto\Unit1.pas</Transaction>
     <Transaction>2018/05/23 13:03:31.000.337,C:\Sistanuki\Pesquisa\UnitPesquisaCurso.dfm=C:\Sistanuki\Projeto\Unit1.dfm</Transaction>
     <Transaction>2018/05/23 13:03:52.000.078,=C:\Sistanuki\Projeto\Unit1.pas</Transaction>
-    <Transaction>2018/05/23 13:26:40.000.175,C:\Sistanuki\Cadastros\UnitCadastroCurso.pas=C:\Sistanuki\Projeto\Unit1.pas</Transaction>
     <Transaction>2018/05/23 13:26:40.000.175,C:\Sistanuki\Cadastros\UnitCadastroCurso.dfm=C:\Sistanuki\Projeto\Unit1.dfm</Transaction>
+    <Transaction>2018/05/23 13:26:40.000.175,C:\Sistanuki\Cadastros\UnitCadastroCurso.pas=C:\Sistanuki\Projeto\Unit1.pas</Transaction>
+    <Transaction>2018/06/20 20:39:04.330,=C:\Sistanuki\Projeto\Unit1.pas</Transaction>
+    <Transaction>2018/06/20 20:41:01.237,C:\Sistanuki\Pesquisa\UnitPesquisaAula.pas=C:\Sistanuki\Projeto\Unit1.pas</Transaction>
+    <Transaction>2018/06/20 20:41:01.237,C:\Sistanuki\Pesquisa\UnitPesquisaAula.dfm=C:\Sistanuki\Projeto\Unit1.dfm</Transaction>
+    <Transaction>2018/06/20 20:42:34.447,=C:\Sistanuki\Projeto\Unit1.pas</Transaction>
+    <Transaction>2018/06/20 20:44:19.311,C:\Sistanuki\Cadastros\UnitCadastroAula.dfm=C:\Sistanuki\Projeto\Unit1.dfm</Transaction>
+    <Transaction>2018/06/20 20:44:19.311,C:\Sistanuki\Cadastros\UnitCadastroAula.pas=C:\Sistanuki\Projeto\Unit1.pas</Transaction>
+    <Transaction>2018/06/20 20:51:00.826,C:\Sistanuki\Pesquisa\UnitPesquisaTurma.pas=C:\Sistanuki\Pesquisa\UnitPesquisaAula.pas</Transaction>
+    <Transaction>2018/06/20 20:51:00.826,C:\Sistanuki\Pesquisa\UnitPesquisaTurma.dfm=C:\Sistanuki\Pesquisa\UnitPesquisaAula.dfm</Transaction>
+    <Transaction>2018/06/20 20:51:21.498,C:\Sistanuki\Cadastros\UnitCadastroTurma.dfm=C:\Sistanuki\Cadastros\UnitCadastroAula.dfm</Transaction>
+    <Transaction>2018/06/20 20:51:21.498,C:\Sistanuki\Cadastros\UnitCadastroTurma.pas=C:\Sistanuki\Cadastros\UnitCadastroAula.pas</Transaction>
   </Transactions>
 </BorlandProject>
