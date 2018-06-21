@@ -1,56 +1,6 @@
-
-Projeto/Win32/Debug/ProjetoSistanuki.exe
-*.stat
-Projeto/Win32/Debug/UnitCadastroCidade.dcu
-Projeto/Win32/Debug/UnitCadastroMateria.dcu
-Projeto/Win32/Debug/UnitCadastroPessoas.dcu
-Projeto/Win32/Debug/UnitPesquisaPessoa.dcu
-*.dproj
-*.exe
-*.stat
-*.exe
-Projeto/Win32/Debug/ProjetoSistanuki.exe
-*.dcu
-*.stat
-*.identcache
-*.dproj
-*.dpr
-*.FDB
-*.stat
-*.stat
-Projeto/ProjetoSistanuki.stat
-<<<<<<< HEAD
-Projeto/Win32/Debug/ProjetoSistanuki.exe
-=======
-<<<<<<< HEAD
-*.dcu
-*.dcu
-*.dcu
-*.dcu
-*.dcu
-*.dcu
-*.dcu
-*.dcu
-*.dcu
-*.exe
-=======
-*.stat
-Projeto/Win32/Debug/ProjetoSistanuki.exe
->>>>>>> d0f924dc40ff1658e97dca49f1a5345d5fc3b64e
-*.exe
-*.exe
->>>>>>> ef72819f4f829019f1183f3fb4e350c1be99797e
-<<<<<<< HEAD
-=======
-Projeto/Win32/Debug/ProjetoSistanuki.exe
-Projeto/Win32/Debug/UnitCadastroCidade.dcu
-Projeto/Win32/Debug/UnitCadastroMateria.dcu
-Projeto/Win32/Debug/UnitCadastroPadrão.dcu
-Projeto/Win32/Debug/UnitCadastroPessoas.dcu
-Projeto/Win32/Debug/UnitConexao.dcu
-Projeto/Win32/Debug/UnitPesquisaAulaExp.dcu
-Projeto/Win32/Debug/UnitPesquisaBase.dcu
-Projeto/Win32/Debug/UnitPesquisaCidade.dcu
-Projeto/Win32/Debug/UnitPesquisaMateria.dcu
-Projeto/Win32/Debug/UnitPesquisaPessoa.dcu
->>>>>>> c0a041099a790fa199ebc9fcf67fa74b10d11f38
+Projeto/Win32/
+Cadastros/__history/
+DataModulo/__history/
+Modelo/__history/
+Pesquisa/__history/
+Projeto/__history/
