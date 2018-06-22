@@ -179,7 +179,6 @@ end;
 procedure TForm_CadastroCurso.Label1Click(Sender: TObject);
 begin
   inherited;
-
 end;
 
 ///OPÇÃO PARA ATUALIZA GRID

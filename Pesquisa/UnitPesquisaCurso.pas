@@ -32,7 +32,12 @@ implementation
 {$R *.dfm}
 
 uses UnitCadastroCurso, UnitConexao;
-
+//
+///
+//
+//  FAZER BOTÕRES DE PESQUISA
+//
+//
 procedure TForm_PesquisaCurso.ButPesquisaClick(Sender: TObject);
 var
   sql:String;
@@ -57,7 +62,7 @@ end;
 
 procedure TForm_PesquisaCurso.But_AlterarClick(Sender: TObject);
 begin
-  inherited;
+
   inherited;
    try
         QueryPesquisa.Edit;

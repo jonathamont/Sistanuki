@@ -1,7 +1,30 @@
 inherited Form_PesquisaTurma: TForm_PesquisaTurma
   Caption = 'Pesquisa Turmas'
+  ExplicitWidth = 819
+  ExplicitHeight = 650
   PixelsPerInch = 96
   TextHeight = 13
+  inherited GroupBox: TGroupBox
+    inherited RadioFiltro: TRadioGroup
+      Items.Strings = (
+        'Codigo'
+        'Professor'
+        'Dia'
+        'Periodo'
+        'Curso')
+    end
+    inherited ButPesquisa: TBitBtn
+      OnClick = ButPesquisaClick
+    end
+  end
+  inherited Panel1: TPanel
+    inherited But_Alterar: TBitBtn
+      OnClick = But_AlterarClick
+    end
+  end
+  inherited But_Novo: TBitBtn
+    OnClick = But_NovoClick
+  end
   inherited QueryPesquisa: TIBQuery
     SQL.Strings = (
       'select T.*, P.NM_PESSOA, C.NM_CURSO from TB_TURMA T'

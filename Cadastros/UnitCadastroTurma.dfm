@@ -2,6 +2,8 @@ inherited Form_CadastroTurma: TForm_CadastroTurma
   Caption = 'Cadastro Turmas'
   ClientHeight = 567
   ClientWidth = 833
+  OnClose = FormClose
+  OnCreate = FormCreate
   ExplicitWidth = 849
   ExplicitHeight = 606
   PixelsPerInch = 96
@@ -9,6 +11,7 @@ inherited Form_CadastroTurma: TForm_CadastroTurma
   inherited But_Pesquisa: TSpeedButton
     Left = 308
     Top = 32
+    OnClick = But_PesquisaClick
     ExplicitLeft = 308
     ExplicitTop = 32
   end
@@ -18,7 +21,7 @@ inherited Form_CadastroTurma: TForm_CadastroTurma
     Width = 33
     Height = 13
     Caption = 'Codigo'
-    FocusControl = DBEdit1
+    FocusControl = Edit_CodTurma
   end
   object Label2: TLabel [2]
     Left = 184
@@ -26,7 +29,7 @@ inherited Form_CadastroTurma: TForm_CadastroTurma
     Width = 82
     Height = 13
     Caption = 'Codigo Professor'
-    FocusControl = DBEdit2
+    FocusControl = Edit_CodProf
   end
   object Label3: TLabel [3]
     Left = 366
@@ -34,7 +37,7 @@ inherited Form_CadastroTurma: TForm_CadastroTurma
     Width = 27
     Height = 13
     Caption = 'Nome'
-    FocusControl = DBEdit3
+    FocusControl = Edit_NMProf
   end
   object Label4: TLabel [4]
     Left = 24
@@ -56,7 +59,7 @@ inherited Form_CadastroTurma: TForm_CadastroTurma
     Width = 64
     Height = 13
     Caption = 'Codigo Curso'
-    FocusControl = DBEdit6
+    FocusControl = Edit_CodCurso
   end
   object Label7: TLabel [7]
     Left = 440
@@ -64,10 +67,10 @@ inherited Form_CadastroTurma: TForm_CadastroTurma
     Width = 28
     Height = 13
     Caption = 'Curso'
-    FocusControl = DBEdit7
+    FocusControl = Edit_NMCurso
   end
-  object SpeedButton1: TSpeedButton [8]
-    Left = 405
+  object But_PesquisaCurso: TSpeedButton [8]
+    Left = 411
     Top = 80
     Width = 23
     Height = 22
@@ -87,7 +90,7 @@ inherited Form_CadastroTurma: TForm_CadastroTurma
     Width = 54
     Height = 13
     Caption = 'CD_ALUNO'
-    FocusControl = DBEdit8
+    FocusControl = Edit_CodAluno
   end
   object Label9: TLabel [10]
     Left = 204
@@ -95,9 +98,9 @@ inherited Form_CadastroTurma: TForm_CadastroTurma
     Width = 60
     Height = 13
     Caption = 'NM_PESSOA'
-    FocusControl = DBEdit9
+    FocusControl = Edit_NMPessoa
   end
-  object SpeedButton2: TSpeedButton [11]
+  object But_PesquisaAluno: TSpeedButton [11]
     Left = 169
     Top = 183
     Width = 23
@@ -119,8 +122,8 @@ inherited Form_CadastroTurma: TForm_CadastroTurma
     Height = 38
     Align = alBottom
     ExplicitLeft = 0
-    ExplicitTop = 688
-    ExplicitWidth = 651
+    ExplicitTop = 529
+    ExplicitWidth = 833
     ExplicitHeight = 38
     inherited But_Salvar: TBitBtn
       Left = 16
@@ -138,11 +141,13 @@ inherited Form_CadastroTurma: TForm_CadastroTurma
   inherited GroupSeparacao: TGroupBox
     Top = 248
     Width = 833
+    ExplicitTop = 248
+    ExplicitWidth = 833
     inherited GridItem: TDBGrid
       Width = 793
     end
   end
-  object DBEdit1: TDBEdit [14]
+  object Edit_CodTurma: TDBEdit [14]
     Left = 24
     Top = 32
     Width = 134
@@ -151,7 +156,7 @@ inherited Form_CadastroTurma: TForm_CadastroTurma
     DataSource = Form_PesquisaTurma.DataSourcePesquisa
     TabOrder = 2
   end
-  object DBEdit2: TDBEdit [15]
+  object Edit_CodProf: TDBEdit [15]
     Left = 184
     Top = 32
     Width = 97
@@ -159,8 +164,9 @@ inherited Form_CadastroTurma: TForm_CadastroTurma
     DataField = 'CD_PROFESSOR'
     DataSource = Form_PesquisaTurma.DataSourcePesquisa
     TabOrder = 3
+    OnExit = Edit_CodProfExit
   end
-  object DBEdit3: TDBEdit [16]
+  object Edit_NMProf: TDBEdit [16]
     Left = 366
     Top = 32
     Width = 353
@@ -169,7 +175,7 @@ inherited Form_CadastroTurma: TForm_CadastroTurma
     DataSource = Form_PesquisaTurma.DataSourcePesquisa
     TabOrder = 4
   end
-  object DBEdit6: TDBEdit [17]
+  object Edit_CodCurso: TDBEdit [17]
     Left = 256
     Top = 80
     Width = 134
@@ -178,7 +184,7 @@ inherited Form_CadastroTurma: TForm_CadastroTurma
     DataSource = Form_PesquisaTurma.DataSourcePesquisa
     TabOrder = 5
   end
-  object DBEdit7: TDBEdit [18]
+  object Edit_NMCurso: TDBEdit [18]
     Left = 440
     Top = 80
     Width = 279
@@ -194,7 +200,7 @@ inherited Form_CadastroTurma: TForm_CadastroTurma
     Height = 25
     TabOrder = 7
   end
-  object DBEdit8: TDBEdit [20]
+  object Edit_CodAluno: TDBEdit [20]
     Left = 24
     Top = 184
     Width = 134
@@ -203,7 +209,7 @@ inherited Form_CadastroTurma: TForm_CadastroTurma
     DataSource = DataSourceItem
     TabOrder = 8
   end
-  object DBEdit9: TDBEdit [21]
+  object Edit_NMPessoa: TDBEdit [21]
     Left = 204
     Top = 184
     Width = 437
@@ -212,7 +218,7 @@ inherited Form_CadastroTurma: TForm_CadastroTurma
     DataSource = DataSourceItem
     TabOrder = 9
   end
-  object DBComboBox1: TDBComboBox [22]
+  object Combo_Dia: TDBComboBox [22]
     Left = 22
     Top = 80
     Width = 105
@@ -221,7 +227,7 @@ inherited Form_CadastroTurma: TForm_CadastroTurma
     DataSource = Form_PesquisaTurma.DataSourcePesquisa
     TabOrder = 10
   end
-  object DBComboBox2: TDBComboBox [23]
+  object Combo_Periodo: TDBComboBox [23]
     Left = 160
     Top = 80
     Width = 73
@@ -238,9 +244,16 @@ inherited Form_CadastroTurma: TForm_CadastroTurma
     SQL.Strings = (
       'SELECT T.*,P.NM_PESSOA  FROM  TB_TURMA_ALUNO T'
       'INNER JOIN TB_PESSOA P ON(P.CD_PESSOA = T.CD_ALUNO)'
+      'WHERE CD_TURMA = :TURMA'
       'ORDER BY T.CD_ALUNO ')
     Left = 520
     Top = 424
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'TURMA'
+        ParamType = ptUnknown
+      end>
     object QueryItemCD_TURMA_ALUNO: TIntegerField
       FieldName = 'CD_TURMA_ALUNO'
       Origin = '"TB_TURMA_ALUNO"."CD_TURMA_ALUNO"'
