@@ -13,7 +13,7 @@ type
   TForm_PesquisaCurso = class(TForm_PesquisaBase)
     QueryPesquisaCD_CURSO: TIntegerField;
     QueryPesquisaNM_CURSO: TIBStringField;
-    QueryPesquisaNR_HORAS: TTimeField;
+    QueryPesquisaNR_HORAS: TIBBCDField;
     procedure But_NovoClick(Sender: TObject);
     procedure ButPesquisaClick(Sender: TObject);
     procedure But_AlterarClick(Sender: TObject);
@@ -32,7 +32,12 @@ implementation
 {$R *.dfm}
 
 uses UnitCadastroCurso, UnitConexao;
-
+//
+///
+//
+//  FAZER BOTÕRES DE PESQUISA
+//
+//
 procedure TForm_PesquisaCurso.ButPesquisaClick(Sender: TObject);
 var
   sql:String;
@@ -57,7 +62,7 @@ end;
 
 procedure TForm_PesquisaCurso.But_AlterarClick(Sender: TObject);
 begin
-  inherited;
+
   inherited;
    try
         QueryPesquisa.Edit;
@@ -91,7 +96,7 @@ begin
           CONEXAO.Transaction.Commit;
         Except
           CONEXAO.Transaction.Rollback;
-          ShowMessage('Erro ao Remover!');
+          Application.MessageBox('Erro ao Excluir Item! Exclua todas as materias do cursos antes de excluir o mesmo!','Aviso')
         End;
       End;
 

@@ -1,8 +1,6 @@
 inherited Form_PesquisaCurso: TForm_PesquisaCurso
   Caption = 'Pesquisa Curso'
   ExplicitTop = -213
-  ExplicitWidth = 819
-  ExplicitHeight = 650
   PixelsPerInch = 96
   TextHeight = 13
   inherited GroupBox: TGroupBox
@@ -23,20 +21,25 @@ inherited Form_PesquisaCurso: TForm_PesquisaCurso
       'select * from TB_CURSO')
     Left = 688
     object QueryPesquisaCD_CURSO: TIntegerField
+      DisplayLabel = 'Codigo'
       FieldName = 'CD_CURSO'
       Origin = '"TB_CURSO"."CD_CURSO"'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
       Required = True
     end
     object QueryPesquisaNM_CURSO: TIBStringField
+      DisplayLabel = 'Curso'
       FieldName = 'NM_CURSO'
       Origin = '"TB_CURSO"."NM_CURSO"'
       Size = 50
     end
-    object QueryPesquisaNR_HORAS: TTimeField
+    object QueryPesquisaNR_HORAS: TIBBCDField
+      DisplayLabel = 'Numero De Horas'
       FieldName = 'NR_HORAS'
       Origin = '"TB_CURSO"."NR_HORAS"'
       Required = True
+      Precision = 9
+      Size = 2
     end
   end
   inherited UpdateCadastro: TIBUpdateSQL
