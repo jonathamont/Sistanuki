@@ -14,8 +14,6 @@ type
     Edit_CodCurso: TDBEdit;
     Label2: TLabel;
     Edit_NMCurso: TDBEdit;
-    Label3: TLabel;
-    Edit_Horas: TDBEdit;
     QueryItemCD_CURSO_MATERIA: TIntegerField;
     QueryItemCD_CURSO: TIntegerField;
     QueryItemCD_MATERIA: TIntegerField;
@@ -26,15 +24,18 @@ type
     Edit_NmMateria: TDBEdit;
     Panel1: TPanel;
     Panel2: TPanel;
-    But_atualiza: TBitBtn;
+    Label3: TLabel;
+    Edit_Horas: TDBEdit;
     procedure But_Item_NovoClick(Sender: TObject);
     procedure But_PesquisaClick(Sender: TObject);
     procedure Edit_CodMateriaExit(Sender: TObject);
     procedure FormCreate(Sender: TObject);
 
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure But_atualizaClick(Sender: TObject);
     procedure But_Item_SaveClick(Sender: TObject);
+    procedure But_Item_EditClick(Sender: TObject);
+    procedure But_Item_ExcluirClick(Sender: TObject);
+    procedure Label1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -52,18 +53,27 @@ implementation
 uses UnitConexao, UnitPesquisaCurso, UnitPesquisaMateria;
 
 
-procedure TForm_CadastroCurso.But_atualizaClick(Sender: TObject);
-var
-sql:String;
+procedure TForm_CadastroCurso.But_Item_EditClick(Sender: TObject);
 begin
   inherited;
-  sql:='select c.*,m.nm_materia from tb_curso_materia c  inner join tb_materia m on(m.cd_materia = c.cd_materia ) where cd_curso =' + IntToStr( DataSourceCadastro.DataSet.FieldByName('CD_CURSO').Value);
-  CONEXAO.TrocaSQL(QueryItem,SQL);
+  Edit_CodMateria.Enabled:=true;
+end;
+
+procedure TForm_CadastroCurso.But_Item_ExcluirClick(Sender: TObject);
+var
+    chave:Integer;
+begin
+  chave:=StrToInt(Edit_CodCurso.Text);
+  inherited;
+  DataSourceCadastro.DataSet.Locate('CD_CURSO',chave,[]);
+  QueryItem.Open;
+
+
 end;
 
 procedure TForm_CadastroCurso.But_Item_NovoClick(Sender: TObject);
 begin
-
+  Edit_CodMateria.Enabled:=true;
   DataSourceItem.DataSet.Open;
   inherited;
   QueryItemCD_CURSO_MATERIA.Value:=CONEXAO.RetornaPK('CD_CURSO_MATERIA','TB_CURSO_MATERIA');
@@ -73,13 +83,42 @@ end;
 
 procedure TForm_CadastroCurso.But_Item_SaveClick(Sender: TObject);
 var
-  chave:Integer;
+  chave,chaveitem,materia:Integer;
+  nome:String;
 begin
   chave:=StrToInt(Edit_CodCurso.Text);
+  chaveitem:=QueryItemCD_CURSO_MATERIA.Value;
+  materia:=QueryItemCD_MATERIA.Value;
+  nome:=QueryItemNM_MATERIA.value;
+  if DataSourceCadastro.DataSet.State = dsInsert then
+  begin
+        if not(CONEXAO.Transaction.InTransaction) then
+        Begin
+          CONEXAO.Transaction.StartTransaction;
+        End;
+
+         Try
+            DataSourceCadastro.DataSet.Post;
+            CONEXAO.Transaction.Commit;
+         Except
+            ShowMessage('Erro ao gravar!');
+            CONEXAO.Transaction.Rollback;
+         End;
+
+         DataSourceCadastro.DataSet.Open;
+         QueryItem.Open;
+         QueryItem.Append;
+         QueryItemCD_CURSO_MATERIA.Value:= chaveitem;
+         QueryItemCD_CURSO.Value:=chave;
+         QueryItemCD_MATERIA.Value:=materia;
+         QueryItemNM_MATERIA.Value:=nome;
+
+  end;
+
   inherited;
   DataSourceCadastro.DataSet.Locate('CD_CURSO',chave,[]);
   QueryItem.Open;
-  //But_atualizaClick(But_atualiza);
+  Edit_CodMateria.Enabled:=false;
 
 end;
 
@@ -131,12 +170,21 @@ end;
 procedure TForm_CadastroCurso.FormCreate(Sender: TObject);
 begin
   inherited;
-  But_atualizaClick(But_atualiza);
-  //QueryItem.ParamByName('CURSO').AsInteger:=DataSourceCadastro.DataSet.FieldByName('CD_CURSO').AsInteger;
+  QueryItem.close;
+  QueryItem.ParamByName('CURSO').AsInteger:=DataSourceCadastro.DataSet.FieldByName('CD_CURSO').Value;
   QueryItem.Open;
+
 end;
 
+procedure TForm_CadastroCurso.Label1Click(Sender: TObject);
+begin
+  inherited;
 
+end;
+
+///OPÇÃO PARA ATUALIZA GRID
+///  sql:='select c.*,m.nm_materia from tb_curso_materia c  inner join tb_materia m on(m.cd_materia = c.cd_materia ) where cd_curso =' + IntToStr( DataSourceCadastro.DataSet.FieldByName('CD_CURSO').Value);
+//  CONEXAO.TrocaSQL(QueryItem,SQL);
 
 
 end.

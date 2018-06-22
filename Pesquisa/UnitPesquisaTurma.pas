@@ -10,6 +10,13 @@ uses
 
 type
   TForm_PesquisaTurma = class(TForm_PesquisaBase)
+    QueryPesquisaCD_TURMA: TIntegerField;
+    QueryPesquisaCD_PROFESSOR: TIntegerField;
+    QueryPesquisaDS_DIA: TIBStringField;
+    QueryPesquisaDS_PERIODO: TIBStringField;
+    QueryPesquisaCD_CURSO: TIntegerField;
+    QueryPesquisaNM_PESSOA: TIBStringField;
+    QueryPesquisaNM_CURSO: TIBStringField;
   private
     { Private declarations }
   public
