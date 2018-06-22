@@ -86,7 +86,7 @@ var
 begin
   Chave:=StrToInt(Edit_CodTurma.Text);
   Chaveitem:=QueryItemCD_TURMA_ALUNO.Value;
-  Aluno:=QueryItemCD_ALUNO;
+  Aluno:=QueryItemCD_ALUNO.value;
   Nome:=QueryItemNM_PESSOA.value;
   if DataSourceCadastro.DataSet.State = dsInsert then
   begin
@@ -170,7 +170,7 @@ procedure TForm_CadastroTurma.FormCreate(Sender: TObject);
 begin
   inherited;
   QueryItem.close;
-  QueryItem.ParamByName('TURMA').AsInteger:=DataSourceCadastro.DataSet.FieldByName('CD_TURMA').Value;
+  //CONTINUAR AQUI QUE TEM ERRO QueryItem.ParamByName('TURMA').AsInteger:=DataSourceCadastro.DataSet.FieldByName('CD_TURMA').Value;
   QueryItem.Open;
 end;
 

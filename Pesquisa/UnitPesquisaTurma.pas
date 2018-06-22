@@ -43,7 +43,7 @@ var
   SQL:String;
 begin
   inherited;
-  ///CONTINUAR DAQUI
+
   sql:='SELECT T.*, P.NM_PESSOA, C.NM_CURSO FROM TB_TURMA T INNER JOIN TB_PESSOA P ON(T.CD_PROFESSOR = P.CD_CIDADE) INNER JOIN TB_CURSO C ON(C.CD_CURSO = T.CD_CURSO) ';
   case RadioFiltro.ItemIndex of
       0:
@@ -53,27 +53,17 @@ begin
                     SQL:=SQL +(' ORDER BY CD_TURMA;')
                end
              else
-                    SQL:= (SQL +' WHERE CD_PESSOA = '+MaskEditPesquisa.Text+';');
+                    SQL:= (SQL +' WHERE CD_TURMA = '+MaskEditPesquisa.Text+';');
         end;
-      1: SQL:= (SQL+' where NM_PESSOA like '+QuotedStr('%'+MaskEditPesquisa.Text+'%')+' Order by NM_PESSOA;');
-      2: SQL:= (SQL+' where NR_CPF like '+QuotedStr('%'+MaskEditPesquisa.Text+'%')+' Order by NR_CPF;');
-      3:
-        begin
-             if (Trim(MaskEditPesquisa.Text) = '')   then
-               begin
-                    SQL:=SQL +(' ORDER BY DT_NASCIMENTO;')
-               end
-             else
-                    SQL:= (SQL+' where extract(month from p.dt_nascimento) = '+QuotedStr(MaskEditPesquisa.Text)+' Order by DT_NASCIMENTO;');
-
-        end;
-      4: SQL:= (SQL+' where FG_FUNC like '+QuotedStr('%'+MaskEditPesquisa.Text+'%')+' Order by FG_FUNC;');
-      5: SQL:= (SQL+' where C.NM_CIDADE like '+QuotedStr('%'+MaskEditPesquisa.Text+'%')+' Order by C.NM_CIDADE;');
+      1: SQL:= (SQL+' where P.NM_PESSOA like '+QuotedStr('%'+MaskEditPesquisa.Text+'%')+' Order by P.NM_PESSOA;');
+      2: SQL:= (SQL+' where DS_DIA like '+QuotedStr('%'+MaskEditPesquisa.Text+'%')+' Order by DS_DIA;');
+      3: SQL:= (SQL+' where DS_PERIODO like '+QuotedStr('%'+MaskEditPesquisa.Text+'%')+' Order by DS_PERIODO;');
+      4: SQL:= (SQL+' where C.NM_CURSO like '+QuotedStr('%'+MaskEditPesquisa.Text+'%')+' Order by C.NM_CURSO;');
 
   END;
 
   CONEXAO.TrocaSQL(QueryPesquisa,SQL);
-end
+end;
 
 procedure TForm_PesquisaTurma.But_AlterarClick(Sender: TObject);
 begin
@@ -122,7 +112,7 @@ procedure TForm_PesquisaTurma.But_NovoClick(Sender: TObject);
 begin
   inherited;
    try
-
+        QueryPesquisa.Open;
         QueryPesquisa.Append;
         QueryPesquisaCD_TURMA.Value:=(CONEXAO.RetornaPK('CD_TURMA','TB_TURMA'));
         Form_CadastroTurma:=TForm_CadastroTurma.Create(self);

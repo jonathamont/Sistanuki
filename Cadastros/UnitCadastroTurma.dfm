@@ -225,6 +225,14 @@ inherited Form_CadastroTurma: TForm_CadastroTurma
     Height = 21
     DataField = 'DS_DIA'
     DataSource = Form_PesquisaTurma.DataSourcePesquisa
+    Items.Strings = (
+      'SEGUNDA'
+      'TER'#199'A'
+      'QUARTA'
+      'QUINTA'
+      'SEXTA'
+      'SABADO'
+      'DOMINGO')
     TabOrder = 10
   end
   object Combo_Periodo: TDBComboBox [23]
@@ -234,6 +242,10 @@ inherited Form_CadastroTurma: TForm_CadastroTurma
     Height = 21
     DataField = 'DS_PERIODO'
     DataSource = Form_PesquisaTurma.DataSourcePesquisa
+    Items.Strings = (
+      'MANH'#195
+      'TARDE'
+      'NOITE')
     TabOrder = 11
   end
   inherited DataSourceCadastro: TDataSource

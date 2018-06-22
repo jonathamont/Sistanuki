@@ -1,7 +1,5 @@
 inherited Form_PesquisaTurma: TForm_PesquisaTurma
   Caption = 'Pesquisa Turmas'
-  ExplicitWidth = 819
-  ExplicitHeight = 650
   PixelsPerInch = 96
   TextHeight = 13
   inherited GroupBox: TGroupBox

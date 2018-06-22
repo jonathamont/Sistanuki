@@ -36,6 +36,7 @@ type
     procedure But_Item_EditClick(Sender: TObject);
     procedure But_Item_ExcluirClick(Sender: TObject);
     procedure Label1Click(Sender: TObject);
+    procedure But_SalvarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -86,12 +87,23 @@ var
   chave,chaveitem,materia:Integer;
   nome:String;
 begin
+  if Trim(Edit_NMCurso.Text) = '' then
+        begin
+             Application.MessageBox('Nome é obrigatorio','Aviso');
+             exit;
+        end;
+        if Trim(Edit_Horas.Text) = '' then
+        begin
+             Application.MessageBox('Numero de horas é obrigatorio','Aviso');
+             exit;
+        end;
   chave:=StrToInt(Edit_CodCurso.Text);
   chaveitem:=QueryItemCD_CURSO_MATERIA.Value;
   materia:=QueryItemCD_MATERIA.Value;
   nome:=QueryItemNM_MATERIA.value;
   if DataSourceCadastro.DataSet.State = dsInsert then
   begin
+
         if not(CONEXAO.Transaction.InTransaction) then
         Begin
           CONEXAO.Transaction.StartTransaction;
@@ -140,6 +152,24 @@ begin
 
   end;
 end;
+procedure TForm_CadastroCurso.But_SalvarClick(Sender: TObject);
+begin
+  if Trim(Edit_NMCurso.Text) = '' then
+  begin
+       Application.MessageBox('Nome é obrigatorio','Aviso');
+       exit;
+  end;
+  if Trim(Edit_Horas.Text) = '' then
+  begin
+       Application.MessageBox('Numero de horas é obrigatorio','Aviso');
+       exit;
+  end;
+
+
+  inherited;
+
+end;
+
 procedure TForm_CadastroCurso.Edit_CodMateriaExit(Sender: TObject);
 var
   sql:String;
