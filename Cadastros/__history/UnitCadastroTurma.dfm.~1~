@@ -1,6 +1,0 @@
-inherited Form_CadastroAula: TForm_CadastroAula
-  Caption = 'Cadastro aulas'
-  ExplicitHeight = 764
-  PixelsPerInch = 96
-  TextHeight = 13
-end
