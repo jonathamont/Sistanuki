@@ -1,2 +1,55 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<BorlandProject/>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2018/06/26 12:52:49.000.803,=C:\Sistanuki\Projeto\Unit1.pas</Transaction>
+    <Transaction>2018/06/26 19:14:49.000.643,C:\Sistanuki\Projeto\Unit1.dfm=C:\Sistanuki\Pesquisa\UnitPesquisaAula.dfm</Transaction>
+    <Transaction>2018/06/26 19:14:49.000.629,C:\Sistanuki\Projeto\Unit1.pas=C:\Sistanuki\Pesquisa\UnitPesquisaAula.pas</Transaction>
+    <Transaction>2018/06/27 22:27:51.492,=C:\Sistanuki\Modelo\UnitCadastroBaseMestreDetalheAlt.pas</Transaction>
+    <Transaction>2018/06/27 22:28:08.430,C:\Sistanuki\Modelo\UnitCadastroBaseMestreDetalheAlt.pas=</Transaction>
+    <Transaction>2018/06/27 22:30:48.006,=C:\Sistanuki\Projeto\Unit1.pas</Transaction>
+    <Transaction>2018/06/27 22:35:48.441,C:\Sistanuki\Cadastros\UnitCadastroAula.pas=C:\Sistanuki\Projeto\Unit1.pas</Transaction>
+    <Transaction>2018/06/27 22:35:48.441,C:\Sistanuki\Cadastros\UnitCadastroAula.dfm=C:\Sistanuki\Projeto\Unit1.dfm</Transaction>
+  </Transactions>  <ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="C:\Sistanuki"/>
+    <File Path="..\Cadastros"/>
+    <File Path="..\Cadastros\UnitCadastroAulaExp.pas"/>
+    <File Path="..\Cadastros\UnitCadastroAulaExp.dfm"/>
+    <File Path="..\Cadastros\UnitCadastroCidade.pas"/>
+    <File Path="..\Cadastros\UnitCadastroCidade.dfm"/>
+    <File Path="..\Cadastros\UnitCadastroCurso.pas"/>
+    <File Path="..\Cadastros\UnitCadastroCurso.dfm"/>
+    <File Path="..\Cadastros\UnitCadastroMateria.pas"/>
+    <File Path="..\Cadastros\UnitCadastroMateria.dfm"/>
+    <File Path="..\Cadastros\UnitCadastroPessoas.pas"/>
+    <File Path="..\Cadastros\UnitCadastroPessoas.dfm"/>
+    <File Path="..\Cadastros\UnitCadastroTurma.pas"/>
+    <File Path="..\Cadastros\UnitCadastroTurma.dfm"/>
+    <File Path="..\Cadastros\UnitCadastroAula.pas"/>
+    <File Path="..\Cadastros\UnitCadastroAula.dfm"/>
+    <File Path="..\DataModulo"/>
+    <File Path="..\DataModulo\UnitConexao.pas"/>
+    <File Path="..\DataModulo\UnitConexao.dfm"/>
+    <File Path="..\Modelo"/>
+    <File Path="..\Modelo\UnitCadastroBaseMestreDetalhe.pas"/>
+    <File Path="..\Modelo\UnitCadastroBaseMestreDetalhe.dfm"/>
+    <File Path="..\Modelo\UnitCadastroPadrão.pas"/>
+    <File Path="..\Modelo\UnitCadastroPadrão.dfm"/>
+    <File Path="..\Modelo\UnitPesquisaBase.pas"/>
+    <File Path="..\Modelo\UnitPesquisaBase.dfm"/>
+    <File Path="..\Pesquisa"/>
+    <File Path="..\Pesquisa\UnitPesquisaAula.pas"/>
+    <File Path="..\Pesquisa\UnitPesquisaAula.dfm"/>
+    <File Path="..\Pesquisa\UnitPesquisaAulaExp.pas"/>
+    <File Path="..\Pesquisa\UnitPesquisaAulaExp.dfm"/>
+    <File Path="..\Pesquisa\UnitPesquisaCidade.pas"/>
+    <File Path="..\Pesquisa\UnitPesquisaCidade.dfm"/>
+    <File Path="..\Pesquisa\UnitPesquisaCurso.pas"/>
+    <File Path="..\Pesquisa\UnitPesquisaCurso.dfm"/>
+    <File Path="..\Pesquisa\UnitPesquisaMateria.pas"/>
+    <File Path="..\Pesquisa\UnitPesquisaMateria.dfm"/>
+    <File Path="..\Pesquisa\UnitPesquisaPessoa.pas"/>
+    <File Path="..\Pesquisa\UnitPesquisaPessoa.dfm"/>
+    <File Path="..\Pesquisa\UnitPesquisaTurma.pas"/>
+    <File Path="..\Pesquisa\UnitPesquisaTurma.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>

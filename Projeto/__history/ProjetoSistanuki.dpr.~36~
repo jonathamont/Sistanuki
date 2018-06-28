@@ -20,8 +20,7 @@ uses
   UnitCadastroCurso in '..\Cadastros\UnitCadastroCurso.pas' {Form_CadastroCurso},
   UnitPesquisaTurma in '..\Pesquisa\UnitPesquisaTurma.pas' {Form_PesquisaTurma},
   UnitCadastroTurma in '..\Cadastros\UnitCadastroTurma.pas' {Form_CadastroTurma},
-  UnitPesquisaAula in '..\Pesquisa\UnitPesquisaAula.pas' {Form_PesquisaAula},
-  UnitCadastroAula in '..\Cadastros\UnitCadastroAula.pas' {Form_CadastroAula};
+  UnitPesquisaAula in '..\Pesquisa\UnitPesquisaAula.pas' {Form_PesquisaBase1};
 
 {$R *.res}
 
@@ -29,8 +28,8 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TCONEXAO, CONEXAO);
-  Application.CreateForm(TForm_PesquisaAula, Form_PesquisaAula);
-  Application.CreateForm(TForm_CadastroAula, Form_CadastroAula);
+  Application.CreateForm(TForm_PesquisaTurma, Form_PesquisaTurma);
+  Application.CreateForm(TForm_PesquisaBase1, Form_PesquisaBase1);
   Application.Run;
 end.
 
