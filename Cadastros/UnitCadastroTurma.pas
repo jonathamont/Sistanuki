@@ -88,6 +88,7 @@ begin
   But_PesquisaAluno.Enabled:=True;
   DataSourceItem.DataSet.Open;
   inherited;
+  QueryItemPC_FREQ.Value:=100;
   QueryItemCD_TURMA_ALUNO.Value:=CONEXAO.RetornaPK('CD_TURMA_ALUNO','TB_TURMA_ALUNO');
   QueryItemCD_TURMA.Value:=StrToInt(DataSourceCadastro.DataSet.FieldByName('CD_TURMA').Value);
 
@@ -97,7 +98,7 @@ end;
 procedure TForm_CadastroTurma.But_Item_SaveClick(Sender: TObject);
 var
   Chave,chaveitem,Aluno:Integer;
-  Nome:String;
+  Nome, sql,sql2:String;
 begin
   if Trim(Edit_CodProf.Text) = '' then
   begin
@@ -140,6 +141,27 @@ begin
          QueryItemPC_FREQ.Value:=StrToFloat('100,00');
 
   end;
+  SQL:='select COUNT(T.cd_turma) AS CONTA FROM tb_turma_aluno T WHERE T.cd_turma = ' + IntToStr(Chave);
+  CONEXAO.TrocaSQL(CONEXAO.Query,SQL);
+  if StrToInt(CONEXAO.Query.FieldByName('CONTA').Value) >= 10 then
+   BEGIN
+      ShowMessage('Numero maximo de aluno atingido');
+      QueryItem.CancelUpdates;
+      DataSourceCadastro.DataSet.Locate('CD_TURMA',Chave,[]);
+
+      exit;
+    END;
+  SQL:='select cd_aluno AS CONTA FROM tb_turma_aluno T WHERE T.cd_turma = ' + IntToStr(Chave)+' and t.cd_aluno='+IntToStr(Aluno);
+  CONEXAO.TrocaSQL(CONEXAO.Query,SQL);
+  if not(CONEXAO.Query.IsEmpty) then
+   BEGIN
+      ShowMessage('Aluno ja Cadastrado');
+      QueryItem.CancelUpdates;
+      DataSourceCadastro.DataSet.Locate('CD_TURMA',Chave,[]);
+
+      exit;
+    END;
+
 
   inherited;
   DataSourceCadastro.DataSet.Locate('CD_TURMA',Chave,[]);
@@ -266,9 +288,9 @@ var
 begin
   inherited;
    if Edit_CodProf.Text='' then
-  begin
-    EXIT;
-  end;
+    begin
+      EXIT;
+    end;
   SQL:=('SELECT NM_PESSOA FROM TB_PESSOA P WHERE CD_PESSOA='+Edit_CodProf.Text);
   CONEXAO.TrocaSQL(CONEXAO.Query,SQL);
   if CONEXAO.Query.IsEmpty then

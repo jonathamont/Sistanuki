@@ -1,6 +1,6 @@
 inherited Form_PesquisaTurma: TForm_PesquisaTurma
   Caption = 'Pesquisa Turmas'
-  ExplicitTop = -213
+  ExplicitTop = -88
   ExplicitWidth = 819
   ExplicitHeight = 650
   PixelsPerInch = 96

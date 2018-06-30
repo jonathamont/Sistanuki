@@ -4,12 +4,13 @@
     <Transaction>2018/06/26 12:52:49.000.803,=C:\Sistanuki\Projeto\Unit1.pas</Transaction>
     <Transaction>2018/06/26 19:14:49.000.643,C:\Sistanuki\Projeto\Unit1.dfm=C:\Sistanuki\Pesquisa\UnitPesquisaAula.dfm</Transaction>
     <Transaction>2018/06/26 19:14:49.000.629,C:\Sistanuki\Projeto\Unit1.pas=C:\Sistanuki\Pesquisa\UnitPesquisaAula.pas</Transaction>
-    <Transaction>2018/06/27 22:27:51.492,=C:\Sistanuki\Modelo\UnitCadastroBaseMestreDetalheAlt.pas</Transaction>
-    <Transaction>2018/06/27 22:28:08.430,C:\Sistanuki\Modelo\UnitCadastroBaseMestreDetalheAlt.pas=</Transaction>
-    <Transaction>2018/06/27 22:30:48.006,=C:\Sistanuki\Projeto\Unit1.pas</Transaction>
-    <Transaction>2018/06/27 22:35:48.441,C:\Sistanuki\Cadastros\UnitCadastroAula.pas=C:\Sistanuki\Projeto\Unit1.pas</Transaction>
-    <Transaction>2018/06/27 22:35:48.441,C:\Sistanuki\Cadastros\UnitCadastroAula.dfm=C:\Sistanuki\Projeto\Unit1.dfm</Transaction>
-  </Transactions>  <ProjectSortOrder AutoSort="0" SortType="0">
+    <Transaction>2018/06/27 22:27:51.000.492,=C:\Sistanuki\Modelo\UnitCadastroBaseMestreDetalheAlt.pas</Transaction>
+    <Transaction>2018/06/27 22:28:08.000.430,C:\Sistanuki\Modelo\UnitCadastroBaseMestreDetalheAlt.pas=</Transaction>
+    <Transaction>2018/06/27 22:30:48.000.006,=C:\Sistanuki\Projeto\Unit1.pas</Transaction>
+    <Transaction>2018/06/27 22:35:48.000.441,C:\Sistanuki\Cadastros\UnitCadastroAula.pas=C:\Sistanuki\Projeto\Unit1.pas</Transaction>
+    <Transaction>2018/06/27 22:35:48.000.441,C:\Sistanuki\Cadastros\UnitCadastroAula.dfm=C:\Sistanuki\Projeto\Unit1.dfm</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="C:\Sistanuki"/>
     <File Path="..\Cadastros"/>
     <File Path="..\Cadastros\UnitCadastroAulaExp.pas"/>

@@ -20,7 +20,6 @@ type
     procedure But_NovoClick(Sender: TObject);
     procedure ButPesquisaClick(Sender: TObject);
     procedure But_AlterarClick(Sender: TObject);
-    procedure But_ExcluirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -76,16 +75,6 @@ begin
         ButPesquisaClick(ButPesquisa);
 
      end;
-end;
-
-procedure TForm_PesquisaTurma.But_ExcluirClick(Sender: TObject);
-var
-  sql:string;
-begin
-  inherited;
-
-
-
 end;
 
 procedure TForm_PesquisaTurma.But_NovoClick(Sender: TObject);

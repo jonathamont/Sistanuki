@@ -2,7 +2,9 @@ inherited Form_CadastroAulaExp: TForm_CadastroAulaExp
   Caption = 'Cadastro aulas experimentais'
   ClientHeight = 464
   OnCreate = FormCreate
-  ExplicitHeight = 502
+  ExplicitTop = -49
+  ExplicitWidth = 535
+  ExplicitHeight = 503
   PixelsPerInch = 96
   TextHeight = 13
   inherited But_Pesquisa: TSpeedButton
@@ -130,6 +132,7 @@ inherited Form_CadastroAulaExp: TForm_CadastroAulaExp
     DataField = 'CD_PESSOA'
     DataSource = DataSourceCadastro
     TabOrder = 2
+    OnExit = Edit_CodPessoaExit
   end
   object Edit_DataCadastro: TDBEdit [13]
     Left = 20

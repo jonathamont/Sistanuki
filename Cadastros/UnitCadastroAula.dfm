@@ -1,11 +1,10 @@
 inherited Form_CadastroAula: TForm_CadastroAula
   Caption = 'Cadastro Aula'
-  ClientHeight = 608
+  ClientHeight = 605
   ClientWidth = 816
-  ExplicitLeft = -2
-  ExplicitTop = -36
+  OnCreate = FormCreate
   ExplicitWidth = 832
-  ExplicitHeight = 647
+  ExplicitHeight = 644
   PixelsPerInch = 96
   TextHeight = 13
   inherited But_Pesquisa: TSpeedButton
@@ -72,39 +71,39 @@ inherited Form_CadastroAula: TForm_CadastroAula
   end
   object Label8: TLabel [8]
     Left = 24
-    Top = 160
-    Width = 54
+    Top = 176
+    Width = 33
     Height = 13
-    Caption = 'CD_ALUNO'
+    Caption = 'Codigo'
     FocusControl = Edit_CdAluno
   end
   object Label9: TLabel [9]
-    Left = 125
-    Top = 160
-    Width = 60
+    Left = 61
+    Top = 176
+    Width = 27
     Height = 13
-    Caption = 'NM_PESSOA'
+    Caption = 'Aluno'
     FocusControl = Edit_NmPessoa
   end
   object Label10: TLabel [10]
     Left = 24
-    Top = 208
-    Width = 65
+    Top = 224
+    Width = 33
     Height = 13
-    Caption = 'CD_MATERIA'
+    Caption = 'Codigo'
     FocusControl = Edit_CdMateria
   end
   object Label11: TLabel [11]
-    Left = 208
-    Top = 208
-    Width = 66
+    Left = 63
+    Top = 224
+    Width = 36
     Height = 13
-    Caption = 'NM_MATERIA'
+    Caption = 'Materia'
     FocusControl = Edit_NmMateria
   end
   object But_PesquisaMat: TSpeedButton [12]
     Left = 170
-    Top = 223
+    Top = 239
     Width = 23
     Height = 22
     Glyph.Data = {
@@ -119,12 +118,12 @@ inherited Form_CadastroAula: TForm_CadastroAula
   end
   inherited GroupBox1: TGroupBox
     Left = 0
-    Top = 563
+    Top = 560
     Width = 816
     Height = 45
     Align = alBottom
     ExplicitLeft = 0
-    ExplicitTop = 704
+    ExplicitTop = 560
     ExplicitWidth = 816
     ExplicitHeight = 45
     inherited But_Salvar: TBitBtn
@@ -141,11 +140,14 @@ inherited Form_CadastroAula: TForm_CadastroAula
     end
   end
   inherited GroupSeparacao: TGroupBox
-    Top = 282
+    Top = 279
     Width = 816
-    ExplicitLeft = 8
-    ExplicitTop = 347
+    ExplicitTop = 279
     ExplicitWidth = 816
+    inherited But_Item_Novo: TSpeedButton
+      Enabled = False
+      Visible = False
+    end
     inherited GridItem: TDBGrid
       Width = 785
     end
@@ -214,10 +216,10 @@ inherited Form_CadastroAula: TForm_CadastroAula
     TabOrder = 8
   end
   object But_AdiconaAlunos: TBitBtn [22]
-    Left = 601
-    Top = 176
-    Width = 104
-    Height = 69
+    Left = 24
+    Top = 101
+    Width = 134
+    Height = 38
     Caption = 'Adiconar Alunos'
     Glyph.Data = {
       76010000424D7601000000000000760000002800000020000000100000000100
@@ -247,6 +249,7 @@ inherited Form_CadastroAula: TForm_CadastroAula
     Items.Strings = (
       'Sim'
       'N'#227'o')
+    ReadOnly = True
     TabOrder = 10
     Values.Strings = (
       'S'
@@ -271,7 +274,7 @@ inherited Form_CadastroAula: TForm_CadastroAula
   end
   object Panel1: TPanel [25]
     Left = 0
-    Top = 120
+    Top = 145
     Width = 816
     Height = 25
     BorderStyle = bsSingle
@@ -279,7 +282,7 @@ inherited Form_CadastroAula: TForm_CadastroAula
   end
   object Edit_CdAluno: TDBEdit [26]
     Left = 24
-    Top = 176
+    Top = 192
     Width = 81
     Height = 21
     DataField = 'CD_ALUNO'
@@ -288,16 +291,17 @@ inherited Form_CadastroAula: TForm_CadastroAula
   end
   object Edit_NmPessoa: TDBEdit [27]
     Left = 125
-    Top = 176
+    Top = 192
     Width = 292
     Height = 21
     DataField = 'NM_PESSOA'
     DataSource = DataSourceItem
+    ReadOnly = True
     TabOrder = 14
   end
   object Edit_CdMateria: TDBEdit [28]
     Left = 24
-    Top = 224
+    Top = 240
     Width = 134
     Height = 21
     DataField = 'CD_MATERIA'
@@ -306,16 +310,17 @@ inherited Form_CadastroAula: TForm_CadastroAula
   end
   object Edit_NmMateria: TDBEdit [29]
     Left = 208
-    Top = 224
+    Top = 240
     Width = 209
     Height = 21
     DataField = 'NM_MATERIA'
     DataSource = DataSourceItem
+    ReadOnly = True
     TabOrder = 16
   end
   object RadioPresenca: TDBRadioGroup [30]
     Left = 464
-    Top = 176
+    Top = 192
     Width = 63
     Height = 69
     Caption = 'Presente'
@@ -354,35 +359,43 @@ inherited Form_CadastroAula: TForm_CadastroAula
       Origin = '"TB_AULA_ALUNO"."CD_AULA_ALUNO"'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
       Required = True
+      Visible = False
     end
     object QueryItemCD_AULA: TIntegerField
+      DisplayLabel = 'Codigo_Aula'
       FieldName = 'CD_AULA'
       Origin = '"TB_AULA_ALUNO"."CD_AULA"'
       Required = True
+      Visible = False
     end
     object QueryItemCD_ALUNO: TIntegerField
+      DisplayLabel = 'Aluno'
       FieldName = 'CD_ALUNO'
       Origin = '"TB_AULA_ALUNO"."CD_ALUNO"'
       Required = True
     end
     object QueryItemNM_PESSOA: TIBStringField
+      DisplayLabel = 'Nome'
       FieldName = 'NM_PESSOA'
       Origin = '"TB_PESSOA"."NM_PESSOA"'
       Required = True
       Size = 50
     end
     object QueryItemCD_MATERIA: TIntegerField
+      DisplayLabel = 'Cod. Materia'
       FieldName = 'CD_MATERIA'
       Origin = '"TB_AULA_ALUNO"."CD_MATERIA"'
       Required = True
     end
     object QueryItemNM_MATERIA: TIBStringField
+      DisplayLabel = 'Nome'
       FieldName = 'NM_MATERIA'
       Origin = '"TB_MATERIA"."NM_MATERIA"'
       Required = True
       Size = 50
     end
     object QueryItemFG_PRESENCA: TIBStringField
+      DisplayLabel = 'Presente'
       FieldName = 'FG_PRESENCA'
       Origin = '"TB_AULA_ALUNO"."FG_PRESENCA"'
       Required = True
@@ -390,6 +403,7 @@ inherited Form_CadastroAula: TForm_CadastroAula
       Size = 1
     end
     object QueryItemFG_EXP: TIBStringField
+      DisplayLabel = 'Aula Exp'
       FieldName = 'FG_EXP'
       Origin = '"TB_AULA_ALUNO"."FG_EXP"'
       Required = True

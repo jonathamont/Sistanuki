@@ -46,6 +46,9 @@ type
     Edit_NmMateria: TDBEdit;
     RadioPresenca: TDBRadioGroup;
     But_PesquisaMat: TSpeedButton;
+    procedure FormCreate(Sender: TObject);
+    procedure But_Item_EditClick(Sender: TObject);
+    procedure But_Item_SaveClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -60,5 +63,41 @@ implementation
 {$R *.dfm}
 
 uses UnitConexao, UnitPesquisaAula, UnitPesquisaTurma;
+
+procedure TForm_CadastroAula.But_Item_EditClick(Sender: TObject);
+begin
+  Edit_CdAluno.Enabled:=True;
+  Edit_CdMateria.Enabled:=True;
+  RadioPresenca.Enabled:=True;
+  But_PesquisaMat.Enabled:=True;
+  inherited;
+
+end;
+
+procedure TForm_CadastroAula.But_Item_SaveClick(Sender: TObject);
+var
+  chave:integer;
+begin
+  inherited;
+  DataSourceCadastro.DataSet.Locate('CD_TURMA',Chave,[]);
+  QueryItem.Open;
+  Edit_CdAluno.Enabled:=False;
+  Edit_CdMateria.Enabled:=False;
+  RadioPresenca.Enabled:=False;
+  But_PesquisaMat.Enabled:=False;
+
+end;
+
+procedure TForm_CadastroAula.FormCreate(Sender: TObject);
+begin
+  inherited;
+  QueryItem.close;
+  QueryItem.ParamByName('AULA').AsInteger:=DataSourceCadastro.DataSet.FieldByName('CD_AULA').Value;
+  QueryItem.Open;
+  Edit_CdAluno.Enabled:=False;
+  Edit_CdMateria.Enabled:=False;
+  RadioPresenca.Enabled:=False;
+  But_PesquisaMat.Enabled:=False;
+end;
 
 end.

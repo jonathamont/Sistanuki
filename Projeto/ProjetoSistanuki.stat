@@ -5,9 +5,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-EditorSecs=27078
-DesignerSecs=9601
-InspectorSecs=3195
+EditorSecs=29993
+DesignerSecs=10227
+InspectorSecs=3364
 =======
 EditorSecs=18423
 DesignerSecs=7631
@@ -31,8 +31,8 @@ InspectorSecs=2093
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-CompileSecs=428986
-OtherSecs=8648
+CompileSecs=469610
+OtherSecs=9157
 =======
 CompileSecs=237189
 OtherSecs=4929
@@ -58,7 +58,7 @@ EffectiveKeys=0
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-DebugSecs=15390
+DebugSecs=17355
 =======
 DebugSecs=12175
 >>>>>>> bf660dca3138529f366e4fd4076bb9c0be895ceb

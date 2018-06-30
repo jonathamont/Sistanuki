@@ -4,6 +4,67 @@ inherited Form_PesquisaAula: TForm_PesquisaAula
   ExplicitHeight = 650
   PixelsPerInch = 96
   TextHeight = 13
+  inherited GridPesquisa: TDBGrid
+    Top = 89
+    Height = 481
+  end
+  inherited GroupBox: TGroupBox
+    Height = 89
+    ExplicitHeight = 89
+    object Label1: TLabel [0]
+      Left = 378
+      Top = 49
+      Width = 51
+      Height = 13
+      Caption = 'Data Inicio'
+    end
+    object Label2: TLabel [1]
+      Left = 512
+      Top = 49
+      Width = 42
+      Height = 13
+      Caption = 'Data Fim'
+    end
+    inherited RadioFiltro: TRadioGroup
+      Items.Strings = (
+        'Codigo'
+        'Professor'
+        'Data'
+        'Turma'
+        'Encerradas')
+    end
+    inherited ButPesquisa: TBitBtn
+      OnClick = ButPesquisaClick
+    end
+    object Edit_DtInicio: TMaskEdit
+      Left = 378
+      Top = 62
+      Width = 94
+      Height = 21
+      EditMask = '00/00/0000;1;_'
+      MaxLength = 10
+      TabOrder = 4
+      Text = '  /  /    '
+    end
+    object Edit_DtFim: TMaskEdit
+      Left = 512
+      Top = 62
+      Width = 96
+      Height = 21
+      EditMask = '00/00/0000;1;_'
+      MaxLength = 10
+      TabOrder = 5
+      Text = '  /  /    '
+    end
+  end
+  inherited Panel1: TPanel
+    inherited But_Alterar: TBitBtn
+      OnClick = But_AlterarClick
+    end
+  end
+  inherited But_Novo: TBitBtn
+    OnClick = But_NovoClick
+  end
   inherited QueryPesquisa: TIBQuery
     SQL.Strings = (
       'select a.*,p.nm_pessoa  from TB_AULA a'
