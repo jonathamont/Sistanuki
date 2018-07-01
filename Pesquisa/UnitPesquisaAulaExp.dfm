@@ -3,6 +3,7 @@ inherited Form_PesquisaAulaExp: TForm_PesquisaAulaExp
   PixelsPerInch = 96
   TextHeight = 13
   inherited GroupBox: TGroupBox
+    ExplicitTop = -6
     inherited RadioFiltro: TRadioGroup
       ItemIndex = 0
     end

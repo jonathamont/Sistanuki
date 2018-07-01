@@ -20,7 +20,11 @@ uses
   UnitCadastroCurso in '..\Cadastros\UnitCadastroCurso.pas' {Form_CadastroCurso},
   UnitPesquisaTurma in '..\Pesquisa\UnitPesquisaTurma.pas' {Form_PesquisaTurma},
   UnitCadastroTurma in '..\Cadastros\UnitCadastroTurma.pas' {Form_CadastroTurma},
+<<<<<<< HEAD:Projeto/__history/ProjetoSistanuki.dpr.~36~
   UnitPesquisaMatricula in '..\Pesquisa\UnitPesquisaMatricula.pas' {Form_PesquisaMatricula};
+=======
+  UnitPesquisaAula in '..\Pesquisa\UnitPesquisaAula.pas' {Form_PesquisaBase1};
+>>>>>>> 33f376d18e7f0ab2e8e37b2d0d00e291edcb05d2:Projeto/__history/ProjetoSistanuki.dpr.~36~
 
 {$R *.res}
 
@@ -29,7 +33,11 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TCONEXAO, CONEXAO);
   Application.CreateForm(TForm_PesquisaTurma, Form_PesquisaTurma);
+<<<<<<< HEAD:Projeto/__history/ProjetoSistanuki.dpr.~36~
   Application.CreateForm(TForm_PesquisaMatricula, Form_PesquisaMatricula);
+=======
+  Application.CreateForm(TForm_PesquisaBase1, Form_PesquisaBase1);
+>>>>>>> 33f376d18e7f0ab2e8e37b2d0d00e291edcb05d2:Projeto/__history/ProjetoSistanuki.dpr.~36~
   Application.Run;
 end.
 
