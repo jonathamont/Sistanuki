@@ -1,0 +1,62 @@
+unit UnitMenu;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus;
+
+type
+  TForm_Menu = class(TForm)
+    MainMenu1: TMainMenu;
+    Pessoas: TMenuItem;
+    Menu_Pessoa: TMenuItem;
+    Menu_Cidade: TMenuItem;
+    Aulas: TMenuItem;
+    Menu_AulaExperimental: TMenuItem;
+    Menu_Matricula: TMenuItem;
+    Cursos: TMenuItem;
+    Menu_Curso: TMenuItem;
+    Menu_Materia: TMenuItem;
+    Turmas: TMenuItem;
+    Menu_turma: TMenuItem;
+    procedure Menu_PessoaClick(Sender: TObject);
+    procedure Menu_CidadeClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form_Menu: TForm_Menu;
+
+implementation
+
+{$R *.dfm}
+
+uses UnitConexao, UnitPesquisaAulaExp, UnitPesquisaCidade, UnitPesquisaCurso,
+  UnitPesquisaMateria, UnitPesquisaMatricula, UnitPesquisaPessoa,
+  UnitPesquisaTurma;
+
+procedure TForm_Menu.Menu_CidadeClick(Sender: TObject);
+begin
+  try
+    Form_PesquisaCidade:=TForm_PesquisaCidade.Create(Self);
+    Form_PesquisaCidade.ShowModal;
+  finally
+    Form_PesquisaCidade.Free;
+  end;
+end;
+
+procedure TForm_Menu.Menu_PessoaClick(Sender: TObject);
+begin
+ try
+   Form_PesquisaPessoa:=TForm_PesquisaPessoa.Create(Self);
+   Form_PesquisaPessoa.ShowModal
+ finally
+   Form_PesquisaPessoa.Free;
+ end;
+end;
+
+end.

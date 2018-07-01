@@ -22,7 +22,7 @@ uses
   UnitCadastroTurma in '..\Cadastros\UnitCadastroTurma.pas' {Form_CadastroTurma},
   UnitPesquisaMatricula in '..\Pesquisa\UnitPesquisaMatricula.pas' {Form_PesquisaMatricula},
   UnitCadastroMatricula in '..\Cadastros\UnitCadastroMatricula.pas' {Form_CadastroMatricula},
-  UnitMenu in '..\Menu\UnitMenu.pas' {Form_Menu};
+  UnitMenu in '..\Menu\UnitMenu.pas' {FormMenu};
 
 {$R *.res}
 
@@ -30,7 +30,10 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TCONEXAO, CONEXAO);
-  Application.CreateForm(TForm_Menu, Form_Menu);
+  Application.CreateForm(TForm_PesquisaMatricula, Form_PesquisaMatricula);
+  Application.CreateForm(TForm_PesquisaTurma, Form_PesquisaTurma);
+  Application.CreateForm(TForm_CadastroMatricula, Form_CadastroMatricula);
+  Application.CreateForm(TFormMenu, FormMenu);
   Application.Run;
 end.
 

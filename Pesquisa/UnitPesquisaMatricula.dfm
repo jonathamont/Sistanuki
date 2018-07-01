@@ -2,7 +2,6 @@ inherited Form_PesquisaMatricula: TForm_PesquisaMatricula
   Caption = 'Pesquisa Matricula'
   ClientHeight = 568
   ClientWidth = 807
-  ExplicitTop = -43
   ExplicitWidth = 823
   ExplicitHeight = 606
   PixelsPerInch = 96
@@ -55,7 +54,6 @@ inherited Form_PesquisaMatricula: TForm_PesquisaMatricula
   end
   inherited GroupBox: TGroupBox
     Width = 807
-    ExplicitTop = -6
     ExplicitWidth = 807
     inherited RadioFiltro: TRadioGroup
       ItemIndex = 0
@@ -67,6 +65,8 @@ inherited Form_PesquisaMatricula: TForm_PesquisaMatricula
   inherited Panel1: TPanel
     Top = 527
     Width = 807
+    ExplicitTop = 527
+    ExplicitWidth = 807
     inherited But_Alterar: TBitBtn
       Top = 6
       OnClick = But_AlterarClick
