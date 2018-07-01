@@ -1,8 +1,5 @@
 inherited Form_PesquisaTurma: TForm_PesquisaTurma
   Caption = 'Pesquisa Turmas'
-  ExplicitTop = -88
-  ExplicitWidth = 819
-  ExplicitHeight = 650
   PixelsPerInch = 96
   TextHeight = 13
   inherited GroupBox: TGroupBox
@@ -20,9 +17,7 @@ inherited Form_PesquisaTurma: TForm_PesquisaTurma
   end
   inherited Panel1: TPanel
     inherited But_Alterar: TBitBtn
-      Top = 6
       OnClick = But_AlterarClick
-      ExplicitTop = 6
     end
   end
   inherited But_Novo: TBitBtn
@@ -85,7 +80,8 @@ inherited Form_PesquisaTurma: TForm_PesquisaTurma
       '  CD_PROFESSOR,'
       '  DS_DIA,'
       '  DS_PERIODO,'
-      '  CD_CURSO'
+      '  CD_CURSO,'
+      '  PC_FREQ'
       'from TB_TURMA '
       'where'
       '  CD_TURMA = :CD_TURMA')
@@ -96,14 +92,19 @@ inherited Form_PesquisaTurma: TForm_PesquisaTurma
       '  CD_PROFESSOR = :CD_PROFESSOR,'
       '  DS_DIA = :DS_DIA,'
       '  DS_PERIODO = :DS_PERIODO,'
-      '  CD_CURSO = :CD_CURSO'
+      '  CD_CURSO = :CD_CURSO,'
+      '  PC_FREQ = :PC_FREQ'
       'where'
       '  CD_TURMA = :OLD_CD_TURMA')
     InsertSQL.Strings = (
       'insert into TB_TURMA'
-      '  (CD_TURMA, CD_PROFESSOR, DS_DIA, DS_PERIODO, CD_CURSO)'
+      
+        '  (CD_TURMA, CD_PROFESSOR, DS_DIA, DS_PERIODO, CD_CURSO, PC_FREQ' +
+        ')'
       'values'
-      '  (:CD_TURMA, :CD_PROFESSOR, :DS_DIA, :DS_PERIODO, :CD_CURSO)')
+      
+        '  (:CD_TURMA, :CD_PROFESSOR, :DS_DIA, :DS_PERIODO, :CD_CURSO, :P' +
+        'C_FREQ)')
     DeleteSQL.Strings = (
       'delete from TB_TURMA'
       'where'

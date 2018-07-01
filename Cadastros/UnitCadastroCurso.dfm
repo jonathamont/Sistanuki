@@ -4,6 +4,7 @@ inherited Form_CadastroCurso: TForm_CadastroCurso
   ClientWidth = 537
   OnClose = FormClose
   OnCreate = FormCreate
+  ExplicitTop = -24
   ExplicitWidth = 553
   ExplicitHeight = 603
   PixelsPerInch = 96

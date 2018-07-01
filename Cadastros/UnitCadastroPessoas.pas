@@ -74,12 +74,7 @@ begin
 end;
 
 procedure TForm_CadastroPessoa.But_SalvarClick(Sender: TObject);
-var
-  data:Integer;
 begin
-  data:=StrToInt(Copy(Edit_Dt_Nasci.Text,7,10));
-
-
   if Edit_Nome.Text = '' then
   begin
         Application.MessageBox('Nome é um campo obrigatorio','Aviso');
@@ -105,13 +100,6 @@ begin
         Application.MessageBox('Rua é um campo obrigatorio','Aviso');
         exit;
   end;
-  if CurrentYear - data  < 4 then
-  begin
-       Application.MessageBox('As pessoas cadastradas no sistema não podem ter menos de 4 anos, favor corrigir','Aviso');
-      exit;
-
-  end;
-
 
   inherited;
 

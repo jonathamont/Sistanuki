@@ -32,7 +32,6 @@ type
     procedure But_PesquisaClick(Sender: TObject);
     procedure Btn_PesquisaCursoClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure Edit_CodPessoaExit(Sender: TObject);
   private
     { Private declarations }
   public
@@ -84,9 +83,9 @@ begin
 end;
 
 procedure TForm_CadastroAulaExp.But_SalvarClick(Sender: TObject);
-var
-  sql:String;
 begin
+  inherited;
+
   if Edit_CodPessoa.Text = '' then
   begin
     Application.MessageBox('Nome é um campo obrigatório','Aviso');
@@ -111,17 +110,6 @@ begin
     Exit;
   end;
 
-  SQL:='select a.cd_pessoa from tb_aula_exp a where a.cd_pessoa='+ Edit_CodPessoa.Text+ 'and a.cd_curso ='+ Edit_CodCurso.Text;
-  CONEXAO.TrocaSQL(CONEXAO.Query,SQL);
-  if not(CONEXAO.Query.IsEmpty) then
-   BEGIN
-      ShowMessage('Aluno ja Cadastrado para esse curso');
-      exit;
-    END;
-  inherited;
-
-
-
 end;
 
 procedure TForm_CadastroAulaExp.Edit_CodCursoExit(Sender: TObject);
@@ -135,7 +123,7 @@ begin
       Exit;
     End;
 
-  sql := ('SELECT NM_CURSO FROM TB_CURSO WHERE CD_CURSO = '+Edit_CodCurso.Text);
+  sql := ('SELECT NM_CURSO FROM TB_CURSO = '+Edit_CodCurso.Text);
   CONEXAO.TrocaSQL(CONEXAO.Query,sql);
   if CONEXAO.Query.IsEmpty then
     begin
@@ -145,27 +133,6 @@ begin
     end;
   DataSourceCadastro.DataSet.FieldByName('NM_CURSO').AsString:=CONEXAO.Query.FieldByName('NM_CURSO').AsString;
 
-
-end;
-
-procedure TForm_CadastroAulaExp.Edit_CodPessoaExit(Sender: TObject);
-var
-  sql:string;
-begin
-  inherited;
-   if Edit_CodPessoa.Text='' then
-    begin
-      EXIT;
-    end;
-  SQL:=('SELECT NM_PESSOA FROM TB_PESSOA P WHERE CD_PESSOA='+Edit_CodPessoa.Text);
-  CONEXAO.TrocaSQL(CONEXAO.Query,SQL);
-  if CONEXAO.Query.IsEmpty then
-    begin
-         Application.MessageBox('Codigo PESSOA não localizado','Aviso',MB_ICONWARNING+MB_OK);
-         Edit_CodPessoa.SetFocus;
-         exit;
-    end;
-  DataSourceCadastro.DataSet.FieldByName('NM_PESSOA').Value:=CONEXAO.Query.FieldByName('NM_PESSOA').AsString;
 
 end;
 

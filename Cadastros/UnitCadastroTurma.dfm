@@ -83,7 +83,6 @@ inherited Form_CadastroTurma: TForm_CadastroTurma
       05555508CECCCCC805555508CEECCCC8055555508C444C805555555088FFF880
       5555555508FFF80555555555508F805555555555508F805555555555508F8055
       55555555508F8055555555550888880555555555500000555555}
-    OnClick = But_PesquisaCursoClick
   end
   object Label8: TLabel [9]
     Left = 24
@@ -102,7 +101,7 @@ inherited Form_CadastroTurma: TForm_CadastroTurma
     FocusControl = Edit_NMPessoa
   end
   object But_PesquisaAluno: TSpeedButton [11]
-    Left = 164
+    Left = 169
     Top = 183
     Width = 23
     Height = 22
@@ -115,7 +114,6 @@ inherited Form_CadastroTurma: TForm_CadastroTurma
       05555508CECCCCC805555508CEECCCC8055555508C444C805555555088FFF880
       5555555508FFF80555555555508F805555555555508F805555555555508F8055
       55555555508F8055555555550888880555555555500000555555}
-    OnClick = But_PesquisaAlunoClick
   end
   inherited GroupBox1: TGroupBox
     Left = 0
@@ -151,12 +149,11 @@ inherited Form_CadastroTurma: TForm_CadastroTurma
   end
   object Edit_CodTurma: TDBEdit [14]
     Left = 24
-    Top = 35
+    Top = 32
     Width = 134
     Height = 21
     DataField = 'CD_TURMA'
     DataSource = Form_PesquisaTurma.DataSourcePesquisa
-    ReadOnly = True
     TabOrder = 2
   end
   object Edit_CodProf: TDBEdit [15]
@@ -176,7 +173,6 @@ inherited Form_CadastroTurma: TForm_CadastroTurma
     Height = 21
     DataField = 'NM_PESSOA'
     DataSource = Form_PesquisaTurma.DataSourcePesquisa
-    ReadOnly = True
     TabOrder = 4
   end
   object Edit_CodCurso: TDBEdit [17]
@@ -212,7 +208,6 @@ inherited Form_CadastroTurma: TForm_CadastroTurma
     DataField = 'CD_ALUNO'
     DataSource = DataSourceItem
     TabOrder = 8
-    OnExit = Edit_CodAlunoExit
   end
   object Edit_NMPessoa: TDBEdit [21]
     Left = 204
@@ -221,7 +216,6 @@ inherited Form_CadastroTurma: TForm_CadastroTurma
     Height = 21
     DataField = 'NM_PESSOA'
     DataSource = DataSourceItem
-    ReadOnly = True
     TabOrder = 9
   end
   object Combo_Dia: TDBComboBox [22]
@@ -229,7 +223,6 @@ inherited Form_CadastroTurma: TForm_CadastroTurma
     Top = 80
     Width = 105
     Height = 21
-    Style = csDropDownList
     DataField = 'DS_DIA'
     DataSource = Form_PesquisaTurma.DataSourcePesquisa
     Items.Strings = (
@@ -247,7 +240,6 @@ inherited Form_CadastroTurma: TForm_CadastroTurma
     Top = 80
     Width = 73
     Height = 21
-    Style = csDropDownList
     DataField = 'DS_PERIODO'
     DataSource = Form_PesquisaTurma.DataSourcePesquisa
     Items.Strings = (
@@ -257,7 +249,6 @@ inherited Form_CadastroTurma: TForm_CadastroTurma
     TabOrder = 11
   end
   inherited DataSourceCadastro: TDataSource
-    DataSet = Form_PesquisaTurma.QueryPesquisa
     Left = 592
     Top = 0
   end
@@ -301,6 +292,7 @@ inherited Form_CadastroTurma: TForm_CadastroTurma
       Size = 50
     end
     object QueryItemPC_FREQ: TIBBCDField
+      DisplayLabel = 'Frquencia'
       FieldName = 'PC_FREQ'
       Origin = '"TB_TURMA_ALUNO"."PC_FREQ"'
       Precision = 9
@@ -322,15 +314,14 @@ inherited Form_CadastroTurma: TForm_CadastroTurma
       'set'
       '  CD_TURMA_ALUNO = :CD_TURMA_ALUNO,'
       '  CD_TURMA = :CD_TURMA,'
-      '  CD_ALUNO = :CD_ALUNO,'
-      '  PC_FREQ = :PC_FREQ'
+      '  CD_ALUNO = :CD_ALUNO'
       'where'
       '  CD_TURMA_ALUNO = :OLD_CD_TURMA_ALUNO')
     InsertSQL.Strings = (
       'insert into TB_TURMA_ALUNO'
-      '  (CD_TURMA_ALUNO, CD_TURMA, CD_ALUNO, PC_FREQ)'
+      '  (CD_TURMA_ALUNO, CD_TURMA, CD_ALUNO)'
       'values'
-      '  (:CD_TURMA_ALUNO, :CD_TURMA, :CD_ALUNO, :PC_FREQ)')
+      '  (:CD_TURMA_ALUNO, :CD_TURMA, :CD_ALUNO)')
     DeleteSQL.Strings = (
       'delete from TB_TURMA_ALUNO'
       'where'
