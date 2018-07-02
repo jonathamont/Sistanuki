@@ -52,6 +52,21 @@ inherited Form_CadastroMatricula: TForm_CadastroMatricula
     Caption = 'Data Matricula'
     FocusControl = EditDataMatricula
   end
+  object SpeedButton1: TSpeedButton [6]
+    Left = 94
+    Top = 131
+    Width = 23
+    Height = 22
+    Glyph.Data = {
+      F6000000424DF600000000000000760000002800000010000000100000000100
+      04000000000080000000120B0000120B00001000000000000000000000000000
+      800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00555555000555
+      55555555008880055555555088CCC880555555508C888C8055555508CCCCCCC8
+      05555508CECCCCC805555508CEECCCC8055555508C444C805555555088FFF880
+      5555555508FFF80555555555508F805555555555508F805555555555508F8055
+      55555555508F8055555555550888880555555555500000555555}
+  end
   inherited GroupBox1: TGroupBox
     Left = 0
     Top = 212
@@ -59,7 +74,7 @@ inherited Form_CadastroMatricula: TForm_CadastroMatricula
     Height = 51
     Align = alBottom
     ExplicitLeft = 0
-    ExplicitTop = 256
+    ExplicitTop = 212
     ExplicitWidth = 487
     ExplicitHeight = 51
     inherited But_Salvar: TBitBtn
@@ -75,7 +90,7 @@ inherited Form_CadastroMatricula: TForm_CadastroMatricula
       ExplicitTop = 13
     end
   end
-  object EditMatricula: TDBEdit [7]
+  object EditMatricula: TDBEdit [8]
     Left = 23
     Top = 40
     Width = 60
@@ -84,7 +99,7 @@ inherited Form_CadastroMatricula: TForm_CadastroMatricula
     DataSource = Form_PesquisaMatricula.DataSourcePesquisa
     TabOrder = 1
   end
-  object EditCodNome: TDBEdit [8]
+  object EditCodNome: TDBEdit [9]
     Left = 23
     Top = 85
     Width = 65
@@ -93,7 +108,7 @@ inherited Form_CadastroMatricula: TForm_CadastroMatricula
     DataSource = Form_PesquisaMatricula.DataSourcePesquisa
     TabOrder = 2
   end
-  object EditNomePessoa: TDBEdit [9]
+  object EditNomePessoa: TDBEdit [10]
     Left = 123
     Top = 85
     Width = 300
@@ -102,7 +117,7 @@ inherited Form_CadastroMatricula: TForm_CadastroMatricula
     DataSource = Form_PesquisaMatricula.DataSourcePesquisa
     TabOrder = 3
   end
-  object EditCodTurma: TDBEdit [10]
+  object EditCodTurma: TDBEdit [11]
     Left = 23
     Top = 132
     Width = 60
@@ -111,13 +126,14 @@ inherited Form_CadastroMatricula: TForm_CadastroMatricula
     DataSource = Form_PesquisaMatricula.DataSourcePesquisa
     TabOrder = 4
   end
-  object EditDataMatricula: TDBEdit [11]
+  object EditDataMatricula: TDBEdit [12]
     Left = 23
     Top = 178
     Width = 134
     Height = 21
     DataField = 'DT_MATRICULA'
     DataSource = Form_PesquisaMatricula.DataSourcePesquisa
+    MaxLength = 11
     TabOrder = 5
   end
   inherited DataSourceCadastro: TDataSource

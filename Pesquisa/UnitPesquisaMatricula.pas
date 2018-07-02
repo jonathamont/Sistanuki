@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, UnitPesquisaBase, Data.DB,
   IBX.IBCustomDataSet, IBX.IBUpdateSQL, IBX.IBQuery, Vcl.ExtCtrls, Vcl.StdCtrls,
-  Vcl.Buttons, Vcl.Mask, Vcl.Grids, Vcl.DBGrids;
+  Vcl.Buttons, Vcl.Mask, Vcl.Grids, Vcl.DBGrids, frxClass, frxDBSet;
 
 type
   TForm_PesquisaMatricula = class(TForm_PesquisaBase)
@@ -23,9 +23,12 @@ type
     Label5: TLabel;
     Label6: TLabel;
     Btn_Novo: TBitBtn;
+    Dataset_Matricula: TfrxDBDataset;
+    Report_Matricula: TfrxReport;
     procedure Btn_NovoClick(Sender: TObject);
     procedure ButPesquisaClick(Sender: TObject);
     procedure But_AlterarClick(Sender: TObject);
+    procedure But_ImprimirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -88,6 +91,12 @@ begin
     Form_CadastroMatricula.Free;
   end;
 
+end;
+
+procedure TForm_PesquisaMatricula.But_ImprimirClick(Sender: TObject);
+begin
+  inherited;
+  Report_Matricula.ShowReport();
 end;
 
 end.

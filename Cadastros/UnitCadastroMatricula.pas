@@ -19,6 +19,7 @@ type
     EditCodTurma: TDBEdit;
     Label5: TLabel;
     EditDataMatricula: TDBEdit;
+    SpeedButton1: TSpeedButton;
     procedure But_SalvarClick(Sender: TObject);
   private
     { Private declarations }

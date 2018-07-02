@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, UnitPesquisaBase, Data.DB,
   IBX.IBCustomDataSet, IBX.IBQuery, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Buttons,
-  Vcl.Mask, Vcl.Grids, Vcl.DBGrids, UnitConexao, IBX.IBUpdateSQL;
+  Vcl.Mask, Vcl.Grids, Vcl.DBGrids, UnitConexao, IBX.IBUpdateSQL, frxClass,
+  frxDBSet;
 
 type
   TForm_PesquisaCidade = class(TForm_PesquisaBase)
@@ -14,10 +15,13 @@ type
     QueryPesquisaNM_CIDADE: TIBStringField;
     QueryPesquisaDS_ESTADO: TIBStringField;
     QueryPesquisaDS_PAIS: TIBStringField;
+    Dataset_Cidades: TfrxDBDataset;
+    Report_Cidades: TfrxReport;
     procedure ButPesquisaClick(Sender: TObject);
     procedure But_AlterarClick(Sender: TObject);
     procedure But_NovoClick(Sender: TObject);
     procedure But_ExcluirClick(Sender: TObject);
+    procedure But_ImprimirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -93,6 +97,17 @@ begin
           ShowMessage('Erro ao Remover!');
         End;
       End;
+end;
+
+procedure TForm_PesquisaCidade.But_ImprimirClick(Sender: TObject);
+var
+  SQL: string;
+begin
+  inherited;
+  {SQL necessário para o relatorio sempre agrupar por estados }
+  SQL:= 'SELECT C.CD_CIDADE, C. NM_CIDADE, C.DS_ESTADO, C.DS_PAIS FROM TB_CIDADE C ORDER BY DS_PAIS';
+  CONEXAO.TrocaSQL(QueryPesquisa,SQL);
+  Report_Cidades.ShowReport();
 end;
 
 procedure TForm_PesquisaCidade.But_NovoClick(Sender: TObject);
