@@ -30,6 +30,7 @@ type
     procedure But_NovoClick(Sender: TObject);
     procedure But_AlterarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure But_ImprimirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -93,6 +94,12 @@ begin
         QueryPesquisaNR_CPF_CNPJ.EditMask:='';
         Form_CadastroPessoa.Free;
      end;
+end;
+
+procedure TForm_PesquisaPessoa.But_ImprimirClick(Sender: TObject);
+begin
+  inherited;
+  Report_Pessoa.ShowReport();
 end;
 
 procedure TForm_PesquisaPessoa.But_NovoClick(Sender: TObject);

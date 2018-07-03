@@ -13,7 +13,7 @@ inherited Form_PesquisaCidade: TForm_PesquisaCidade
       OnClick = ButPesquisaClick
     end
     inherited But_Imprimir: TBitBtn
-      Visible = False
+      OnClick = But_ImprimirClick
     end
   end
   inherited Panel1: TPanel

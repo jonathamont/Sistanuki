@@ -20,6 +20,7 @@ type
     procedure ButPesquisaClick(Sender: TObject);
     procedure But_AlterarClick(Sender: TObject);
     procedure But_ExcluirClick(Sender: TObject);
+    procedure But_ImprimirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -105,6 +106,12 @@ begin
       QueryPesquisa.Open;
 
 
+end;
+
+procedure TForm_PesquisaCurso.But_ImprimirClick(Sender: TObject);
+begin
+  inherited;
+  Report_Curso.ShowReport();
 end;
 
 procedure TForm_PesquisaCurso.But_NovoClick(Sender: TObject);

@@ -20,7 +20,6 @@ type
     Menu_Materia: TMenuItem;
     Turmas: TMenuItem;
     Menu_turma: TMenuItem;
-    Aula1: TMenuItem;
     procedure Menu_PessoaClick(Sender: TObject);
     procedure Menu_CidadeClick(Sender: TObject);
     procedure Menu_AulaExperimentalClick(Sender: TObject);
@@ -28,7 +27,6 @@ type
     procedure Menu_CursoClick(Sender: TObject);
     procedure Menu_MateriaClick(Sender: TObject);
     procedure Menu_turmaClick(Sender: TObject);
-    procedure Aula1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -44,17 +42,7 @@ implementation
 
 uses UnitConexao, UnitPesquisaAulaExp, UnitPesquisaCidade, UnitPesquisaCurso,
   UnitPesquisaMateria, UnitPesquisaMatricula, UnitPesquisaPessoa,
-  UnitPesquisaTurma, UnitPesquisaAula;
-
-procedure TForm_Menu.Aula1Click(Sender: TObject);
-begin
-  try
-    Form_PesquisaAula:=TForm_PesquisaAula.Create(Self);
-    Form_PesquisaAula.ShowModal;
-  finally
-    Form_PesquisaAula.Free;
-  end;
-end;
+  UnitPesquisaTurma;
 
 procedure TForm_Menu.Menu_AulaExperimentalClick(Sender: TObject);
 begin

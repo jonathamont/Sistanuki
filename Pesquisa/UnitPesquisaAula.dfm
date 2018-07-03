@@ -34,6 +34,9 @@ inherited Form_PesquisaAula: TForm_PesquisaAula
     inherited ButPesquisa: TBitBtn
       OnClick = ButPesquisaClick
     end
+    inherited But_Imprimir: TBitBtn
+      OnClick = But_ImprimirClick
+    end
     object Edit_DtInicio: TMaskEdit
       Left = 378
       Top = 62
@@ -129,14 +132,15 @@ inherited Form_PesquisaAula: TForm_PesquisaAula
       Required = True
     end
   end
-  object frxDBDataset1: TfrxDBDataset
-    UserName = 'frxDBDataset1'
+  object Dataset_Aula: TfrxDBDataset
+    UserName = 'Dataset_Aula'
     CloseDataSource = False
+    DataSet = QueryPesquisa
     BCDToCurrency = False
     Left = 448
     Top = 392
   end
-  object frxReport1: TfrxReport
+  object Report_Aula: TfrxReport
     Version = '5.1.5'
     DotMatrixReport = False
     IniFile = '\Software\Fast Reports'
@@ -153,8 +157,25 @@ inherited Form_PesquisaAula: TForm_PesquisaAula
       'end.')
     Left = 592
     Top = 392
-    Datasets = <>
+    Datasets = <
+      item
+        DataSet = Dataset_Aula
+        DataSetName = 'Dataset_Aula'
+      end>
     Variables = <>
     Style = <>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 9
+      LeftMargin = 10.000000000000000000
+      RightMargin = 10.000000000000000000
+      TopMargin = 10.000000000000000000
+      BottomMargin = 10.000000000000000000
+    end
   end
 end

@@ -14,6 +14,9 @@ inherited Form_PesquisaTurma: TForm_PesquisaTurma
     inherited ButPesquisa: TBitBtn
       OnClick = ButPesquisaClick
     end
+    inherited But_Imprimir: TBitBtn
+      OnClick = But_ImprimirClick
+    end
   end
   inherited Panel1: TPanel
     inherited But_Alterar: TBitBtn

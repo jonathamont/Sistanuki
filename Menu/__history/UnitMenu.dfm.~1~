@@ -28,10 +28,6 @@ object Form_Menu: TForm_Menu
         Caption = 'Cidade'
         OnClick = Menu_CidadeClick
       end
-      object Menu_Matricula: TMenuItem
-        Caption = 'Matr'#237'cula'
-        OnClick = Menu_MatriculaClick
-      end
     end
     object Aulas: TMenuItem
       Caption = 'Aulas'
@@ -39,20 +35,20 @@ object Form_Menu: TForm_Menu
         Caption = 'Aula Experimental'
         OnClick = Menu_AulaExperimentalClick
       end
-      object Aula1: TMenuItem
-        Caption = 'Aula'
-        OnClick = Aula1Click
+      object Menu_Matricula: TMenuItem
+        Caption = 'Matr'#237'cula'
+        OnClick = Menu_MatriculaClick
       end
     end
     object Cursos: TMenuItem
       Caption = 'Cursos'
-      object Menu_Materia: TMenuItem
-        Caption = 'Mat'#233'ria'
-        OnClick = Menu_MateriaClick
-      end
       object Menu_Curso: TMenuItem
         Caption = 'Curso'
         OnClick = Menu_CursoClick
+      end
+      object Menu_Materia: TMenuItem
+        Caption = 'Mat'#233'ria'
+        OnClick = Menu_MateriaClick
       end
     end
     object Turmas: TMenuItem

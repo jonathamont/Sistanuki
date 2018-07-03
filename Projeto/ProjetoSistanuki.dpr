@@ -23,7 +23,8 @@ uses
   UnitPesquisaAula in '..\Pesquisa\UnitPesquisaAula.pas' {Form_PesquisaAula},
   UnitCadastroAula in '..\Cadastros\UnitCadastroAula.pas' {Form_CadastroAula},
   UnitCadastroMatricula in '..\Cadastros\UnitCadastroMatricula.pas' {Form_CadastroMatricula},
-  UnitPesquisaMatricula in '..\Pesquisa\UnitPesquisaMatricula.pas' {Form_PesquisaMatricula};
+  UnitPesquisaMatricula in '..\Pesquisa\UnitPesquisaMatricula.pas' {Form_PesquisaMatricula},
+  UnitMenu in '..\Menu\UnitMenu.pas' {Form_Menu};
 
 {$R *.res}
 
@@ -31,9 +32,7 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TCONEXAO, CONEXAO);
-  Application.CreateForm(TForm_PesquisaAulaExp, Form_PesquisaAulaExp);
-  Application.CreateForm(TForm_CadastroMatricula, Form_CadastroMatricula);
-  Application.CreateForm(TForm_PesquisaMatricula, Form_PesquisaMatricula);
+  Application.CreateForm(TForm_Menu, Form_Menu);
   Application.Run;
 end.
 

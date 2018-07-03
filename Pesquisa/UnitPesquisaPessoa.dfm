@@ -41,6 +41,7 @@ inherited Form_PesquisaPessoa: TForm_PesquisaPessoa
     end
     inherited But_Imprimir: TBitBtn
       Left = 667
+      OnClick = But_ImprimirClick
       ExplicitLeft = 667
     end
   end

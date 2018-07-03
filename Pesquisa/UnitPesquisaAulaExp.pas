@@ -23,6 +23,7 @@ type
     procedure ButPesquisaClick(Sender: TObject);
     procedure But_AlterarClick(Sender: TObject);
     procedure But_NovoClick(Sender: TObject);
+    procedure But_ImprimirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -70,6 +71,12 @@ begin
   finally
     Form_CadastroAulaExp.Free;
   end;
+end;
+
+procedure TForm_PesquisaAulaExp.But_ImprimirClick(Sender: TObject);
+begin
+  inherited;
+  Report_AulaExp.ShowReport();
 end;
 
 procedure TForm_PesquisaAulaExp.But_NovoClick(Sender: TObject);

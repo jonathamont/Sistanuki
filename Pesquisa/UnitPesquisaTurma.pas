@@ -22,6 +22,7 @@ type
     procedure But_NovoClick(Sender: TObject);
     procedure ButPesquisaClick(Sender: TObject);
     procedure But_AlterarClick(Sender: TObject);
+    procedure But_ImprimirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -77,6 +78,12 @@ begin
         ButPesquisaClick(ButPesquisa);
 
      end;
+end;
+
+procedure TForm_PesquisaTurma.But_ImprimirClick(Sender: TObject);
+begin
+  inherited;
+  Report_Turma.ShowReport();
 end;
 
 procedure TForm_PesquisaTurma.But_NovoClick(Sender: TObject);

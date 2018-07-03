@@ -23,11 +23,12 @@ type
     Edit_DtFim: TMaskEdit;
     Label1: TLabel;
     Label2: TLabel;
-    frxDBDataset1: TfrxDBDataset;
-    frxReport1: TfrxReport;
+    Dataset_Aula: TfrxDBDataset;
+    Report_Aula: TfrxReport;
     procedure But_NovoClick(Sender: TObject);
     procedure ButPesquisaClick(Sender: TObject);
     procedure But_AlterarClick(Sender: TObject);
+    procedure But_ImprimirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -88,6 +89,12 @@ begin
         ButPesquisaClick(ButPesquisa);
 
      end;
+end;
+
+procedure TForm_PesquisaAula.But_ImprimirClick(Sender: TObject);
+begin
+  inherited;
+  Report_Aula.ShowReport();
 end;
 
 procedure TForm_PesquisaAula.But_NovoClick(Sender: TObject);

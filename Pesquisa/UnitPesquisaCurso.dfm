@@ -6,6 +6,9 @@ inherited Form_PesquisaCurso: TForm_PesquisaCurso
     inherited ButPesquisa: TBitBtn
       OnClick = ButPesquisaClick
     end
+    inherited But_Imprimir: TBitBtn
+      OnClick = But_ImprimirClick
+    end
   end
   inherited Panel1: TPanel
     inherited But_Alterar: TBitBtn

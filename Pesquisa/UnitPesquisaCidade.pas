@@ -21,6 +21,7 @@ type
     procedure But_AlterarClick(Sender: TObject);
     procedure But_NovoClick(Sender: TObject);
     procedure But_ExcluirClick(Sender: TObject);
+    procedure But_ImprimirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -96,6 +97,12 @@ begin
           ShowMessage('Erro ao Remover!');
         End;
       End;
+end;
+
+procedure TForm_PesquisaCidade.But_ImprimirClick(Sender: TObject);
+begin
+  inherited;
+ Report_Cidades.ShowReport();
 end;
 
 procedure TForm_PesquisaCidade.But_NovoClick(Sender: TObject);
