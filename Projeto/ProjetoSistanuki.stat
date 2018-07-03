@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 EditorSecs=20506
 DesignerSecs=7338
 InspectorSecs=2299
@@ -14,6 +15,11 @@ EditorSecs=23962
 DesignerSecs=8143
 InspectorSecs=2621
 >>>>>>> 64734611b3a1032721198b526a88f718a4163492
+=======
+EditorSecs=29993
+DesignerSecs=10248
+InspectorSecs=3364
+>>>>>>> 6f073e88cb28ca2e1a03a4d91da96a86cc213aa1
 =======
 EditorSecs=18423
 DesignerSecs=7631
@@ -38,12 +44,17 @@ InspectorSecs=2093
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 CompileSecs=318048
 OtherSecs=6192
 =======
 CompileSecs=362532
 OtherSecs=7199
 >>>>>>> 64734611b3a1032721198b526a88f718a4163492
+=======
+CompileSecs=469610
+OtherSecs=9188
+>>>>>>> 6f073e88cb28ca2e1a03a4d91da96a86cc213aa1
 =======
 CompileSecs=237189
 OtherSecs=4929
@@ -69,11 +80,7 @@ EffectiveKeys=0
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
-DebugSecs=12489
-=======
-DebugSecs=13074
->>>>>>> 64734611b3a1032721198b526a88f718a4163492
+DebugSecs=17355
 =======
 DebugSecs=12175
 >>>>>>> bf660dca3138529f366e4fd4076bb9c0be895ceb

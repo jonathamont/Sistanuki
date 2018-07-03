@@ -13,15 +13,7 @@ uses
   UnitPesquisaMateria in '..\Pesquisa\UnitPesquisaMateria.pas' {Form_PesquisaMateria},
   UnitPesquisaPessoa in '..\Pesquisa\UnitPesquisaPessoa.pas' {Form_PesquisaPessoa},
   UnitCadastroPessoas in '..\Cadastros\UnitCadastroPessoas.pas' {Form_CadastroPessoa},
-  UnitPesquisaAulaExp in '..\Pesquisa\UnitPesquisaAulaExp.pas' {Form_PesquisaAulaExp},
-  UnitCadastroAulaExp in '..\Cadastros\UnitCadastroAulaExp.pas' {Form_CadastroAulaExp},
-  UnitCadastroBaseMestreDetalhe in '..\Modelo\UnitCadastroBaseMestreDetalhe.pas' {Form_CadastroBaseMestreDetalhe},
-  UnitPesquisaCurso in '..\Pesquisa\UnitPesquisaCurso.pas' {Form_PesquisaCurso},
-  UnitCadastroCurso in '..\Cadastros\UnitCadastroCurso.pas' {Form_CadastroCurso},
-  UnitPesquisaTurma in '..\Pesquisa\UnitPesquisaTurma.pas' {Form_PesquisaTurma},
-  UnitCadastroTurma in '..\Cadastros\UnitCadastroTurma.pas' {Form_CadastroTurma},
-  UnitPesquisaAula in '..\Pesquisa\UnitPesquisaAula.pas' {Form_PesquisaAula},
-  UnitCadastroAula in '..\Cadastros\UnitCadastroAula.pas' {Form_CadastroAula};
+  UnitPesquisaAulaExp in '..\Pesquisa\UnitPesquisaAulaExp.pas' {Form_PesquisaAulaExp};
 
 {$R *.res}
 
@@ -29,7 +21,7 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TCONEXAO, CONEXAO);
-  Application.CreateForm(TForm_PesquisaAulaExp, Form_PesquisaAulaExp);
+  Application.CreateForm(TForm_PesquisaPessoa, Form_PesquisaPessoa);
   Application.Run;
 end.
 

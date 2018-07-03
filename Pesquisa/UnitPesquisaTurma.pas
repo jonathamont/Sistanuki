@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, UnitPesquisaBase, Data.DB,
   IBX.IBCustomDataSet, IBX.IBUpdateSQL, IBX.IBQuery, Vcl.ExtCtrls, Vcl.StdCtrls,
-  Vcl.Buttons, Vcl.Mask, Vcl.Grids, Vcl.DBGrids, frxClass, frxDBSet;
+  Vcl.Buttons, Vcl.Mask, Vcl.Grids, Vcl.DBGrids;
 
 type
   TForm_PesquisaTurma = class(TForm_PesquisaBase)
@@ -17,13 +17,9 @@ type
     QueryPesquisaCD_CURSO: TIntegerField;
     QueryPesquisaNM_PESSOA: TIBStringField;
     QueryPesquisaNM_CURSO: TIBStringField;
-    Dataset_Turma: TfrxDBDataset;
-    Report_Turma: TfrxReport;
     procedure But_NovoClick(Sender: TObject);
     procedure ButPesquisaClick(Sender: TObject);
     procedure But_AlterarClick(Sender: TObject);
-    procedure But_ExcluirClick(Sender: TObject);
-    procedure But_ImprimirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -42,12 +38,11 @@ uses UnitCadastroTurma, UnitConexao;
 
 
 procedure TForm_PesquisaTurma.ButPesquisaClick(Sender: TObject);
-var
-  SQL:String;
+VAR
+    sql:String;
 begin
   inherited;
-
-  sql:='SELECT T.*, P.NM_PESSOA, C.NM_CURSO FROM TB_TURMA T INNER JOIN TB_PESSOA P ON(T.CD_PROFESSOR = P.CD_CIDADE) INNER JOIN TB_CURSO C ON(C.CD_CURSO = T.CD_CURSO) ';
+  sql:='SELECT T.*, p.nm_pessoa, c.nm_curso FROM tb_turma T inner JOIN tb_pessoa P ON (P.cd_pessoa = T.cd_professor) inner join tb_curso C ON(C.cd_curso = T.cd_curso) ';
   case RadioFiltro.ItemIndex of
       0:
         begin
@@ -58,11 +53,10 @@ begin
              else
                     SQL:= (SQL +' WHERE CD_TURMA = '+MaskEditPesquisa.Text+';');
         end;
-      1: SQL:= (SQL+' where P.NM_PESSOA like '+QuotedStr('%'+MaskEditPesquisa.Text+'%')+' Order by P.NM_PESSOA;');
+      	  1: SQL:= (SQL+' where P.NM_PESSOA like '+QuotedStr('%'+MaskEditPesquisa.Text+'%')+' Order by P.NM_PESSOA;');
       2: SQL:= (SQL+' where DS_DIA like '+QuotedStr('%'+MaskEditPesquisa.Text+'%')+' Order by DS_DIA;');
       3: SQL:= (SQL+' where DS_PERIODO like '+QuotedStr('%'+MaskEditPesquisa.Text+'%')+' Order by DS_PERIODO;');
       4: SQL:= (SQL+' where C.NM_CURSO like '+QuotedStr('%'+MaskEditPesquisa.Text+'%')+' Order by C.NM_CURSO;');
-
   END;
 
   CONEXAO.TrocaSQL(QueryPesquisa,SQL);
@@ -81,40 +75,6 @@ begin
         ButPesquisaClick(ButPesquisa);
 
      end;
-end;
-
-procedure TForm_PesquisaTurma.But_ExcluirClick(Sender: TObject);
-var
-  sql:string;
-begin
-  inherited;
-  if Application.MessageBox('Deseja realmente excluir?','Aviso', MB_OK + MB_YESNO) = IDNO then
-        Begin
-          Exit;
-        End;
-     if not(CONEXAO.Transaction.InTransaction) then
-        Begin
-          CONEXAO.Transaction.StartTransaction;
-        End;
-
-      Begin
-        Try
-          QueryPesquisa.Delete;
-          CONEXAO.Transaction.Commit;
-        Except
-          CONEXAO.Transaction.Rollback;
-          Application.MessageBox('Erro ao Excluir Item! Uma Turma com Alunos não pode ser excluida!','Aviso')
-        End;
-      End;
-
-      QueryPesquisa.Open;
-
-end;
-
-procedure TForm_PesquisaTurma.But_ImprimirClick(Sender: TObject);
-begin
-  inherited;
-  Report_Turma.ShowReport();
 end;
 
 procedure TForm_PesquisaTurma.But_NovoClick(Sender: TObject);
