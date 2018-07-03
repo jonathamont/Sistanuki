@@ -50,7 +50,7 @@ end;
 procedure TForm_CadastroCidades.FormCreate(Sender: TObject);
 begin
   inherited;
-
+  ////
   if (DataSourceCadastro.State = dsInsert) then
   begin
        DataSourceCadastro.DataSet.FieldByName('DS_PAIS').Value:='BRASIL';
