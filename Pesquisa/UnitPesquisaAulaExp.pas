@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, UnitPesquisaBase, Data.DB,
   IBX.IBCustomDataSet, IBX.IBUpdateSQL, IBX.IBQuery, Vcl.ExtCtrls, Vcl.StdCtrls,
-  Vcl.Buttons, Vcl.Mask, Vcl.Grids, Vcl.DBGrids;
+  Vcl.Buttons, Vcl.Mask, Vcl.Grids, Vcl.DBGrids, frxClass, frxDBSet;
 
 type
   TForm_PesquisaAulaExp = class(TForm_PesquisaBase)
@@ -18,6 +18,8 @@ type
     QueryPesquisaDS_INF: TIBStringField;
     QueryPesquisaNM_PESSOA: TIBStringField;
     QueryPesquisaNM_CURSO: TIBStringField;
+    Dataset_AulaExp: TfrxDBDataset;
+    Report_AulaExp: TfrxReport;
     procedure ButPesquisaClick(Sender: TObject);
     procedure But_AlterarClick(Sender: TObject);
     procedure But_NovoClick(Sender: TObject);

@@ -7,13 +7,15 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, UnitPesquisaBase, Data.DB,
   IBX.IBCustomDataSet, IBX.IBUpdateSQL, IBX.IBQuery, Vcl.ExtCtrls, Vcl.StdCtrls,
-  Vcl.Buttons, Vcl.Mask, Vcl.Grids, Vcl.DBGrids;
+  Vcl.Buttons, Vcl.Mask, Vcl.Grids, Vcl.DBGrids, frxClass, frxDBSet;
 
 type
   TForm_PesquisaCurso = class(TForm_PesquisaBase)
     QueryPesquisaCD_CURSO: TIntegerField;
     QueryPesquisaNM_CURSO: TIBStringField;
     QueryPesquisaNR_HORAS: TIBBCDField;
+    Dataset_Curso: TfrxDBDataset;
+    Report_Curso: TfrxReport;
     procedure But_NovoClick(Sender: TObject);
     procedure ButPesquisaClick(Sender: TObject);
     procedure But_AlterarClick(Sender: TObject);

@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, UnitPesquisaBase, Data.DB,
   IBX.IBCustomDataSet, IBX.IBQuery, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Buttons,
-  Vcl.Mask, Vcl.Grids, Vcl.DBGrids, UnitConexao, IBX.IBUpdateSQL;
+  Vcl.Mask, Vcl.Grids, Vcl.DBGrids, UnitConexao, IBX.IBUpdateSQL, frxClass,
+  frxDBSet;
 
 type
   TForm_PesquisaCidade = class(TForm_PesquisaBase)
@@ -14,6 +15,8 @@ type
     QueryPesquisaNM_CIDADE: TIBStringField;
     QueryPesquisaDS_ESTADO: TIBStringField;
     QueryPesquisaDS_PAIS: TIBStringField;
+    Dataset_Cidades: TfrxDBDataset;
+    Report_Cidades: TfrxReport;
     procedure ButPesquisaClick(Sender: TObject);
     procedure But_AlterarClick(Sender: TObject);
     procedure But_NovoClick(Sender: TObject);

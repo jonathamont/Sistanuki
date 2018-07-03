@@ -21,7 +21,9 @@ uses
   UnitPesquisaTurma in '..\Pesquisa\UnitPesquisaTurma.pas' {Form_PesquisaTurma},
   UnitCadastroTurma in '..\Cadastros\UnitCadastroTurma.pas' {Form_CadastroTurma},
   UnitPesquisaAula in '..\Pesquisa\UnitPesquisaAula.pas' {Form_PesquisaAula},
-  UnitCadastroAula in '..\Cadastros\UnitCadastroAula.pas' {Form_CadastroAula};
+  UnitCadastroAula in '..\Cadastros\UnitCadastroAula.pas' {Form_CadastroAula},
+  UnitCadastroMatricula in '..\Cadastros\UnitCadastroMatricula.pas' {Form_CadastroMatricula},
+  UnitPesquisaMatricula in '..\Pesquisa\UnitPesquisaMatricula.pas' {Form_PesquisaMatricula};
 
 {$R *.res}
 
@@ -30,6 +32,8 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TCONEXAO, CONEXAO);
   Application.CreateForm(TForm_PesquisaAulaExp, Form_PesquisaAulaExp);
+  Application.CreateForm(TForm_CadastroMatricula, Form_CadastroMatricula);
+  Application.CreateForm(TForm_PesquisaMatricula, Form_PesquisaMatricula);
   Application.Run;
 end.
 
