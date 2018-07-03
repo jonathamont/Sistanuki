@@ -6,17 +6,14 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, UnitPesquisaBase, Data.DB,
   IBX.IBCustomDataSet, IBX.IBUpdateSQL, IBX.IBQuery, Vcl.ExtCtrls, Vcl.StdCtrls,
-  Vcl.Buttons, Vcl.Mask, Vcl.Grids, Vcl.DBGrids, frxClass, frxDBSet;
+  Vcl.Buttons, Vcl.Mask, Vcl.Grids, Vcl.DBGrids;
 
 type
   TForm_PesquisaMateria = class(TForm_PesquisaBase)
-    Dataset_Materia: TfrxDBDataset;
-    Report_Materia: TfrxReport;
     procedure But_NovoClick(Sender: TObject);
     procedure But_AlterarClick(Sender: TObject);
     procedure But_ExcluirClick(Sender: TObject);
     procedure ButPesquisaClick(Sender: TObject);
-    procedure But_ImprimirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -89,12 +86,6 @@ begin
           ShowMessage('Erro ao Remover!');
         End;
       End;
-end;
-
-procedure TForm_PesquisaMateria.But_ImprimirClick(Sender: TObject);
-begin
-  inherited;
-  Report_Materia.ShowReport();
 end;
 
 procedure TForm_PesquisaMateria.But_NovoClick(Sender: TObject);

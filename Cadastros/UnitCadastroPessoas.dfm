@@ -3,8 +3,9 @@ inherited Form_CadastroPessoa: TForm_CadastroPessoa
   ClientHeight = 465
   ClientWidth = 617
   OnCreate = FormCreate
+  ExplicitTop = -50
   ExplicitWidth = 633
-  ExplicitHeight = 503
+  ExplicitHeight = 504
   PixelsPerInch = 96
   TextHeight = 13
   inherited But_Pesquisa: TSpeedButton
