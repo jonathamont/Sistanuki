@@ -23,7 +23,7 @@ type
     Label6: TLabel;
     Edit_HrInicio: TDBEdit;
     Label7: TLabel;
-    EditHrFim: TDBEdit;
+    Edit_HrFim: TDBEdit;
     But_AdiconaAlunos: TBitBtn;
     RadioEncerrado: TDBRadioGroup;
     RadioProfPres: TDBRadioGroup;
@@ -51,6 +51,7 @@ type
     procedure But_Item_SaveClick(Sender: TObject);
     procedure But_AdiconaAlunosClick(Sender: TObject);
     procedure But_PesquisaClick(Sender: TObject);
+    procedure But_Item_ExcluirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -68,20 +69,45 @@ uses UnitConexao, UnitPesquisaAula, UnitPesquisaTurma;
 
 procedure TForm_CadastroAula.But_AdiconaAlunosClick(Sender: TObject);
 VAR
-  chave:Integer;
+  chave,turma,aluno:Integer;
   SQL:String;
 begin
   inherited;
-  sql:='select cd_aluno from tb_turma_aluno t where t.cd_turma = ' + Edit_CdTurma.Text;
-  CONEXAO.TrocaSQL(CONEXAO.Query,SQL);
-  if (CONEXAO.Query.IsEmpty) then
+  if (CONEXAO.Query2.IsEmpty) then
    BEGIN
       ShowMessage('Nenhum aluno encontrado:');
       exit;
    END;
-   //chave:=DataSourceCadastro.DataSet.FieldByName('')
-   if DataSourceCadastro.DataSet.State = dsInsert then
-  begin
+   if Trim(Edit_CdTurma.Text) = '' then
+    begin
+      Application.MessageBox('Turma é obrigatorio!','Aviso!');
+      Edit_CdTurma.SetFocus;
+      exit;
+    end;
+    if Trim(Edit_Data.Text) = '  /  /    ' then
+    begin
+      Application.MessageBox('Data é obrigatorio!','Aviso!');
+      Edit_Data.SetFocus;
+      exit;
+    end;
+    if Trim(Edit_HrInicio.Text) = '  :  :  ' then
+    begin
+      Application.MessageBox('Data inicio é obrigatorio!','Aviso!');
+      Edit_HrInicio.SetFocus;
+      exit;
+    end;
+    if Trim(Edit_HrFim.Text) = '::' then
+    begin
+      Application.MessageBox('Data Fim é obrigatorio!','Aviso!');
+      Edit_HrFim.SetFocus;
+      exit;
+    end;
+  turma:=DataSourceCadastro.DataSet.FieldByName('CD_TURMA').Value;
+  sql:='select cd_aluno, p.nm_pessoa from tb_turma_aluno t inner join tb_pessoa p on(p.cd_pessoa = t.cd_aluno) where t.cd_turma = ' + IntToStr(turma);
+  CONEXAO.TrocaSQL(CONEXAO.Query2,SQL);
+
+    if DataSourceCadastro.DataSet.State = dsInsert then
+    begin
         if not(CONEXAO.Transaction.InTransaction) then
         Begin
           CONEXAO.Transaction.StartTransaction;
@@ -96,16 +122,46 @@ begin
          End;
 
          DataSourceCadastro.DataSet.Open;
-         DataSourceCadastro.DataSet.Locate('CD_Aula',Chave,[]);
-         QueryItem.Open;
-         QueryItem.Append;
+         DataSourceCadastro.DataSet.Locate('CD_AULA',Chave,[]);
+    end;
 
-
-  end;
-   while not(CONEXAO.Query.IsEmpty) do
+   chave:=DataSourceCadastro.DataSet.FieldByName('CD_AULA').Value;
+   aluno:=0;
+   while (aluno <> CONEXAO.Query2.FieldByName('cd_aluno').Value) do
     begin
+        aluno:=CONEXAO.Query2.FieldByName('cd_aluno').Value;
+            QueryItem.Open;
+            QueryItem.Append;
+            QueryItemCD_ALUNO.Value:=CONEXAO.Query2.FieldByName('cd_aluno').Value;
+            QueryItemNM_PESSOA.Value:=CONEXAO.Query2.FieldByName('nm_pessoa').AsString;
+            QueryItemCD_AULA.Value:=chave;
+            QueryItemCD_MATERIA.Value:=1;
+            QueryItemNM_MATERIA.Value:='PADRÃO';
+            QueryItemFG_PRESENCA.Value:='S';
+            QueryItemFG_EXP.Value:='N';
+            QueryItemCD_AULA_ALUNO.Value:=CONEXAO.RetornaPK('CD_AULA_ALUNO','TB_AULA_ALUNO');
+
+            CONEXAO.Query2.Next;
+
+
+
 
     end;
+      QueryItem.open;
+      if  not(CONEXAO.Transaction.InTransaction) then
+          begin
+               CONEXAO.Transaction.StartTransaction;
+          end;
+          try
+            QueryItem.Post;
+            CONEXAO.Transaction.Commit;
+          except
+            CONEXAO.Transaction.Rollback;
+            Application.MessageBox('Erro ao gravar','Erro',MB_OK);
+          end;
+      DataSourceCadastro.DataSet.Open;
+      QueryItem.Open;
+      DataSourceCadastro.DataSet.Locate('CD_AULA',Chave,[]);
 
 
    ///CONEXAO.Query.FieldByName('cd_aluno').Value
@@ -121,12 +177,19 @@ begin
 
 end;
 
+procedure TForm_CadastroAula.But_Item_ExcluirClick(Sender: TObject);
+begin
+  inherited;
+  QueryItem.Open;
+end;
+
 procedure TForm_CadastroAula.But_Item_SaveClick(Sender: TObject);
 var
   chave:integer;
 begin
+  chave:=DataSourceCadastro.DataSet.FieldByName('CD_AULA').Value;
   inherited;
-  DataSourceCadastro.DataSet.Locate('CD_TURMA',Chave,[]);
+  DataSourceCadastro.DataSet.Locate('CD_AULA',Chave,[]);
   QueryItem.Open;
   Edit_CdAluno.Enabled:=False;
   Edit_CdMateria.Enabled:=False;

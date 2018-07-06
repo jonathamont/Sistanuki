@@ -15,6 +15,7 @@ object CONEXAO: TCONEXAO
     Top = 88
   end
   object Transaction: TIBTransaction
+    Active = True
     DefaultDatabase = DB
     Left = 160
     Top = 88
@@ -26,6 +27,15 @@ object CONEXAO: TCONEXAO
     CachedUpdates = False
     ParamCheck = True
     Left = 88
+    Top = 160
+  end
+  object Query2: TIBQuery
+    Database = DB
+    Transaction = Transaction
+    BufferChunks = 1000
+    CachedUpdates = False
+    ParamCheck = True
+    Left = 144
     Top = 160
   end
 end

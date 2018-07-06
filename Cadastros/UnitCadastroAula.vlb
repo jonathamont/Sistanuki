@@ -107,12 +107,12 @@ Coordinates=725,344,62,36
 [Edit_HrInicio]
 Coordinates=437,344,62,36
 
-[EditHrFim]
-Coordinates=509,344,62,36
-
 [Edit_CdProf]
 Coordinates=82,412,62,36
 
 [Edit_NmProf]
 Coordinates=653,344,62,36
+
+[Edit_HrFim]
+Coordinates=509,344,62,36
 

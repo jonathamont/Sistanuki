@@ -81,6 +81,9 @@ begin
   inherited;
   try
         QueryPesquisa.Edit;
+        QueryPesquisaHR_INICIO.EditMask:='00:00:00';
+        QueryPesquisaHR_FIM.EditMask:='00:00:00';
+        QueryPesquisaDT_AULA.EditMask:='00/00/0000';
         Form_CadastroAula:=TForm_CadastroAula.Create(self);
         Form_CadastroAula.ShowModal;
 
@@ -107,6 +110,7 @@ begin
         QueryPesquisaFG_ENCERRADA.Value:='N';
         QueryPesquisaHR_INICIO.EditMask:='00:00:00';
         QueryPesquisaHR_FIM.EditMask:='00:00:00';
+        QueryPesquisaDT_AULA.EditMask:='00/00/0000';
         Form_CadastroAula:=TForm_CadastroAula.Create(self);
         Form_CadastroAula.ShowModal;
 

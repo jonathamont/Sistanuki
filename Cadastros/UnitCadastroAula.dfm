@@ -3,6 +3,7 @@ inherited Form_CadastroAula: TForm_CadastroAula
   ClientHeight = 605
   ClientWidth = 816
   OnCreate = FormCreate
+  ExplicitTop = -207
   ExplicitWidth = 832
   ExplicitHeight = 644
   PixelsPerInch = 96
@@ -68,7 +69,7 @@ inherited Form_CadastroAula: TForm_CadastroAula
     Width = 52
     Height = 13
     Caption = 'Horario fim'
-    FocusControl = EditHrFim
+    FocusControl = Edit_HrFim
   end
   object Label8: TLabel [8]
     Left = 24
@@ -210,7 +211,7 @@ inherited Form_CadastroAula: TForm_CadastroAula
     DataSource = DataSourceCadastro
     TabOrder = 7
   end
-  object EditHrFim: TDBEdit [21]
+  object Edit_HrFim: TDBEdit [21]
     Left = 640
     Top = 23
     Width = 134
@@ -374,7 +375,6 @@ inherited Form_CadastroAula: TForm_CadastroAula
       Visible = False
     end
     object QueryItemCD_ALUNO: TIntegerField
-      DisplayLabel = 'Aluno'
       FieldName = 'CD_ALUNO'
       Origin = '"TB_AULA_ALUNO"."CD_ALUNO"'
       Required = True
@@ -418,7 +418,7 @@ inherited Form_CadastroAula: TForm_CadastroAula
   end
   inherited UpdateItem: TIBUpdateSQL
     RefreshSQL.Strings = (
-      'Select *'
+      'Select '
       'from tb_aula_aluno '
       'where'
       '  CD_AULA_ALUNO = :CD_AULA_ALUNO and'

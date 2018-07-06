@@ -11,6 +11,7 @@ type
     DB: TIBDatabase;
     Transaction: TIBTransaction;
     Query: TIBQuery;
+    Query2: TIBQuery;
   private
     { Private declarations }
   public
