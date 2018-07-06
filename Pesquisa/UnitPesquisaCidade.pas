@@ -96,12 +96,18 @@ begin
           CONEXAO.Transaction.Rollback;
           ShowMessage('Erro ao Remover!');
         End;
-      End;
+      End;                                                     .
 end;
 
 procedure TForm_PesquisaCidade.But_ImprimirClick(Sender: TObject);
+var
+  SQL: string;
 begin
   inherited;
+   {SQL necessário para o relatorio sempre agrupar por estados }
+  SQL:= 'SELECT C.CD_CIDADE, C. NM_CIDADE, C.DS_ESTADO, C.DS_PAIS FROM TB_CIDADE C ORDER BY DS_PAIS';
+  CONEXAO.TrocaSQL(QueryPesquisa,SQL);
+  Report_Cidades.ShowReport();
  Report_Cidades.ShowReport();
 end;
 

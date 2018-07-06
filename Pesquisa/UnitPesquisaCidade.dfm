@@ -1,5 +1,7 @@
 inherited Form_PesquisaCidade: TForm_PesquisaCidade
   Caption = 'Pesquisa Cidade'
+  ExplicitWidth = 819
+  ExplicitHeight = 649
   PixelsPerInch = 96
   TextHeight = 13
   inherited GroupBox: TGroupBox
@@ -28,8 +30,7 @@ inherited Form_PesquisaCidade: TForm_PesquisaCidade
     Active = True
     SQL.Strings = (
       'select * from TB_CIDADE')
-    Left = 696
-    Top = 136
+    Top = 264
     object QueryPesquisaCD_CIDADE: TIntegerField
       DisplayLabel = 'Codigo'
       FieldName = 'CD_CIDADE'
@@ -60,8 +61,8 @@ inherited Form_PesquisaCidade: TForm_PesquisaCidade
     end
   end
   inherited DataSourcePesquisa: TDataSource
-    Left = 600
-    Top = 136
+    Left = 552
+    Top = 264
   end
   inherited UpdateCadastro: TIBUpdateSQL
     RefreshSQL.Strings = (
@@ -91,8 +92,8 @@ inherited Form_PesquisaCidade: TForm_PesquisaCidade
       'delete from TB_CIDADE'
       'where'
       '  CD_CIDADE = :OLD_CD_CIDADE')
-    Left = 472
-    Top = 144
+    Left = 448
+    Top = 264
   end
   object Dataset_Cidades: TfrxDBDataset
     UserName = 'Dataset_Cidades'
