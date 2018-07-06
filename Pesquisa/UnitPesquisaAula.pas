@@ -61,7 +61,7 @@ begin
                     SQL:= (SQL +' WHERE CD_AULA = '+MaskEditPesquisa.Text+';');
         end;
       	  1: SQL:= (SQL+' where P.NM_PESSOA like '+QuotedStr('%'+MaskEditPesquisa.Text+'%')+' Order by P.NM_PESSOA;');
-      2: SQL:= (SQL+' where DT_AULA BETWEEN '+Edit_DtInicio.Text+' AND '+Edit_DtFim.Text +' Order by DT_AULA;');
+      2: SQL:= (SQL+' where DT_AULA BETWEEN '+QuotedStr(Edit_DtInicio.Text)+' AND '+QuotedStr(Edit_DtFim.Text) +' Order by DT_AULA;');
       3: begin
              if (Trim(MaskEditPesquisa.Text) = '')  then
                begin
@@ -105,6 +105,8 @@ begin
         QueryPesquisa.Append;
         QueryPesquisaCD_AULA.Value:=(CONEXAO.RetornaPK('CD_AULA','TB_AULA'));
         QueryPesquisaFG_ENCERRADA.Value:='N';
+        QueryPesquisaHR_INICIO.EditMask:='00:00:00';
+        QueryPesquisaHR_FIM.EditMask:='00:00:00';
         Form_CadastroAula:=TForm_CadastroAula.Create(self);
         Form_CadastroAula.ShowModal;
 

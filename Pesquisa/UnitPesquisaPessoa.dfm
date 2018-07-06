@@ -2,6 +2,7 @@ inherited Form_PesquisaPessoa: TForm_PesquisaPessoa
   Caption = 'Pesquisa Pessoa'
   ClientWidth = 808
   ExplicitWidth = 824
+  ExplicitHeight = 650
   PixelsPerInch = 96
   TextHeight = 13
   inherited GridPesquisa: TDBGrid
@@ -56,7 +57,6 @@ inherited Form_PesquisaPessoa: TForm_PesquisaPessoa
     OnClick = But_NovoClick
   end
   inherited QueryPesquisa: TIBQuery
-    Active = True
     SQL.Strings = (
       'Select p.*,c.nm_cidade from tb_pessoa p'
       'inner join tb_cidade c on (c.cd_cidade = p.cd_cidade)'
