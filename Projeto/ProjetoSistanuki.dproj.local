@@ -2,16 +2,16 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2018/06/26 12:52:49.000.803,=C:\Sistanuki\Projeto\Unit1.pas</Transaction>
-    <Transaction>2018/06/26 19:14:49.000.643,C:\Sistanuki\Pesquisa\UnitPesquisaAula.dfm=C:\Sistanuki\Projeto\Unit1.dfm</Transaction>
-    <Transaction>2018/06/26 19:14:49.000.629,C:\Sistanuki\Pesquisa\UnitPesquisaAula.pas=C:\Sistanuki\Projeto\Unit1.pas</Transaction>
+    <Transaction>2018/06/26 19:14:49.000.643,C:\Sistanuki\Projeto\Unit1.dfm=C:\Sistanuki\Pesquisa\UnitPesquisaAula.dfm</Transaction>
+    <Transaction>2018/06/26 19:14:49.000.629,C:\Sistanuki\Projeto\Unit1.pas=C:\Sistanuki\Pesquisa\UnitPesquisaAula.pas</Transaction>
     <Transaction>2018/06/27 22:27:51.000.492,=C:\Sistanuki\Modelo\UnitCadastroBaseMestreDetalheAlt.pas</Transaction>
     <Transaction>2018/06/27 22:28:08.000.430,C:\Sistanuki\Modelo\UnitCadastroBaseMestreDetalheAlt.pas=</Transaction>
     <Transaction>2018/06/27 22:30:48.000.006,=C:\Sistanuki\Projeto\Unit1.pas</Transaction>
-    <Transaction>2018/06/27 22:35:48.000.441,C:\Sistanuki\Projeto\Unit1.dfm=C:\Sistanuki\Cadastros\UnitCadastroAula.dfm</Transaction>
-    <Transaction>2018/06/27 22:35:48.000.441,C:\Sistanuki\Projeto\Unit1.pas=C:\Sistanuki\Cadastros\UnitCadastroAula.pas</Transaction>
+    <Transaction>2018/06/27 22:35:48.000.441,C:\Sistanuki\Cadastros\UnitCadastroAula.pas=C:\Sistanuki\Projeto\Unit1.pas</Transaction>
+    <Transaction>2018/06/27 22:35:48.000.441,C:\Sistanuki\Cadastros\UnitCadastroAula.dfm=C:\Sistanuki\Projeto\Unit1.dfm</Transaction>
     <Transaction>2018/07/03 00:28:10.000.354,=C:\Sistanuki\Cadastros\UnitCadastroMatricula.pas</Transaction>
     <Transaction>2018/07/03 00:28:28.000.157,=C:\Sistanuki\Pesquisa\UnitPesquisaMatricula.pas</Transaction>
-    <Transaction>2018/07/03 00:39:49.700,=C:\Sistanuki\Menu\UnitMenu.pas</Transaction>
+    <Transaction>2018/07/03 00:39:49.000.700,=C:\Sistanuki\Menu\UnitMenu.pas</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="C:\Sistanuki"/>

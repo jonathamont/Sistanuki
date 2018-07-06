@@ -49,6 +49,8 @@ type
     procedure FormCreate(Sender: TObject);
     procedure But_Item_EditClick(Sender: TObject);
     procedure But_Item_SaveClick(Sender: TObject);
+    procedure But_AdiconaAlunosClick(Sender: TObject);
+    procedure But_PesquisaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -63,6 +65,51 @@ implementation
 {$R *.dfm}
 
 uses UnitConexao, UnitPesquisaAula, UnitPesquisaTurma;
+
+procedure TForm_CadastroAula.But_AdiconaAlunosClick(Sender: TObject);
+VAR
+  chave:Integer;
+  SQL:String;
+begin
+  inherited;
+  sql:='select cd_aluno from tb_turma_aluno t where t.cd_turma = ' + Edit_CdTurma.Text;
+  CONEXAO.TrocaSQL(CONEXAO.Query,SQL);
+  if (CONEXAO.Query.IsEmpty) then
+   BEGIN
+      ShowMessage('Nenhum aluno encontrado:');
+      exit;
+   END;
+   //chave:=DataSourceCadastro.DataSet.FieldByName('')
+   if DataSourceCadastro.DataSet.State = dsInsert then
+  begin
+        if not(CONEXAO.Transaction.InTransaction) then
+        Begin
+          CONEXAO.Transaction.StartTransaction;
+        End;
+
+         Try
+            DataSourceCadastro.DataSet.Post;
+            CONEXAO.Transaction.Commit;
+         Except
+            ShowMessage('Erro ao gravar!');
+            CONEXAO.Transaction.Rollback;
+         End;
+
+         DataSourceCadastro.DataSet.Open;
+         DataSourceCadastro.DataSet.Locate('CD_Aula',Chave,[]);
+         QueryItem.Open;
+         QueryItem.Append;
+
+
+  end;
+   while not(CONEXAO.Query.IsEmpty) do
+    begin
+
+    end;
+
+
+   ///CONEXAO.Query.FieldByName('cd_aluno').Value
+end;
 
 procedure TForm_CadastroAula.But_Item_EditClick(Sender: TObject);
 begin
@@ -86,6 +133,24 @@ begin
   RadioPresenca.Enabled:=False;
   But_PesquisaMat.Enabled:=False;
 
+end;
+
+procedure TForm_CadastroAula.But_PesquisaClick(Sender: TObject);
+begin
+  inherited;
+  try
+    Form_PesquisaTurma:=TForm_PesquisaTurma.Create(self);
+    Form_PesquisaTurma.ShowModal
+  finally
+    if (Form_PesquisaTurma.ModalResult = mrok) then
+      begin
+           DataSourceCadastro.DataSet.FieldByName('CD_TURMA').Value:=Form_PesquisaTurma.QueryPesquisa.FieldByName('CD_TURMA').AsInteger;
+           DataSourceCadastro.DataSet.FieldByName('CD_PROF').Value:=Form_PesquisaTurma.QueryPesquisa.FieldByName('CD_PROFESSOR').AsInteger;
+           DataSourceCadastro.DataSet.FieldByName('NM_PESSOA').Value:=Form_PesquisaTurma.QueryPesquisa.FieldByName('NM_PESSOA').Value;
+      end;
+    Form_PesquisaTurma.QueryPesquisa.Close;
+    Form_PesquisaTurma.Free;
+  end;
 end;
 
 procedure TForm_CadastroAula.FormCreate(Sender: TObject);

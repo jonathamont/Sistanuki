@@ -10,6 +10,7 @@ inherited Form_CadastroAula: TForm_CadastroAula
   inherited But_Pesquisa: TSpeedButton
     Left = 125
     Top = 24
+    OnClick = But_PesquisaClick
     ExplicitLeft = 125
     ExplicitTop = 24
   end
@@ -159,6 +160,7 @@ inherited Form_CadastroAula: TForm_CadastroAula
     Height = 21
     DataField = 'CD_AULA'
     DataSource = DataSourceCadastro
+    ReadOnly = True
     TabOrder = 2
   end
   object Edit_CdTurma: TDBEdit [16]
@@ -177,6 +179,7 @@ inherited Form_CadastroAula: TForm_CadastroAula
     Height = 21
     DataField = 'CD_PROF'
     DataSource = DataSourceCadastro
+    Enabled = False
     TabOrder = 4
   end
   object Edit_NmProf: TDBEdit [18]
@@ -186,6 +189,7 @@ inherited Form_CadastroAula: TForm_CadastroAula
     Height = 21
     DataField = 'NM_PESSOA'
     DataSource = DataSourceCadastro
+    ReadOnly = True
     TabOrder = 5
   end
   object Edit_Data: TDBEdit [19]
@@ -236,6 +240,7 @@ inherited Form_CadastroAula: TForm_CadastroAula
       33333333337F7F33333333333300033333333333337773333333}
     NumGlyphs = 2
     TabOrder = 9
+    OnClick = But_AdiconaAlunosClick
   end
   object RadioEncerrado: TDBRadioGroup [23]
     Left = 511
