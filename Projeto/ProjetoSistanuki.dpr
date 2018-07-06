@@ -31,6 +31,7 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
+  TStyleManager.TrySetStyle('Amethyst Kamri');
   Application.CreateForm(TCONEXAO, CONEXAO);
   Application.CreateForm(TForm_Menu, Form_Menu);
   Application.Run;
