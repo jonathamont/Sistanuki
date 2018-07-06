@@ -164,7 +164,10 @@ begin
        Application.MessageBox('Numero de horas é obrigatorio','Aviso');
        exit;
   end;
-
+  if Form_PesquisaCurso.QueryPesquisa.State <> dsInsert then
+    begin
+      Form_PesquisaCurso.QueryPesquisa.Edit;
+  end;
 
   inherited;
 

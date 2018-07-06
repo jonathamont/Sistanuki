@@ -108,9 +108,11 @@ begin
         QueryPesquisa.Append;
         QueryPesquisaCD_AULA.Value:=(CONEXAO.RetornaPK('CD_AULA','TB_AULA'));
         QueryPesquisaFG_ENCERRADA.Value:='N';
+        QueryPesquisaFG_PROF_PRESENT.Value:='S';
         QueryPesquisaHR_INICIO.EditMask:='00:00:00';
         QueryPesquisaHR_FIM.EditMask:='00:00:00';
         QueryPesquisaDT_AULA.EditMask:='00/00/0000';
+        QueryPesquisaDT_AULA.Value:=Now;
         Form_CadastroAula:=TForm_CadastroAula.Create(self);
         Form_CadastroAula.ShowModal;
 

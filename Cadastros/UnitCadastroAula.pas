@@ -52,6 +52,7 @@ type
     procedure But_AdiconaAlunosClick(Sender: TObject);
     procedure But_PesquisaClick(Sender: TObject);
     procedure But_Item_ExcluirClick(Sender: TObject);
+    procedure But_SalvarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -73,30 +74,19 @@ VAR
   SQL:String;
 begin
   inherited;
-  if (CONEXAO.Query2.IsEmpty) then
-   BEGIN
-      ShowMessage('Nenhum aluno encontrado:');
-      exit;
-   END;
-   if Trim(Edit_CdTurma.Text) = '' then
+  if Trim(Edit_CdTurma.Text) = '' then
     begin
       Application.MessageBox('Turma é obrigatorio!','Aviso!');
       Edit_CdTurma.SetFocus;
       exit;
     end;
-    if Trim(Edit_Data.Text) = '  /  /    ' then
-    begin
-      Application.MessageBox('Data é obrigatorio!','Aviso!');
-      Edit_Data.SetFocus;
-      exit;
-    end;
-    if Trim(Edit_HrInicio.Text) = '  :  :  ' then
+    if (Edit_HrInicio.Text) = '  :  :  ' then
     begin
       Application.MessageBox('Data inicio é obrigatorio!','Aviso!');
       Edit_HrInicio.SetFocus;
       exit;
     end;
-    if Trim(Edit_HrFim.Text) = '::' then
+    if (Edit_HrFim.Text) = '  :  :  ' then
     begin
       Application.MessageBox('Data Fim é obrigatorio!','Aviso!');
       Edit_HrFim.SetFocus;
@@ -105,6 +95,13 @@ begin
   turma:=DataSourceCadastro.DataSet.FieldByName('CD_TURMA').Value;
   sql:='select cd_aluno, p.nm_pessoa from tb_turma_aluno t inner join tb_pessoa p on(p.cd_pessoa = t.cd_aluno) where t.cd_turma = ' + IntToStr(turma);
   CONEXAO.TrocaSQL(CONEXAO.Query2,SQL);
+  if (CONEXAO.Query2.IsEmpty) then
+   BEGIN
+      ShowMessage('Nenhum aluno encontrado:');
+      exit;
+   END;
+
+
 
     if DataSourceCadastro.DataSet.State = dsInsert then
     begin
@@ -127,7 +124,7 @@ begin
 
    chave:=DataSourceCadastro.DataSet.FieldByName('CD_AULA').Value;
    aluno:=0;
-   while (aluno <> CONEXAO.Query2.FieldByName('cd_aluno').Value) do
+   while not(CONEXAO.Query2.Eof) do
     begin
         aluno:=CONEXAO.Query2.FieldByName('cd_aluno').Value;
             QueryItem.Open;
@@ -140,11 +137,7 @@ begin
             QueryItemFG_PRESENCA.Value:='S';
             QueryItemFG_EXP.Value:='N';
             QueryItemCD_AULA_ALUNO.Value:=CONEXAO.RetornaPK('CD_AULA_ALUNO','TB_AULA_ALUNO');
-
             CONEXAO.Query2.Next;
-
-
-
 
     end;
       QueryItem.open;
@@ -214,6 +207,36 @@ begin
     Form_PesquisaTurma.QueryPesquisa.Close;
     Form_PesquisaTurma.Free;
   end;
+end;
+
+procedure TForm_CadastroAula.But_SalvarClick(Sender: TObject);
+begin
+
+  if Trim(Edit_CdTurma.Text) = '' then
+    begin
+      Application.MessageBox('Turma é obrigatorio!','Aviso!');
+      Edit_CdTurma.SetFocus;
+      exit;
+    end;
+    if (Edit_HrInicio.Text) = '  :  :  ' then
+    begin
+      Application.MessageBox('Data inicio é obrigatorio!','Aviso!');
+      Edit_HrInicio.SetFocus;
+      exit;
+    end;
+
+    if (Edit_HrFim.Text) = '  :  :  ' then
+    begin
+      Application.MessageBox('Data Fim é obrigatorio!','Aviso!');
+      Edit_HrFim.SetFocus;
+      exit;
+    end;
+  if Form_PesquisaAula.QueryPesquisa.State <> dsInsert then
+    begin
+      Form_PesquisaAula.QueryPesquisa.Edit;
+    end;
+  inherited;
+
 end;
 
 procedure TForm_CadastroAula.FormCreate(Sender: TObject);
