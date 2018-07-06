@@ -146,7 +146,7 @@ begin
        DataSourceCadastro.DataSet.FieldByName('FG_SEXO').Value:='N';
        DataSourceCadastro.DataSet.FieldByName('FG_FUNC').Value:='N';
        DataSourceCadastro.DataSet.FieldByName('FG_FISC_JURID').Value:='F';
-       DataSourceCadastro.DataSet.FieldByName('NR_CPF_CNPJ').EditMask:='000.000.00-00';
+       DataSourceCadastro.DataSet.FieldByName('NR_CPF_CNPJ').EditMask:='000.000.000-00';
   end;
 
   inherited;
@@ -159,7 +159,7 @@ procedure TForm_CadastroPessoa.Radio_Fis_JuriExit(Sender: TObject);
 begin
   inherited;
   case Radio_Fis_Juri.ItemIndex of
-  0:DataSourceCadastro.DataSet.FieldByName('NR_CPF_CNPJ').EditMask:='000.000.00-00';
+  0:DataSourceCadastro.DataSet.FieldByName('NR_CPF_CNPJ').EditMask:='000.000.000-00';
   1:DataSourceCadastro.DataSet.FieldByName('NR_CPF_CNPJ').EditMask:='000.000/0000-00'
   end;
 end;

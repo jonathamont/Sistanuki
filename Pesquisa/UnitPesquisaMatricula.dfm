@@ -3,7 +3,7 @@ inherited Form_PesquisaMatricula: TForm_PesquisaMatricula
   ClientHeight = 568
   ClientWidth = 807
   ExplicitWidth = 823
-  ExplicitHeight = 606
+  ExplicitHeight = 607
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel [0]
@@ -86,7 +86,6 @@ inherited Form_PesquisaMatricula: TForm_PesquisaMatricula
     end
   end
   inherited QueryPesquisa: TIBQuery
-    Active = True
     SQL.Strings = (
       'select m.*, p.nm_pessoa p, c.nm_curso from tb_matricula m'
       'inner join tb_pessoa p on (p.cd_pessoa = m.cd_pessoa)'

@@ -1,5 +1,7 @@
 inherited Form_PesquisaCurso: TForm_PesquisaCurso
   Caption = 'Pesquisa Curso'
+  ExplicitWidth = 819
+  ExplicitHeight = 650
   PixelsPerInch = 96
   TextHeight = 13
   inherited GroupBox: TGroupBox
@@ -19,7 +21,6 @@ inherited Form_PesquisaCurso: TForm_PesquisaCurso
     OnClick = But_NovoClick
   end
   inherited QueryPesquisa: TIBQuery
-    Active = True
     SQL.Strings = (
       'select * from TB_CURSO')
     Left = 688

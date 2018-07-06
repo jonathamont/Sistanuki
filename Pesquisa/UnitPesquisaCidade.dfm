@@ -1,5 +1,7 @@
 inherited Form_PesquisaCidade: TForm_PesquisaCidade
   Caption = 'Pesquisa Cidade'
+  ExplicitWidth = 819
+  ExplicitHeight = 650
   PixelsPerInch = 96
   TextHeight = 13
   inherited GroupBox: TGroupBox
@@ -25,7 +27,6 @@ inherited Form_PesquisaCidade: TForm_PesquisaCidade
     OnClick = But_NovoClick
   end
   inherited QueryPesquisa: TIBQuery
-    Active = True
     SQL.Strings = (
       'select * from TB_CIDADE')
     Left = 696

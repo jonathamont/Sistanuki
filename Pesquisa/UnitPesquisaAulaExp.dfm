@@ -1,5 +1,7 @@
 inherited Form_PesquisaAulaExp: TForm_PesquisaAulaExp
   Caption = 'Pesquisa de Aulas Esperimentais'
+  ExplicitWidth = 819
+  ExplicitHeight = 650
   PixelsPerInch = 96
   TextHeight = 13
   inherited GroupBox: TGroupBox
@@ -22,7 +24,6 @@ inherited Form_PesquisaAulaExp: TForm_PesquisaAulaExp
     OnClick = But_NovoClick
   end
   inherited QueryPesquisa: TIBQuery
-    Active = True
     SQL.Strings = (
       'select ae.*, p.nm_pessoa, c.nm_curso from tb_aula_exp ae'
       'inner join tb_pessoa p on (p.cd_pessoa = ae.cd_pessoa)'

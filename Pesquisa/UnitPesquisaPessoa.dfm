@@ -63,23 +63,27 @@ inherited Form_PesquisaPessoa: TForm_PesquisaPessoa
       'order by p.nm_pessoa')
     Left = 688
     object QueryPesquisaCD_PESSOA: TIntegerField
+      DisplayLabel = 'Codigo'
       FieldName = 'CD_PESSOA'
       Origin = '"TB_PESSOA"."CD_PESSOA"'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
       Required = True
     end
     object QueryPesquisaNM_PESSOA: TIBStringField
+      DisplayLabel = 'Nome'
       FieldName = 'NM_PESSOA'
       Origin = '"TB_PESSOA"."NM_PESSOA"'
       Required = True
       Size = 50
     end
     object QueryPesquisaNR_CPF_CNPJ: TIBStringField
+      DisplayLabel = 'CPF/CNPJ'
       FieldName = 'NR_CPF_CNPJ'
       Origin = '"TB_PESSOA"."NR_CPF_CNPJ"'
       Size = 18
     end
     object QueryPesquisaFG_FISC_JURID: TIBStringField
+      DisplayLabel = 'Tipo'
       FieldName = 'FG_FISC_JURID'
       Origin = '"TB_PESSOA"."FG_FISC_JURID"'
       Required = True
@@ -87,6 +91,7 @@ inherited Form_PesquisaPessoa: TForm_PesquisaPessoa
       Size = 1
     end
     object QueryPesquisaFG_FUNC: TIBStringField
+      DisplayLabel = 'Funcionario'
       FieldName = 'FG_FUNC'
       Origin = '"TB_PESSOA"."FG_FUNC"'
       Required = True
@@ -94,6 +99,7 @@ inherited Form_PesquisaPessoa: TForm_PesquisaPessoa
       Size = 1
     end
     object QueryPesquisaFG_SEXO: TIBStringField
+      DisplayLabel = 'Sexo'
       FieldName = 'FG_SEXO'
       Origin = '"TB_PESSOA"."FG_SEXO"'
       Required = True
@@ -101,43 +107,51 @@ inherited Form_PesquisaPessoa: TForm_PesquisaPessoa
       Size = 1
     end
     object QueryPesquisaDT_NASCIMENTO: TDateField
+      DisplayLabel = 'Nascimento'
       FieldName = 'DT_NASCIMENTO'
       Origin = '"TB_PESSOA"."DT_NASCIMENTO"'
       Required = True
     end
     object QueryPesquisaNR_TELEFONE: TIBStringField
+      DisplayLabel = 'Telefone Fixo'
       FieldName = 'NR_TELEFONE'
       Origin = '"TB_PESSOA"."NR_TELEFONE"'
       Size = 13
     end
     object QueryPesquisaNR_CELULAR: TIBStringField
+      DisplayLabel = 'Celular'
       FieldName = 'NR_CELULAR'
       Origin = '"TB_PESSOA"."NR_CELULAR"'
       Size = 14
     end
     object QueryPesquisaDS_EMAIL: TIBStringField
+      DisplayLabel = 'E-mail'
       FieldName = 'DS_EMAIL'
       Origin = '"TB_PESSOA"."DS_EMAIL"'
       Size = 50
     end
     object QueryPesquisaCD_CIDADE: TIntegerField
+      DisplayLabel = 'Cod. Cidade'
       FieldName = 'CD_CIDADE'
       Origin = '"TB_PESSOA"."CD_CIDADE"'
       Required = True
     end
     object QueryPesquisaNM_CIDADE: TIBStringField
+      DisplayLabel = 'Cidade'
       FieldName = 'NM_CIDADE'
       Origin = '"TB_CIDADE"."NM_CIDADE"'
       Required = True
       Size = 60
     end
     object QueryPesquisaDS_BAIRRO: TIBStringField
+      DisplayLabel = 'Bairro'
       FieldName = 'DS_BAIRRO'
       Origin = '"TB_PESSOA"."DS_BAIRRO"'
       Required = True
       Size = 50
     end
     object QueryPesquisaDS_RUA: TIBStringField
+      DisplayLabel = 'Rua'
       FieldName = 'DS_RUA'
       Origin = '"TB_PESSOA"."DS_RUA"'
       Required = True

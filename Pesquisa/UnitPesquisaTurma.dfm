@@ -1,5 +1,7 @@
 inherited Form_PesquisaTurma: TForm_PesquisaTurma
   Caption = 'Pesquisa Turmas'
+  ExplicitWidth = 819
+  ExplicitHeight = 650
   PixelsPerInch = 96
   TextHeight = 13
   inherited GroupBox: TGroupBox
@@ -29,7 +31,6 @@ inherited Form_PesquisaTurma: TForm_PesquisaTurma
     OnClick = But_NovoClick
   end
   inherited QueryPesquisa: TIBQuery
-    Active = True
     SQL.Strings = (
       'select T.*, P.NM_PESSOA, C.NM_CURSO from TB_TURMA T'
       'INNER JOIN TB_PESSOA P  ON (P.CD_PESSOA = T.CD_PROFESSOR)'
